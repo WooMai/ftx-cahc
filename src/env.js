@@ -11,7 +11,7 @@ export const env = createEnv({
       .string()
       .url()
       .refine(
-        (str) => !str.includes("DATABASE_URL"),
+        (str) => !str.includes("postgres.railway.internal"),
         "You forgot to change the default URL"
       ),
     NODE_ENV: z

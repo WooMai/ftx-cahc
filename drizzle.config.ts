@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     connectionString: env.DATABASE_URL,
   },
-  tablesFilter: ["ftx-cahc_*"],
+  tablesFilter: ["cahc_*"],
 } satisfies Config;
