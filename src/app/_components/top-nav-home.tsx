@@ -5,9 +5,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Join Us", href: "#" },
+  { name: "Join Us", href: "/" },
   { name: "Find Claim", href: "#" },
-  { name: "Bylaws", href: "#" },
+  { name: "Telegram", href: "https://t.me/ftxcoalition" },
   { name: "In the Press", href: "#" },
 ];
 

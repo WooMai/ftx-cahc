@@ -16,6 +16,7 @@ import { api } from "@/trpc/server";
 export default async function Home() {
   noStore();
   const hello = await api.claim.hello.query({ text: "from tRPC" });
+  const latestClaim = await api.claim.getLatest.query();
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-gray-900">
@@ -72,7 +73,7 @@ export default async function Home() {
         <div className="mx-auto max-w-2xl pb-20 text-center">
           <div className="mt-24 hidden sm:mt-32 sm:block lg:mt-16">
             <a
-              href="https://t.me/ftxcoalition"
+              href="https://x.com/sunil_trades/status/1763120860829716758?s=20"
               target="_blank"
               className="mb-10 inline-flex space-x-6"
             >
@@ -90,40 +91,22 @@ export default async function Home() {
           </div>
           <br />
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Join the FTX Customer Ad-Hoc Committee
+            Join the FTX Customer Ad-Hoc Committee (CAHC)
             <br />
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
             With over <span className="font-bold">300+ creditors</span> holding{" "}
             <span className="font-bold">9-figures in claims</span>, we have
             formed the largest voting block in the FTX bankruptcy cases.
+            <br />
             Represented by{" "}
-            <span className="font-bold">McCarter & English, LLP</span>, we have
-            filed{" "}
-            <Link
-              className="underline"
-              href={
-                "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA1NjA5Mg==&id2=-1"
-              }
-            >
-              litigation
-            </Link>
-            ,{" "}
-            <Link
-              className="underline"
-              href={
-                "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA2Nzk0MA==&id2=-1"
-              }
-            >
-              objections
-            </Link>{" "}
-            and have already made several appearances in court.
+            <span className="font-bold">McCarter & English, LLP</span>.
           </p>
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            Though we are the largest creditor group we still need more to join
-            to show the judge that customers are unified in demanding our claims
-            be prioritized and valued higher than petition-date.
+            Though we are the largest group we need creditors to onboard to the
+            CAHC providing the court evidence that our arguments do infact
+            represent the views of customers.
           </p>
           <br />
           <div className="mt-10 flex items-center justify-center gap-x-3">
@@ -134,7 +117,7 @@ export default async function Home() {
               Find your claim <span aria-hidden="true">→</span>
             </a>
             <span className="text-sm font-semibold leading-6 text-white">
-              to get started
+              to begin the onboarding process
             </span>
           </div>
           <div className="my-20">
@@ -213,21 +196,3 @@ export default async function Home() {
 //     </main>
 //   );
 // }
-
-async function CrudShowcase() {
-  const latestClaim = await api.claim.getLatest.query();
-
-  return (
-    <div className="w-full max-w-xs">
-      {latestClaim ? (
-        <p className="truncate">
-          {JSON.stringify(latestClaim.tokenFiatNftBalance).toString()}
-        </p>
-      ) : (
-        <p>You have no claims yet.</p>
-      )}
-
-      {/* <CreatePost /> */}
-    </div>
-  );
-}

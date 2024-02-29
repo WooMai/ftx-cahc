@@ -1,7 +1,7 @@
 const navigation = {
   solutions: [
     {
-      name: "CAHC Adversary Proceeding",
+      name: "Adversary Proceeding",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA1NjA5Mg==&id2=-1",
     },
     {
@@ -9,7 +9,7 @@ const navigation = {
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA2Nzk0MA==&id2=-1",
     },
     {
-      name: "Claims Estimation Objection",
+      name: "Estimation Objection",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA2Nzk0MA==&id2=-1",
     },
     {
@@ -28,11 +28,11 @@ const navigation = {
     },
   ],
   company: [
-    { name: "CAHC Telegram", href: "#" },
-    { name: "CAHC Twitter", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "CAHC Telegram", href: "https://t.me/ftxcoalition" },
+    {
+      name: "CAHC Twitter",
+      href: "https://x.com/sunil_trades/status/1763120860829716758?s=20",
+    },
   ],
   legal: [
     {
@@ -113,12 +113,13 @@ export function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Company
+                  Links
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <a
+                        target="_blank"
                         href={item.href}
                         className="text-sm leading-6 text-gray-300 hover:text-white"
                       >
