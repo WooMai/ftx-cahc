@@ -8,6 +8,9 @@ import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import { SearchClaims } from "@/app/_components/search-claims";
 import { CountStats } from "@/app/_components/count-stats";
 import { TopNavHome } from "@/app/_components/top-nav-home";
+import { FightingFor } from "@/app/_components/fighting-for";
+import { Footer } from "@/app/_components/footer";
+
 import { api } from "@/trpc/server";
 
 export default async function Home() {
@@ -66,7 +69,7 @@ export default async function Home() {
         />
       </svg>
       <div className="px-6 py-8 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-2xl pb-60 text-center">
+        <div className="mx-auto max-w-2xl pb-20 text-center">
           <div className="mt-24 hidden sm:mt-32 sm:block lg:mt-16">
             <a
               href="https://t.me/ftxcoalition"
@@ -74,10 +77,10 @@ export default async function Home() {
               className="mb-10 inline-flex space-x-6"
             >
               <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20">
-                Announcing
+                Introducing
               </span>
               <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
-                <span>A new FTX Ad-Hoc for customer victims</span>
+                <span>A new FTX Customer Ad-Hoc Committee</span>
                 <ChevronRightIcon
                   className="h-5 w-5 text-gray-500"
                   aria-hidden="true"
@@ -116,24 +119,34 @@ export default async function Home() {
             </Link>{" "}
             and have already made several appearances in court.
           </p>
+          <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            In order to be succesful we need more creditors to join.
+            Though we are the largest creditor group we still need more to join
+            to show the judge that customers are unified in demanding our claims
+            be prioritized and valued higher than petition-date.
           </p>
           <br />
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div className="mt-10 flex items-center justify-center gap-x-3">
             <a
               href="#"
               className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
-              Find your Claim
+              Find your claim <span aria-hidden="true">→</span>
             </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-white">
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+            <span className="text-sm font-semibold leading-6 text-white">
+              to get started
+            </span>
           </div>
-          <div className="mt-20">
+          <div className="my-20">
             <CountStats />
           </div>
+        </div>
+        <hr className="opacity-10" />
+        <div>
+          <FightingFor />
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
       <div
