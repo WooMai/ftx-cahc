@@ -9,11 +9,11 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z
       .string()
-      .url()
-      .refine(
-        (str) => !str.includes("postgres.railway.internal"),
-        (str) => ({message: `${str} - You forgot to change the default URL`})
-      ),
+      .url(),
+      // .refine(
+      //   (str) => !str.includes("postgres.railway.internal"),
+      //   (str) => ({message: `${str} - You forgot to change the default URL`})
+      // ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
