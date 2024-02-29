@@ -23,7 +23,7 @@ export default async function Home() {
       <TopNavHome />
       <svg
         viewBox="0 0 1024 1024"
-        className="top-1/5 absolute left-1/2 -z-10 h-[84rem] w-[84rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+        className="top-1/5 absolute left-1/2 -z-10 h-[124rem] w-[124rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
         aria-hidden="true"
       >
         <circle
@@ -31,7 +31,7 @@ export default async function Home() {
           cy={512}
           r={512}
           fill="url(#8d958450-c69f-4251-94bc-4e091a323369)"
-          fillOpacity="0.6"
+          fillOpacity="0.5"
         />
         <defs>
           <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
@@ -105,13 +105,13 @@ export default async function Home() {
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
             Though we are the largest group we need creditors to onboard to the
-            CAHC providing the court evidence that our arguments do infact
-            represent the views of customers.
+            CAHC to let the court know that our arguments do infact represent
+            the views of customers.
           </p>
           <br />
           <div className="mt-10 flex items-center justify-center gap-x-3">
             <a
-              href="#"
+              href="/find"
               className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
               Find your claim <span aria-hidden="true">→</span>
@@ -128,12 +128,9 @@ export default async function Home() {
         <div>
           <FightingFor />
         </div>
-        <div>
-          <Footer />
-        </div>
       </div>
       <div
-        className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+        className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-40rem)] xl:left-[calc(50%-24rem)]"
         aria-hidden="true"
       >
         <div

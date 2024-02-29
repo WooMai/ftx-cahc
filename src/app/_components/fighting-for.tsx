@@ -10,7 +10,7 @@ const features = [
   {
     name: "Digital distributions.",
     description:
-      "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for cheques in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries.",
+      "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries.",
     icon: ChevronDoubleUpIcon,
   },
   {
@@ -20,9 +20,9 @@ const features = [
     icon: ChevronDoubleUpIcon,
   },
   {
-    name: "In-kind recoveries.",
+    name: "Higher recoveries.",
     description:
-      "Although the judge ruled to estimate claims at petition-date, customers should still recover today's valuation of their crypto assets due to a theft of property claim.",
+      "Although the judge ruled to estimate claims at petition-date, customers should still recover today's valuation of their crypto assets due to a theft of property claim and/or post-petition interest.",
     icon: ChevronDoubleUpIcon,
   },
   {

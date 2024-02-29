@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Join Us", href: "/" },
-  { name: "Find Claim", href: "#" },
+  { name: "Find Claim", href: "/find" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
   { name: "In the Press", href: "#" },
 ];
@@ -15,7 +15,7 @@ export function TopNavHome() {
   //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-900">
+    <header className="bg-transparent">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
