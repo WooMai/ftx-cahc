@@ -12,7 +12,7 @@ export const env = createEnv({
       .url()
       .refine(
         (str) => !str.includes("postgres.railway.internal"),
-        "You forgot to change the default URL"
+        "You forgot to change the default URL: "+str
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
