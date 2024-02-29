@@ -12,7 +12,7 @@ export const env = createEnv({
       .url()
       .refine(
         (str) => !str.includes("p"),
-        (str) => ({message: `$(str) - You forgot to change the default URL`})
+        (str) => ({message: `${str} - You forgot to change the default URL`})
       ),
     NODE_ENV: z
       .enum(["development", "test", "production"])
