@@ -28,16 +28,16 @@ export const claimRouter = createTRPCRouter({
             };
         }),
 
-    // create: publicProcedure
-    //   .input(z.object({ name: z.string().min(1) }))
-    //   .mutation(async ({ ctx, input }) => {
-    //     // simulate a slow db call
-    //     await new Promise((resolve) => setTimeout(resolve, 1000));
+    create: publicProcedure
+        .input(z.object({ name: z.string().min(1) }))
+        .mutation(async ({ ctx, input }) => {
+            // simulate a slow db call
+            await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    //     await ctx.db.insert(posts).values({
-    //       name: input.name,
-    //     });
-    //   }),
+            // await ctx.db.insert(claims).values({
+            //     customerCode: input.name,
+            // });
+        }),
 
     getLatest: publicProcedure.query(({ ctx }) => {
         return ctx.db.query.claims.findFirst({

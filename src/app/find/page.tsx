@@ -2,7 +2,6 @@ import { unstable_noStore as noStore } from "next/cache";
 import { api } from "@/trpc/server";
 
 import { TopNavHome } from "@/app/_components/top-nav-home";
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
 
 export default async function Find() {
   noStore();

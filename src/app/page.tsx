@@ -1,10 +1,8 @@
 import { unstable_noStore as noStore } from "next/cache";
-// import Link from "next/link";
+
 import { Link } from "@/components/link";
 import { Text } from "@/components/text";
 import { ChevronRightIcon } from "@heroicons/react/16/solid";
-
-// import { CreatePost } from "@/app/_components/create-post";
 import { SearchClaims } from "@/app/_components/search-claims";
 import { CountStats } from "@/app/_components/count-stats";
 import { TopNavHome } from "@/app/_components/top-nav-home";
