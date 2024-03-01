@@ -22,7 +22,7 @@ export default function ClaimsFound() {
   return (
     <ul
       role="list"
-      className="divide-y divide-gray-700 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl"
+      className="divide-y divide-gray-700 overflow-hidden bg-white shadow-lg ring-1 ring-gray-700 sm:rounded-xl"
     >
       {data.claims.map((claimData: typeof ClaimSchema) => (
         <ClaimItem claimData={claimData} />

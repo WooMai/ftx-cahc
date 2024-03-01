@@ -1,4 +1,6 @@
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
+// claimItem.tsx
+import React, { useState } from "react"; // Import useState
+import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; // Ensure ChevronDownIcon is imported
 import { CoinsList } from "./coins-list";
 import { Claim, ClaimSchema } from "@/app/models/Claim.model";
 import { Text } from "@/components/text";
@@ -8,23 +10,26 @@ export default function ClaimItem({
 }: {
   claimData: typeof ClaimSchema;
 }) {
+  const [isVisible, setIsVisible] = useState(false); // State to manage visibility
+
   let claimInstance;
   try {
     claimInstance = new Claim(claimData);
   } catch (error) {
     console.error("Error creating claim:", error);
-    console.log(claimData);
-  }
-  if (!claimInstance) {
     return (
       <li key="error" className="gap-x-6 py-5">
         <Text>Something went wrong fetching the claim</Text>
       </li>
     );
   }
+
   return (
-    <li key={claimInstance.uuid} className=" gap-x-6 bg-gray-800">
-      <div className="relative flex cursor-pointer justify-between gap-x-6 px-4 py-5 hover:bg-gray-700 sm:px-6">
+    <li key={claimInstance.uuid} className="gap-x-6 bg-gray-800">
+      <div
+        className="relative flex cursor-pointer justify-between gap-x-6 px-4 py-5 hover:bg-gray-700 sm:px-6"
+        onClick={() => setIsVisible(!isVisible)} // Toggle visibility on click
+      >
         <div className="flex min-w-0 gap-x-4">
           <div className="min-w-0 flex-auto">
             <p className="mt-1 block text-xs leading-5 text-gray-400">
@@ -51,13 +56,20 @@ export default function ClaimItem({
               {claimInstance.totalPetitionValue}
             </p>
           </div>
-          <ChevronRightIcon
-            className="h-5 w-5 flex-none text-gray-400"
-            aria-hidden="true"
-          />
+          {isVisible ? (
+            <ChevronDownIcon
+              className="h-5 w-5 flex-none text-gray-400"
+              aria-hidden="true"
+            />
+          ) : (
+            <ChevronRightIcon
+              className="h-5 w-5 flex-none text-gray-400"
+              aria-hidden="true"
+            />
+          )}
         </div>
       </div>
-      <CoinsList coins={claimInstance.assets} />
+      {isVisible && <CoinsList coins={claimInstance.assets} />}
     </li>
   );
 }
