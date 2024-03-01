@@ -4,13 +4,20 @@ import { getSome, searchWithConditions } from "@/server/api/search";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
 import { ClaimSchema } from "@/app/models/Claim.model";
-import { Key } from "react";
+import { Key, useState } from "react";
 import SearchForm from "@/app/_components/search-form";
+import { ISearchRequest } from "@/app/models/Search.model";
 
-export default function ClaimsFound() {
+export function Search() {
+  const [searchConditions, setSearchConditions] = useState({
+    conditions: [{ name: "BTC", min_balance: 100, max_balance: 10000 }],
+    page: 1,
+    page_size: 10,
+  });
+
   const { data, isLoading, error } = useQuery({
     queryKey: ["searchResults"],
-    queryFn: getSome,
+    queryFn: () => searchWithConditions(searchConditions),
   });
 
   if (isLoading) {
@@ -20,25 +27,18 @@ export default function ClaimsFound() {
   if (error) {
     return <div>Error fetching claims: {JSON.stringify(error)}</div>;
   }
-
-  const mutation = useMutation(searchWithConditions, {
-    onSuccess: (data) => {
-      // Replace 'demoData' cache with new data from server
-      queryClient.setQueryData(["demoData"], data);
-    },
-    onError: (error) => {
-      console.log("Search error", error);
-      // do something with the error
-    },
-  });
+  console.log(data);
+  const performSearch = async (searchRequest: ISearchRequest) => {
+    setSearchConditions(searchRequest);
+  };
   return (
     <>
-      <SearchForm performSearch={mutation} />
+      <SearchForm performSearch={performSearch} />
       <ul
         role="list"
         className="divide-y divide-gray-700 overflow-hidden bg-white shadow-lg ring-1 ring-gray-700 sm:rounded-xl"
       >
-        {data.claims.map(
+        {data.data.map(
           (claimData: typeof ClaimSchema, idx: Key | null | undefined) => (
             <ClaimItem key={idx} claimData={claimData} />
           ),
