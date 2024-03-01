@@ -7,7 +7,7 @@
     "build": "next build",
     "db:push": "drizzle-kit push:pg",
     "db:studio": "drizzle-kit studio",
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "lint": "next lint",
     "start": "next start"
   },
@@ -20,6 +20,7 @@
     "@trpc/next": "^10.45.1",
     "@trpc/react-query": "^10.45.1",
     "@trpc/server": "^10.45.1",
+    "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "drizzle-orm": "^0.29.4",
     "next": "^14.1.0",

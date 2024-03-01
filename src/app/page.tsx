@@ -107,15 +107,15 @@ export default async function Home() {
             the views of customers.
           </p>
           <br />
-          <div className="mt-10 flex items-center justify-center gap-x-3">
+          <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
             <a
               href="/find"
-              className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+              className="w-full rounded-md bg-indigo-500 px-5 py-2.5 text-sm font-semibold leading-loose text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-fit"
             >
               Find your claim <span aria-hidden="true">→</span>
             </a>
-            <span className="text-sm font-semibold leading-6 text-white">
-              to begin the onboarding process
+            <span className="block py-2 text-sm leading-loose text-white opacity-30 sm:inline-block sm:opacity-100">
+              to get started
             </span>
           </div>
           <div className="my-20">

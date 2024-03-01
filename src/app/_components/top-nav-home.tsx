@@ -3,7 +3,7 @@
 // import { useState } from "react";
 
 const navigation = [
-  { name: "Join Us", href: "/" },
+  { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
   { name: "In the Press", href: "#" },

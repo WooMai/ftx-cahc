@@ -51,9 +51,9 @@ export function FightingFor() {
             What are we fighting for?
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            The have filed a half-baked and value-destructive plan. We aim to
-            fix it by litigating our property rights and negotiating for common
-            sense solutions like those below.
+            The debtors have filed a half-baked and value-destructive plan. We
+            aim to fix it by litigating our property rights and negotiating for
+            common sense solutions like those below.
           </p>
         </div>
         <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-16">
