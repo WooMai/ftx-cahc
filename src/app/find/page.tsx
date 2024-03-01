@@ -2,14 +2,14 @@ import { unstable_noStore as noStore } from "next/cache";
 import { api } from "@/trpc/server";
 
 import { TopNavHome } from "@/app/_components/top-nav-home";
-import { CoinDetail } from "@/app/_components/coin-detail";
+import { CoinDetail } from "@/app/find/components/coins-list";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { getSome } from "@/server/api/find";
 
 // app/posts/page.jsx
 import { dehydrate, Hydrate, QueryClient } from "@tanstack/react-query";
-import ClaimsFound from "./claimsFound";
+import ClaimsFound from "./components/claimsFound";
 
 export default async function Find() {
   const queryClient = new QueryClient();
