@@ -1,4 +1,3 @@
-// claimItem.tsx
 import React, { useState } from "react"; // Import useState
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; // Ensure ChevronDownIcon is imported
 import { CoinsList } from "./coins-list";

@@ -1,10 +1,4 @@
-import { unstable_noStore as noStore } from "next/cache";
-import { api } from "@/trpc/server";
-
 import { TopNavHome } from "@/app/_components/top-nav-home";
-import { CoinDetail } from "@/app/find/components/coins-list";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { getSome } from "@/server/api/find";
 
 // app/posts/page.jsx
