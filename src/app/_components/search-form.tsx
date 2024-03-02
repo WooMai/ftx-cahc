@@ -7,7 +7,7 @@ import { ISearchCondition, ISearchRequest } from "@/app/models/Search.model";
 import { UseMutationResult } from "@tanstack/react-query";
 const initialState = { numConditions: 1 };
 
-export function SearchForm({ performSearch }: { performSearch: Function }) {
+export function SearchForm({ performSearch }) {
   const [numConditions, setNumConditions] = useState<number>(1);
 
   const [page, setPage] = useState<number>(1);
@@ -29,23 +29,18 @@ export function SearchForm({ performSearch }: { performSearch: Function }) {
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const formData = event.currentTarget;
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
 
     const conditions = [];
     let page: number, page_size: number;
 
     // build the request object
     for (let i = 0; i < numConditions; i++) {
-      const formElement = formData as HTMLFormElement;
       const condition: ISearchCondition = {
-        name: formElement.get(`conditions-${i}-name`) as string,
+        name: formData.get(`conditions-${i}-name`) as string,
       };
-      const minBalance = formElement.get(
-        `conditions-${i}-min_balance`,
-      ) as string;
-      const maxBalance = formElement.get(
-        `conditions-${i}-max_balance`,
-      ) as string;
+      const minBalance = formData.get(`conditions-${i}-min_balance`) as string;
+      const maxBalance = formData.get(`conditions-${i}-max_balance`) as string;
 
       if (minBalance) {
         condition.min_balance = parseFloat(minBalance);
@@ -57,8 +52,8 @@ export function SearchForm({ performSearch }: { performSearch: Function }) {
       conditions.push(condition);
     }
 
-    page = parseInt((formData as FormData).get("pagenumber") as string);
-    page_size = parseInt((formData as FormData).get("pagesize") as string);
+    page = parseInt(formData.get("pagenumber") as string);
+    page_size = parseInt(formData.get("pagesize") as string);
 
     const searchRequest: ISearchRequest = {
       conditions,
