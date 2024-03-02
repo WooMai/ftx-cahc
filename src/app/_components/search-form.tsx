@@ -7,7 +7,7 @@ import { ISearchCondition, ISearchRequest } from "@/app/models/Search.model";
 import { UseMutationResult } from "@tanstack/react-query";
 const initialState = { numConditions: 1 };
 
-export function SearchForm({ performSearch }) {
+export function SearchForm({ performSearch }: { performSearch: Function }) {
   const [numConditions, setNumConditions] = useState<number>(1);
 
   const [page, setPage] = useState<number>(1);
