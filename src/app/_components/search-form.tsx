@@ -1,13 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
+import type { SetStateAction } from "react";
 
-import { ISearchCondition, ISearchRequest } from "@/app/models/Search.model";
+import type {
+  ISearchCondition,
+  ISearchRequest,
+} from "@/app/models/Search.model";
 
-import { UseMutationResult } from "@tanstack/react-query";
-const initialState = { numConditions: 1 };
-
-export function SearchForm({ performSearch }: { performSearch: Function }) {
+export function SearchForm({
+  performSearch,
+}: {
+  performSearch: (arg0: SetStateAction<ISearchRequest>) => Promise<void>;
+}) {
   const [numConditions, setNumConditions] = useState<number>(1);
 
   const [page, setPage] = useState<number>(1);
@@ -32,7 +37,6 @@ export function SearchForm({ performSearch }: { performSearch: Function }) {
     const formData = new FormData(event.currentTarget as HTMLFormElement);
 
     const conditions = [];
-    let page: number, page_size: number;
 
     // build the request object
     for (let i = 0; i < numConditions; i++) {
@@ -52,15 +56,15 @@ export function SearchForm({ performSearch }: { performSearch: Function }) {
       conditions.push(condition);
     }
 
-    page = parseInt(formData.get("pagenumber") as string);
-    page_size = parseInt(formData.get("pagesize") as string);
+    const page: number = parseInt(formData.get("pagenumber") as string);
+    const page_size: number = parseInt(formData.get("pagesize") as string);
 
     const searchRequest: ISearchRequest = {
       conditions,
       page,
       page_size,
     };
-    performSearch(searchRequest);
+    return await performSearch(searchRequest);
   };
 
   return (

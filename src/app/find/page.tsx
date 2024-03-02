@@ -66,33 +66,3 @@ export default async function Find() {
     </>
   );
 }
-
-// export default async function Find() {
-//   // const { isLoading, error, data, isFetching } = useQuery({
-//   //   queryKey: ["searchResults"],
-//   //   queryFn: () =>
-//   //     axios
-//   //       .post("https://${process.env.CLAIMS_API_HOST}/batch-claims", {
-//   //         customer_codes: ["00151365", "00151470", "00152020"],
-//   //       })
-//   //       .then((res) => res.data),
-//   // });
-
-//   // if (isLoading) return <div>Loading...</div>;
-
-//   // if (error) return <div>"An error has occurred: " + ${error.message}</div>;
-//   // // Show the response if everything is fine
-//   // return (
-//   //   <div>
-//   //     <h1>Random Fact:</h1>
-//   //     <p>{data.randomFact}</p>
-//   //   </div>
-//   // );
-
-//   noStore();
-//   const hello = await api.claim.hello.query({ text: "from tRPC" });
-//   const claim = await api.claim.getLatest.query();
-//   return (
-
-//   );
-// }

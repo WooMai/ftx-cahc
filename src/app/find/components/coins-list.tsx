@@ -1,4 +1,4 @@
-import { IAsset } from "../../models/Claim.model";
+import { type IAsset } from "@/app/models/Claim.model";
 
 // TODO: color the negative balances
 // const statuses = {

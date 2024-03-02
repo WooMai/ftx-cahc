@@ -1,7 +1,7 @@
 import React, { useState } from "react"; // Import useState
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; // Ensure ChevronDownIcon is imported
 import { CoinsList } from "./coins-list";
-import { Claim, ClaimSchema } from "@/app/models/Claim.model";
+import { Claim, type ClaimSchema } from "@/app/models/Claim.model";
 import { Text } from "@/components/text";
 
 export default function ClaimItem({

@@ -88,14 +88,14 @@ export class Claim implements IClaim {
         // Explicitly map and assign properties
         this.customerCode = validatedData.customer_code!;
         this.contingentIndicator = validatedData.contingent_indicator;
-        this.assets = validatedData.token_fiat_nft_balance!.map((item: any) => ({
+        this.assets = validatedData.token_fiat_nft_balance.map((item) => ({
             name: item.name,
             type: item.type,
             balance: item.balance,
             usdPetition: item.usd_petition
         }));
         this.earnIndicator = validatedData.earn_indicator!;
-        this.assetsLend = validatedData.token_fiat_lend!.map((item: any) => ({
+        this.assetsLend = validatedData.token_fiat_lend.map((item) => ({
             name: item.name,
             type: item.type,
             balance: item.balance,

@@ -1,4 +1,4 @@
-import { pgTable, pgTableCreator, unique, uuid, varchar, foreignKey, serial, integer, jsonb, boolean, index, timestamp, text } from "drizzle-orm/pg-core"
+import { pgTable, unique, uuid, varchar, serial, integer, jsonb, boolean, timestamp, text } from "drizzle-orm/pg-core"
 import { sql } from "drizzle-orm"
 
 /**

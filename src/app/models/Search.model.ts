@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { IClaim } from "./Claim.model";
+import { type ClaimSchema } from "./Claim.model";
 
 export const SearchCondition = z.object({
     name: z.string().min(1),
@@ -26,5 +26,5 @@ export interface ISearchRequest {
 }
 
 export interface ISearchResponse {
-    data: IClaim[];
+    data: typeof ClaimSchema[];
 }
