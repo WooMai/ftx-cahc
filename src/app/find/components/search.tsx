@@ -1,7 +1,7 @@
 "use client";
 
-import { getSome, searchWithConditions } from "@/server/api/search";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { searchWithConditions } from "@/server/api/search";
+import { useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
 import { ClaimSchema } from "@/app/models/Claim.model";
 import { Key, SetStateAction, useState } from "react";

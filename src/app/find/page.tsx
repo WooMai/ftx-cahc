@@ -1,5 +1,4 @@
 import { TopNavHome } from "@/app/_components/top-nav-home";
-import { getSome, searchWithConditions } from "@/server/api/search";
 
 import { dehydrate, Hydrate, QueryClient } from "@tanstack/react-query";
 import { Search } from "./components/search";
