@@ -29,7 +29,7 @@ export function SearchForm({ performSearch }: { performSearch: Function }) {
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const formData = event.currentTarget;
 
     const conditions = [];
     let page: number, page_size: number;
