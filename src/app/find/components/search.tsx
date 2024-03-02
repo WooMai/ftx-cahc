@@ -4,7 +4,7 @@ import { getSome, searchWithConditions } from "@/server/api/search";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
 import { ClaimSchema } from "@/app/models/Claim.model";
-import { Key, useState } from "react";
+import { Key, SetStateAction, useState } from "react";
 import SearchForm from "@/app/_components/search-form";
 import { ISearchRequest } from "@/app/models/Search.model";
 
@@ -28,7 +28,13 @@ export function Search() {
     return <div>Error fetching claims: {JSON.stringify(error)}</div>;
   }
   console.log(data);
-  const performSearch = async (searchRequest: ISearchRequest) => {
+  const performSearch = async (
+    searchRequest: SetStateAction<{
+      conditions: { name: string; min_balance: number; max_balance: number }[];
+      page: number;
+      page_size: number;
+    }>,
+  ) => {
     setSearchConditions(searchRequest);
   };
   return (
