@@ -1,7 +1,7 @@
 "use client";
 
 import { searchWithConditions } from "@/server/api/search";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
 import { type ClaimSchema } from "@/app/models/Claim.model";
 import { type Key, type SetStateAction, useState } from "react";
@@ -12,7 +12,7 @@ import {
 } from "@/app/models/Search.model";
 import { type AxiosResponse } from "axios";
 
-export function Search({ assets }) {
+export function Search({ assets }: { assets: { name: string }[] }) {
   const [searchConditions, setSearchConditions] = useState({
     conditions: [{ name: "USD", min_balance: 99999999 }],
     page: 1,
@@ -31,7 +31,7 @@ export function Search({ assets }) {
   return (
     <>
       <SearchForm
-        assets={assets}
+        assets={assets as { name: string }[]} // Add type annotation to assets prop
         searchConditions={searchConditions}
         performSearch={performSearch}
       />
@@ -41,7 +41,11 @@ export function Search({ assets }) {
   );
 }
 
-function SearchResults({ searchConditions }) {
+function SearchResults({
+  searchConditions,
+}: {
+  searchConditions: ISearchRequest;
+}) {
   const { data, isLoading, error } = useQuery({
     queryKey: ["searchResults", JSON.stringify(searchConditions)],
     queryFn: (): Promise<AxiosResponse<ISearchResponse>> =>

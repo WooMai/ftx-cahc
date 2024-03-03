@@ -90,7 +90,15 @@ export function SearchForm({
                 />
                 {Array.from({ length: numConditions }).map((_, index) => (
                   <div key={index} className="mt-4 flex flex-col sm:flex-row">
-                    <SelectAsset assets={assets} index={index} />
+                    <SelectAsset
+                      assets={assets}
+                      index={index}
+                      defaultValue={
+                        index === 0
+                          ? searchConditions.conditions[0]!.name
+                          : undefined
+                      }
+                    />
                     {/* <div className="max-w-30 inline-block rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-stone-600 focus-within:ring-2 focus-within:ring-indigo-600">
                       <label
                         htmlFor="name"

@@ -19,6 +19,7 @@ export default function SelectAsset({
   index: number;
 }) {
   const defaultValueOrEmptyString = defaultValue ? defaultValue : "";
+  console.log(defaultValue);
   const [query, setQuery] = useState(defaultValueOrEmptyString);
   const [selectedAsset, setSelectedAsset] = useState(null);
 
@@ -51,7 +52,14 @@ export default function SelectAsset({
           style={{ marginTop: 16.5, paddingTop: 10.5 }}
           onChange={(event) => setQuery(event.target.value)}
           defaultValue={defaultValue ? defaultValue : undefined}
-          displayValue={(asset) => asset?.name}
+          displayValue={(asset) =>
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            typeof asset === "object"
+              ? asset.name
+              : defaultValue
+                ? defaultValue
+                : ""
+          }
         />
         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
           <ChevronUpDownIcon
