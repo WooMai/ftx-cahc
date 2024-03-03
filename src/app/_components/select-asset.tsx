@@ -54,7 +54,7 @@ export default function SelectAsset({
           defaultValue={defaultValue ? defaultValue : undefined}
           displayValue={(asset) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-            return typeof asset === "object"
+            return typeof asset === "object" && asset !== null
               ? //@ts-expect-error - TS doesn't understand what is being passed to this func
                 asset.name
               : defaultValue
