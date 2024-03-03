@@ -4,12 +4,13 @@ import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import { CountStats } from "@/app/_components/count-stats";
 import { TopNavHome } from "@/app/_components/top-nav-home";
 import { FightingFor } from "@/app/_components/fighting-for";
+import { getAssets } from "@/app/actions";
 
 export default async function Home() {
   noStore();
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden bg-gray-900">
+    <div className="relative isolate min-h-screen overflow-hidden bg-stone-950">
       <TopNavHome />
       <svg
         viewBox="0 0 1024 1024"

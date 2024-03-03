@@ -26,5 +26,8 @@ export interface ISearchRequest {
 }
 
 export interface ISearchResponse {
-    data: typeof ClaimSchema[];
+    claims: typeof ClaimSchema[],
+    current_page: number,
+    total_pages: number,
+    total_records: number,
 }

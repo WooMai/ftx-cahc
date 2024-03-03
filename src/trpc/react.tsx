@@ -8,7 +8,14 @@ import { useState } from "react";
 import { type AppRouter } from "@/server/api/root";
 import { getUrl, transformer } from "./shared";
 
-const createQueryClient = () => new QueryClient();
+const createQueryClient = () =>
+  new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false, // default: true
+      },
+    },
+  });
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
 const getQueryClient = () => {

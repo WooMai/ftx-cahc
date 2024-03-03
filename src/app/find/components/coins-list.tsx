@@ -7,15 +7,18 @@ import { type IAsset } from "@/app/models/Claim.model";
 // };
 
 export function CoinsList({ coins }: { coins: IAsset[] }) {
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
   return (
-    <div className="overfow-y-scrollk bg-gray-800 py-10">
-      <table className="mt-6 w-full whitespace-nowrap text-left">
+    <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">
+      <table className=" w-full whitespace-nowrap text-left">
         <colgroup>
           <col className="max-[640px]:max-w-8 sm:w-1/12" />
           <col className="max-[640px]:max-w-8 lg:w-1/12" />
           <col className="max-[640px]:max-w-8 lg:w-1/12" />
         </colgroup>
-        <thead className="border-b border-white/10 text-sm leading-6 text-white">
+        <thead className="border-b border-white/10 text-sm leading-6 text-stone-500/80">
           <tr>
             <th
               scope="col"
@@ -45,20 +48,28 @@ export function CoinsList({ coins }: { coins: IAsset[] }) {
                   <div className="truncate text-sm font-medium leading-6 text-white">
                     {coin.name}
                   </div>
-                  <div className="hidden rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10 sm:inline-block">
+                  <div className="hidden rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-stone-300 ring-1 ring-inset ring-white/10 sm:inline-block">
                     {coin.type}
                   </div>
                 </div>
               </td>
-              <td className="py-4 pl-0 pr-4 text-right font-mono text-sm leading-6 text-gray-400 max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8">
+              <td className="py-4 pl-0 pr-4 text-right font-mono text-sm leading-6 text-stone-300 max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8">
                 <div className=" gap-x-3">
-                  <div className="truncate text-right font-mono text-sm leading-6 text-gray-400">
+                  <div className="truncate text-right font-mono text-sm leading-6 text-stone-300">
                     {coin.balance.toFixed(8)}
                   </div>
                 </div>
               </td>
-              <td className="truncate py-4 pl-0 pr-4 text-right font-mono text-sm leading-6 text-gray-400 max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8">
-                <span>{coin.usdPetition}</span>
+              <td className="truncate py-4 pl-0 pr-4 text-right font-mono text-sm leading-6 text-stone-300 max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8">
+                <span
+                  className={classNames(
+                    parseFloat(coin.usdPetition.replace(/[^0-9.-]+/g, "")) < 0
+                      ? "text-rose-500"
+                      : "",
+                  )}
+                >
+                  {coin.usdPetition}
+                </span>
               </td>
             </tr>
           ))}

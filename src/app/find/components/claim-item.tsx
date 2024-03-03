@@ -24,14 +24,14 @@ export default function ClaimItem({
   }
 
   return (
-    <li key={claimInstance.uuid} className="gap-x-6 bg-gray-800">
+    <li key={claimInstance.uuid} className="gap-x-6 bg-stone-800">
       <div
-        className="relative flex cursor-pointer justify-between gap-x-6 px-4 py-5 hover:bg-gray-700 sm:px-6"
+        className="relative flex cursor-pointer justify-between gap-x-6 px-4 py-5 hover:bg-stone-700/25 sm:px-6"
         onClick={() => setIsVisible(!isVisible)} // Toggle visibility on click
       >
         <div className="flex min-w-0 gap-x-4">
           <div className="min-w-0 flex-auto">
-            <p className="mt-1 block text-xs leading-5 text-gray-400">
+            <p className="mt-1 block text-xs leading-5 text-stone-400">
               Customer code
             </p>
             <p className="text-lg font-semibold leading-6 text-white">
@@ -39,16 +39,16 @@ export default function ClaimItem({
                 {claimInstance.customerCode}
               </span>
               {claimInstance.earnIndicator ? (
-                <p className="mt-1 text-xs leading-5 text-gray-500">
+                <span className="mt-1 text-xs leading-5 text-stone-500">
                   Earn enabled
-                </p>
+                </span>
               ) : null}
             </p>
           </div>
         </div>
         <div className="flex shrink-0 items-center gap-x-4">
           <div className="hidden sm:flex sm:flex-col sm:items-end">
-            <p className="mt-1 text-xs leading-5 text-gray-400">
+            <p className="mt-1 text-xs leading-5 text-stone-400">
               {claimInstance.assets.length} assets
             </p>
             <p className="text-md font-mono leading-6 text-white">
@@ -57,12 +57,12 @@ export default function ClaimItem({
           </div>
           {isVisible ? (
             <ChevronDownIcon
-              className="h-5 w-5 flex-none text-gray-400"
+              className="h-5 w-5 flex-none text-stone-400"
               aria-hidden="true"
             />
           ) : (
             <ChevronRightIcon
-              className="h-5 w-5 flex-none text-gray-400"
+              className="h-5 w-5 flex-none text-stone-400"
               aria-hidden="true"
             />
           )}
