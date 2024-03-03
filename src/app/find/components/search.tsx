@@ -54,7 +54,7 @@ function SearchResults({
 
   if (isLoading) {
     return (
-      <p className="my-3 w-full text-left text-xs italic text-stone-500">
+      <p className="my-3 w-full px-4 text-left text-xs italic text-stone-500">
         Searching the docket for matching claims...
       </p>
     );
