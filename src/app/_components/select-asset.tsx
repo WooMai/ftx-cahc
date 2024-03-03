@@ -5,7 +5,7 @@ import { Fragment, useState } from "react";
 
 import { getAssets } from "@/app/actions";
 
-function classNames(...classes) {
+function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
