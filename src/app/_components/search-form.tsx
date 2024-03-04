@@ -106,6 +106,7 @@ export function SearchForm({
                           </label>
                           <input
                             type="number"
+                            step="any"
                             placeholder="100"
                             id={`conditions-${index}-min_balance`}
                             name={`conditions-${index}-min_balance`}
@@ -131,6 +132,7 @@ export function SearchForm({
                               searchConditions.conditions[index]?.max_balance
                             }
                             type="number"
+                            step="any"
                           />
                         </div>
                       </div>
@@ -138,7 +140,7 @@ export function SearchForm({
                   </div>
                 ))}
                 <button
-                  className="mt-10 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                  className="mb-4 sm:mb-0 mt-10 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                   type="submit"
                 >
                   Search

@@ -55,7 +55,7 @@ export default function SelectAsset({
     >
       <Label
         htmlFor={`conditions-${index}-name`}
-        className="absolute left-3 top-0 z-10 block text-xs font-medium leading-6 text-stone-400 "
+        className="absolute left-3 top-0 block text-xs font-medium leading-6 text-stone-400 "
         style={{ marginTop: 4.5 }}
       >
         Asset

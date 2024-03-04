@@ -29,7 +29,6 @@ const createContext = cache(() => {
 });
 
 export const api = createTRPCProxyClient<AppRouter>({
-  transformer,
   links: [
     loggerLink({
       enabled: (op) =>
@@ -48,9 +47,9 @@ export const api = createTRPCProxyClient<AppRouter>({
               return callProcedure({
                 procedures: appRouter._def.procedures,
                 path: op.path,
-                rawInput: op.input,
                 ctx,
                 type: op.type,
+                getRawInput: async () => op.input,
               });
             })
             .then((data) => {

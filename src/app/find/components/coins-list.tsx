@@ -1,32 +1,26 @@
 import { type IAsset } from "@/app/models/Claim.model";
+import { Link } from "@/components/link";
 
-export function CoinsList({ coins, contingentIndicator, earnIndicator }: { coins: IAsset[], contingentIndicator: string[], earnIndicator: boolean}) {
+export function CoinsList({ coins }: { coins: IAsset[]}) {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
   return (
     <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">
-      {
-      earnIndicator ? (
-                <span
-                  style={{ marginTop: -3 }}
-                  className="ml-2 hidden rounded-md bg-cyan-800/50 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/25 sm:inline-block">
-                <span className="text-xs leading-5">
-                  Earn enabled
-                </span></span>
-              ) : null}
-              {
-              contingentIndicator.length > 1 ? (
-                
-                contingentIndicator.map((indicator) => (
-                <span
-                  style={{ marginTop: -3 }}
-                  className="ml-2 hidden rounded-md bg-indigo-600/25 px-2 py-1 text-xs font-medium text-indigo-300 ring-1 ring-inset ring-indigo-500/25 sm:inline-block">
-                  <span className="text-xs leading-5">
-                    indicator)
-                  </span>
-                </span>))
-              ) : null}
+      <div className="mt-6 mb-12 px-4 sm:p-6">
+      <div className="bg-stone-800 shadow-xl ring-1 ring-stone-700 rounded-xl">
+      <div className="py-4 px-6 flex flex-col sm:flex-row justify-between">
+        <div className="mr-4 flex flex-row align-middle">
+          <p className="inline-block leading-9 text-sm text-stone-400 italic text-center sm:text-left">Register this claim as yours <span aria-hidden="true">&rarr;</span> </p>
+        </div>
+        <Link
+          href={""}
+            className="sm:inline-flex sm:mb-0 mb-2 items-center rounded-md bg-indigo-600 sm:px-3 sm:py-2 px-8 text-center inline-block py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" 
+            >Mark as my claim</Link>
+      </div>
+      </div>
+      </div>
+      
       <table className=" w-full whitespace-nowrap text-left">
         <colgroup>
           <col className="max-[640px]:max-w-8 sm:w-1/12" />

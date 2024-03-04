@@ -38,6 +38,25 @@ export default function ClaimItem({
               <span className="font-semibold">
                 {claimInstance.customerCode}
               </span>
+              {claimInstance.earnIndicator ? (
+                <span
+                  style={{ marginTop: -3 }}
+                  className="ml-2 hidden rounded-md bg-cyan-800/50 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/25 sm:inline-block">
+                <span className="text-xs leading-5">
+                  Earn enabled
+                </span></span>
+              ) : null}
+              {claimInstance.contingentIndicator.length > 1 ? (
+                claimInstance.contingentIndicator.map((indicator, index) => (
+                <span
+                key={index}
+                  style={{ marginTop: -3 }}
+                  className="ml-2 hidden rounded-md bg-indigo-600/25 px-2 py-1 text-xs font-medium text-indigo-300 ring-1 ring-inset ring-indigo-500/25 sm:inline-block">
+                  <span className="text-xs leading-5">
+                    {indicator}
+                  </span>
+                </span>))
+              ) : null}
             </p>
           </div>
         </div>
@@ -63,7 +82,7 @@ export default function ClaimItem({
           )}
         </div>
       </div>
-      {isVisible && <CoinsList coins={claimInstance.assets} earnIndicator={claimInstance.earnIndicator} contingentIndicator={claimInstance.contingentIndicator} />}
+      {isVisible && <CoinsList coins={claimInstance.assets} />}
     </li>
   );
 }
