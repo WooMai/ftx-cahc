@@ -8,9 +8,9 @@ const features = [
     icon: ChevronDoubleUpIcon,
   },
   {
-    name: "Digital distributions.",
+    name: "Theft of property damages.",
     description:
-      "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries.",
+      "Although the judge ruled to estimate claims at petition-date, customers should still recover today's valuation of their crypto assets due to a theft of property claim and/or post-petition interest.",
     icon: ChevronDoubleUpIcon,
   },
   {
@@ -20,21 +20,9 @@ const features = [
     icon: ChevronDoubleUpIcon,
   },
   {
-    name: "Higher recoveries.",
+    name: "Digital distributions.",
     description:
-      "Although the judge ruled to estimate claims at petition-date, customers should still recover today's valuation of their crypto assets due to a theft of property claim and/or post-petition interest.",
-    icon: ChevronDoubleUpIcon,
-  },
-  {
-    name: "FTX 2.0.",
-    description:
-      "The estate continues to spread mistruths about the viability of an exchange relaunch, an asset that could drive billions in additional recovery.",
-    icon: ChevronDoubleUpIcon,
-  },
-  {
-    name: "Database backups.",
-    description:
-      "Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.",
+      "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries.",
     icon: ChevronDoubleUpIcon,
   },
 ];
