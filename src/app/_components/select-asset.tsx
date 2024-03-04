@@ -1,9 +1,7 @@
+import { useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
-import { Combobox } from "@headlessui/react";
+import { Combobox, Label } from "@headlessui/react";
 
-import { Fragment, useState } from "react";
-
-import { getAssets } from "@/app/actions";
 
 function classNames(...classes: (string | boolean)[]) {
   return classes.filter(Boolean).join(" ");
@@ -23,9 +21,27 @@ export default function SelectAsset({
   const [query, setQuery] = useState(defaultValueOrEmptyString);
   const [selectedAsset, setSelectedAsset] = useState(null);
 
+
+  const top10asets = [{
+    name: 'BTC'
+  }, {
+    name: 'USD'
+  },{
+    name: 'ETH'
+  },{
+    name: 'SOL'
+  },{
+    name: 'USDT'
+  },{
+    name: 'USDC'
+  },{
+    name: 'BNB'
+  },{
+    name: 'DOGE'
+  }]
   const filteredAssets =
-    query === ""
-      ? assets
+    query === "" || query.length < 1
+      ? top10asets
       : assets.filter((asset) => {
           return asset.name.toLowerCase().includes(query.toLowerCase());
         });
@@ -37,12 +53,12 @@ export default function SelectAsset({
       onChange={setSelectedAsset}
       className="relative mb-1 rounded-md bg-stone-700 shadow-inner ring-1 ring-inset ring-stone-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:mb-0"
     >
-      <Combobox.Label
+      <Label
         className="absolute left-3 top-0 z-10 block text-xs font-medium leading-6 text-stone-400 "
         style={{ marginTop: 4.5 }}
       >
         Asset
-      </Combobox.Label>
+      </Label>
       <div className="relative">
         <Combobox.Input
           id={`conditions-${index}-name`}
