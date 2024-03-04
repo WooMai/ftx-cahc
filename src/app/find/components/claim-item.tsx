@@ -47,7 +47,7 @@ export default function ClaimItem({
           </div>
         </div>
         <div className="flex shrink-0 items-center gap-x-4">
-          <div className="hidden sm:flex sm:flex-col sm:items-end">
+          <div className="sm:flex sm:flex-col sm:items-end">
             <p className="mt-1 text-xs leading-5 text-stone-400">
               {claimInstance.assets.length} assets
             </p>
