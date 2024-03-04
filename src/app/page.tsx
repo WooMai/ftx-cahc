@@ -4,7 +4,8 @@ import { ChevronRightIcon } from "@heroicons/react/16/solid";
 import { CountStats } from "@/app/_components/count-stats";
 import { TopNavHome } from "@/app/_components/top-nav-home";
 import { FightingFor } from "@/app/_components/fighting-for";
-import { getAssets } from "@/app/actions";
+import { Anticipate } from "./_components/anticipate";
+import { Link } from "@/components/link";
 
 export default async function Home() {
   noStore();
@@ -101,12 +102,12 @@ export default async function Home() {
           </p>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
-            <a
+            <Link
               href="/find"
               className="w-full rounded-md bg-indigo-500 px-5 py-2.5 text-sm font-semibold leading-loose text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-fit"
             >
               Find your claim <span aria-hidden="true">→</span>
-            </a>
+            </Link>
             <span className="block py-2 text-sm leading-loose text-white opacity-30 sm:inline-block sm:opacity-100">
               to get started
             </span>
@@ -132,6 +133,7 @@ export default async function Home() {
           }}
         />
       </div>
+      <Anticipate />
     </div>
   );
 }

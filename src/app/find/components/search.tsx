@@ -11,13 +11,11 @@ import {
   type ISearchResponse,
 } from "@/app/models/Search.model";
 import { type AxiosResponse } from "axios";
+import { defaultSearchPayload } from "@/app/_components/default-search-payload";
 
 export function Search({ assets }: { assets: { name: string }[] }) {
-  const [searchConditions, setSearchConditions] = useState({
-    conditions: [{ name: "USD", min_balance: 99999999 }],
-    page: 1,
-    page_size: 10,
-  } as ISearchRequest);
+  const [searchConditions, setSearchConditions] =
+    useState(defaultSearchPayload);
 
   const performSearch: (
     arg0: SetStateAction<ISearchRequest>,

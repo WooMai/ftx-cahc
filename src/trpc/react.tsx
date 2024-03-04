@@ -1,9 +1,11 @@
 "use client";
 
+import * as React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { loggerLink, unstable_httpBatchStreamLink } from "@trpc/client";
 import { createTRPCReact } from "@trpc/react-query";
 import { useState } from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { type AppRouter } from "@/server/api/root";
 import { getUrl, transformer } from "./shared";
@@ -29,7 +31,21 @@ const getQueryClient = () => {
 
 export const api = createTRPCReact<AppRouter>();
 
+const ReactQueryDevtoolsProduction = React.lazy(() =>
+  import("@tanstack/react-query-devtools/build/lib/index.prod.js").then(
+    (d) => ({
+      default: d.ReactQueryDevtools,
+    }),
+  ),
+);
+
 export function TRPCReactProvider(props: { children: React.ReactNode }) {
+  const [showDevtools, setShowDevtools] = React.useState(false);
+  React.useEffect(() => {
+    // @ts-expect-error using window on purpose
+    window.toggleDevtools = () => setShowDevtools((old) => !old);
+  }, []);
+
   const queryClient = getQueryClient();
 
   const [trpcClient] = useState(() =>
@@ -53,6 +69,11 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
       <api.Provider client={trpcClient} queryClient={queryClient}>
         {props.children}
       </api.Provider>
+      {showDevtools && (
+        <React.Suspense fallback={null}>
+          <ReactQueryDevtoolsProduction />
+        </React.Suspense>
+      )}
     </QueryClientProvider>
   );
 }

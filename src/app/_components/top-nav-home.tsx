@@ -1,5 +1,7 @@
 "use-client";
 
+import { Link } from "@/components/link";
+
 // import { useState } from "react";
 
 const navigation = [
@@ -19,7 +21,7 @@ export function TopNavHome() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">FTX CAHC</span>
             <svg
               width="50px"
@@ -38,23 +40,23 @@ export function TopNavHome() {
                 fill="rgb(99, 102, 241)"
               />
             </svg>
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-white"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
+          <Link href="#" className="text-sm font-semibold leading-6 text-white">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
     </header>
