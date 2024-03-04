@@ -9,7 +9,6 @@ export function Anticipate() {
   const queryClient = useQueryClient();
   useEffect(() => {
     const secondaryKey = JSON.stringify(defaultSearchPayload);
-    console.log(`query key: ${secondaryKey}`);
 
     void queryClient.prefetchQuery({
       queryKey: ["searchResults", secondaryKey],

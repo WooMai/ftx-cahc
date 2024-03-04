@@ -17,7 +17,7 @@ export default function SelectAsset({
   index: number;
 }) {
   const defaultValueOrEmptyString = defaultValue ? defaultValue : "";
-  console.log(defaultValue);
+
   const [query, setQuery] = useState(defaultValueOrEmptyString);
   const [selectedAsset, setSelectedAsset] = useState(null);
 
@@ -54,6 +54,7 @@ export default function SelectAsset({
       className="relative mb-1 rounded-md bg-stone-700 shadow-inner ring-1 ring-inset ring-stone-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:mb-0"
     >
       <Label
+        htmlFor={`conditions-${index}-name`}
         className="absolute left-3 top-0 z-10 block text-xs font-medium leading-6 text-stone-400 "
         style={{ marginTop: 4.5 }}
       >
@@ -65,7 +66,7 @@ export default function SelectAsset({
           type="text"
           name={`conditions-${index}-name`}
           className="w-full rounded-md border-0 bg-transparent py-1.5 pl-3 pr-10 text-white ring-0 sm:text-sm sm:leading-6"
-          style={{ marginTop: 16.5, paddingTop: 10.5 }}
+          style={{ paddingTop: 27 }}
           onChange={(event) => setQuery(event.target.value)}
           defaultValue={defaultValue ? defaultValue : undefined}
           displayValue={(asset) => {

@@ -23,8 +23,6 @@ export function Search({ assets }: { assets: { name: string }[] }) {
     searchRequest: SetStateAction<ISearchRequest>,
   ) => {
     setSearchConditions(searchRequest);
-    console.log("here");
-    console.log(searchRequest);
   };
   return (
     <>

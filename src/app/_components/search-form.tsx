@@ -9,10 +9,7 @@ import type {
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { MinusIcon } from "@heroicons/react/16/solid";
 import SelectAsset from "@/app/_components/select-asset";
-import { useRouter } from "next/router";
-import { api } from "@/trpc/server";
-import { getAssets } from "@/app/actions";
-import { useQuery } from "@tanstack/react-query";
+import { defaultSearchPayload } from "@/app/_components/default-search-payload";
 
 export function SearchForm({
   assets,
@@ -57,10 +54,9 @@ export function SearchForm({
       conditions.push(condition);
     }
 
-    const page = 1;
-    const page_size = 10;
+    const page = defaultSearchPayload.page;
+    const page_size = defaultSearchPayload.page_size;
 
-    console.log(conditions);
     const searchRequest: ISearchRequest = {
       conditions,
       page,
@@ -99,22 +95,6 @@ export function SearchForm({
                           : undefined
                       }
                     />
-                    {/* <div className="max-w-30 inline-block rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-stone-600 focus-within:ring-2 focus-within:ring-indigo-600">
-                      <label
-                        htmlFor="name"
-                        className="block text-xs font-medium text-stone-400"
-                      >
-                        Asset name
-                      </label>
-                      <input
-                        className="max-w-10 sm:max-w-20"
-                        id={`conditions-${index}-name`}
-                        name={`conditions-${index}-name`}
-                        defaultValue={condition.name}
-                        type="text"
-                        placeholder="Asset Name"
-                      />
-                    </div> */}
                     <div className="inline-block sm:ml-10 ">
                       <div className="isolate flex flex-row rounded-md bg-stone-700 shadow-inner shadow-stone-900/50">
                         <div className="relative inline-block basis-3/6 rounded-md rounded-r-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600 sm:col-span-1">
