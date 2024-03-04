@@ -10,6 +10,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { type AppRouter } from "@/server/api/root";
 import { getUrl, transformer } from "./shared";
 
+import superjson from "superjson";
+
 const createQueryClient = () =>
   new QueryClient({
     defaultOptions: {
@@ -31,10 +33,13 @@ const getQueryClient = () => {
 
 export const api = createTRPCReact<AppRouter>();
 
+// eslint-expect-error-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 const ReactQueryDevtoolsProduction = React.lazy(() =>
-  import("@tanstack/react-query-devtools/production").then((d) => ({
-    default: d.ReactQueryDevtools,
-  })),
+  import("@tanstack/react-query-devtools/build/modern/production.js").then(
+    (d) => ({
+      default: d.ReactQueryDevtools,
+    }),
+  ),
 );
 
 export function TRPCReactProvider(props: { children: React.ReactNode }) {
@@ -57,6 +62,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
         }),
         unstable_httpBatchStreamLink({
           url: getUrl(),
+          transformer: superjson
         }),
       ],
     }),
