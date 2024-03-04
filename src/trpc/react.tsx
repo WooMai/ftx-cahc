@@ -15,6 +15,7 @@ const createQueryClient = () =>
     defaultOptions: {
       queries: {
         refetchOnWindowFocus: false, // default: true
+        cacheTime: 1000 * 60 * 1, // 5 minutes
       },
     },
   });
@@ -32,11 +33,10 @@ const getQueryClient = () => {
 export const api = createTRPCReact<AppRouter>();
 
 const ReactQueryDevtoolsProduction = React.lazy(() =>
-  import("@tanstack/react-query-devtools/build/lib/index.prod.js").then(
-    (d) => ({
-      default: d.ReactQueryDevtools,
-    }),
-  ),
+  import("@tanstack/react-query-devtools/production").then((d) => ({
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    default: d.ReactQueryDevtools,
+  })),
 );
 
 export function TRPCReactProvider(props: { children: React.ReactNode }) {
@@ -69,6 +69,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
       <api.Provider client={trpcClient} queryClient={queryClient}>
         {props.children}
       </api.Provider>
+      <ReactQueryDevtools initialIsOpen />
       {showDevtools && (
         <React.Suspense fallback={null}>
           <ReactQueryDevtoolsProduction />
