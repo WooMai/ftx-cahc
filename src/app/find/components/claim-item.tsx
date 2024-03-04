@@ -34,15 +34,10 @@ export default function ClaimItem({
             <p className="mt-1 block text-xs leading-5 text-stone-400">
               Customer code
             </p>
-            <p className="text-lg font-semibold leading-6 text-white">
+            <p className="text-lg font-semibold leading-6 text-white flex flex-row align-middle">
               <span className="font-semibold">
                 {claimInstance.customerCode}
               </span>
-              {claimInstance.earnIndicator ? (
-                <span className="mt-1 text-xs leading-5 text-stone-500">
-                  Earn enabled
-                </span>
-              ) : null}
             </p>
           </div>
         </div>
@@ -68,7 +63,7 @@ export default function ClaimItem({
           )}
         </div>
       </div>
-      {isVisible && <CoinsList coins={claimInstance.assets} />}
+      {isVisible && <CoinsList coins={claimInstance.assets} earnIndicator={claimInstance.earnIndicator} contingentIndicator={claimInstance.contingentIndicator} />}
     </li>
   );
 }

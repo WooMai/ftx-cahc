@@ -4,7 +4,7 @@ import { searchWithConditions } from "@/server/api/search";
 import { useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
 import { type ClaimSchema } from "@/app/models/Claim.model";
-import { type Key, type SetStateAction, useState } from "react";
+import { type Key, type SetStateAction, useState, Suspense } from "react";
 import SearchForm from "@/app/_components/search-form";
 import {
   type ISearchRequest,
@@ -12,6 +12,7 @@ import {
 } from "@/app/models/Search.model";
 import { type AxiosResponse } from "axios";
 import { defaultSearchPayload } from "@/app/_components/default-search-payload";
+import Stopwatch from "./stopwatch";
 
 export function Search({ assets }: { assets: { name: string }[] }) {
   const [searchConditions, setSearchConditions] =
@@ -24,6 +25,7 @@ export function Search({ assets }: { assets: { name: string }[] }) {
   ) => {
     setSearchConditions(searchRequest);
   };
+  
   return (
     <>
       <SearchForm
@@ -50,9 +52,34 @@ function SearchResults({
 
   if (isLoading) {
     return (
-      <p className="my-3 w-full px-4 text-left text-xs italic text-stone-500">
-        Searching the docket for matching claims...
-      </p>
+      <>
+        <div>
+          <p className="my-3 pr-3 w-full text-right text-xs italic text-stone-500">
+            {' '}&nbsp;
+          </p>
+        </div>
+        <ul
+        key="search-results"
+          role="list"
+          className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
+        >
+          <nav
+              className="flex items-center justify-between border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"
+              aria-label="Pagination"
+            >
+              <div className="sm:block">
+                <p className="text-sm text-stone-400 italic">
+                  Searching millions of claims... <span className="text-stone-500"><Suspense><Stopwatch /></Suspense></span>
+                </p>
+              </div>
+              {/* <div className="flex flex-1 justify-between sm:justify-end">
+                <p className="text-right text-xs italic text-stone-500">
+                  
+                </p>
+              </div> */}
+            </nav>
+        </ul>
+      </>
     );
   }
 
@@ -65,7 +92,7 @@ function SearchResults({
   return (
     <>
       <div>
-        <p className="my-3 w-full text-right text-xs italic text-stone-500">
+        <p className="my-3 pr-3 w-full text-right text-xs italic text-stone-500">
           Showing <span className="font-medium">{searchConditions.page}</span>{" "}
           to <span className="font-medium">{searchConditions.page_size}</span>{" "}
           of <span className="font-medium">{searchResponse.total_records}</span>{" "}
@@ -73,8 +100,9 @@ function SearchResults({
         </p>
       </div>
       <ul
+      key="search-results"
         role="list"
-        className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-lg shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
+        className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
       >
         {claims.map(
           (claimData: typeof ClaimSchema, idx: Key | null | undefined) => (
@@ -82,7 +110,7 @@ function SearchResults({
           ),
         )}
         <nav
-          className="flex items-center justify-between border-t border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"
+          className="flex items-center justify-between border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"
           aria-label="Pagination"
         >
           <div className="hidden sm:block">
