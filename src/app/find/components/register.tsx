@@ -2,27 +2,32 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { useClaimsStore } from "@/app/store/useClaimsStore";
 
 export function Register() {
   const [open, setOpen] = useState(true);
-  let alreadyStored = null;
-  useEffect(() => {
-    const handleStorage = () => {
-      console.log("Storage event");
-      try {
-        alreadyStored = localStorage.getItem("claims-to-register");
-      } catch (error) {
-        console.log("Error fetching claim from localStorage:", error);
-      }
-    };
 
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
-  }, []);
+  const selectedClaims = useClaimsStore((state) => state.selectedClaims);
+
+  //   let alreadyStored = null;
+
+  //   useEffect(() => {
+  //     const handleStorage = () => {
+  //       console.log("Storage event");
+  //       try {
+  //         alreadyStored = localStorage.getItem("claims-to-register");
+  //       } catch (error) {
+  //         console.log("Error fetching claim from localStorage:", error);
+  //       }
+  //     };
+
+  //     window.addEventListener("storage", handleStorage);
+  //     return () => window.removeEventListener("storage", handleStorage);
+  //   }, []);
 
   const cancelButtonRef = useRef(null);
 
-  if (!open && alreadyStored !== null) {
+  if (!open && selectedClaims !== null) {
     return (
       <>
         {/* Global notification live region, render this permanently at the end of the document */}
@@ -47,11 +52,12 @@ export function Register() {
                   <div className="flex items-center">
                     <div className="flex w-0 flex-1 justify-between">
                       <p className="w-0 flex-1 text-sm font-medium text-gray-900">
-                        Selected {alreadyStored.length} claim
-                        {alreadyStored.length > 1 ? "s" : ""}
+                        Selected {selectedClaims.length} claim
+                        {selectedClaims.length > 1 ? "s" : ""}
                       </p>
                       <button
                         type="button"
+                        onClick={() => setOpen(true)}
                         className="ml-3 flex-shrink-0 rounded-md bg-white text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       >
                         Register
