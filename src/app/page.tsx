@@ -97,7 +97,7 @@ export default async function Home() {
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
             Join us in voting &apos;no&apos; on any plan that fails to addresses serious issues impacting recovery of customer's property.
             <br/>
-            Read our <Link href="https://ftx-cahc.notion.site/CAHC-Bylaws-f8cc70b98b734f7680648e3d7b994df1" className="underline" target="_blank">bylaws</Link> and <Link href="" target="_blank" className="underline">charter</Link> to learn more.
+            Read our <Link href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing" className="underline" target="_blank">bylaws</Link> and <Link href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing" target="_blank" className="underline">charter</Link> to learn more.
           </p>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
@@ -105,10 +105,10 @@ export default async function Home() {
               href="/find"
               className="w-full rounded-md bg-indigo-500 px-5 py-2.5 text-sm font-semibold leading-loose text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-fit"
             >
-              Find your claim <span aria-hidden="true">→</span>
+              Find your FTX claim <span aria-hidden="true">→</span>
             </Link>
             <span className="block py-2 text-sm leading-loose text-white opacity-30 sm:inline-block sm:opacity-100">
-              to join the voting block
+              to get started
             </span>
           </div>
           <div className="my-20">
