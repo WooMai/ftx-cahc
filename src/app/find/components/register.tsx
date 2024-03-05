@@ -1,7 +1,6 @@
 "use client";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
 import {
   ArrowTopRightOnSquareIcon,
@@ -160,7 +159,7 @@ export function Register() {
                             <input
                               id="register-email"
                               name="register-email"
-                              className="border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600/80 focus:ring-0 sm:max-w-36 sm:text-sm sm:leading-6"
+                              className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600/80 focus:ring-0 sm:text-sm sm:leading-6"
                               placeholder="your@email.com"
                               type="email"
                             />
