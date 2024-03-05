@@ -69,7 +69,7 @@ function SearchResults({
             >
               <div className="sm:block">
                 <p className="text-sm text-stone-400 italic">
-                  Searching millions of claims... <span className="text-stone-500"><Suspense><Stopwatch /></Suspense></span>
+                  Searching through millions of claims... <span className="text-stone-500"><Suspense><Stopwatch /></Suspense></span>
                 </p>
               </div>
               {/* <div className="flex flex-1 justify-between sm:justify-end">

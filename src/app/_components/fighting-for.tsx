@@ -36,7 +36,7 @@ export function FightingFor() {
             Issues with current plan
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            What are we fighting for?
+            We vote 'no' on any plan unless the following issues are addressed
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
             The debtors have filed a half-baked and value-destructive plan. We

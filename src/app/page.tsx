@@ -83,22 +83,21 @@ export default async function Home() {
           </div>
           <br />
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Join the FTX Customer Ad-Hoc Committee (CAHC)
+            Join the FTX Customer Ad-Hoc Committee (CAHC) Voting Block
             <br />
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            With over <span className="font-bold">300+ creditors</span> holding{" "}
+            With over <span className="font-bold">300+ former FTX customers</span> holding{" "}
             <span className="font-bold">9-figures in claims</span>, we have
             formed the largest voting block in the FTX bankruptcy cases.
-            <br />
-            Represented by{" "}
-            <span className="font-bold">McCarter & English, LLP</span>.
+            <br /><br/>
+            Our legal counsel <span className="font-bold">McCarter & English, LLP</span> have filed customer property litigation: <Link className="underline" href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo" target="_blank">docket 6863</Link>
           </p>
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            Though we are the largest group we need creditors to onboard to the
-            CAHC to let the court know that our arguments do infact represent
-            the views of customers.
+            Join us in voting 'no' on any plan that fails to addresses serious issues impacting recovery of customer's property.
+            <br/>
+            Read our <Link href="https://ftx-cahc.notion.site/CAHC-Bylaws-f8cc70b98b734f7680648e3d7b994df1" className="underline" target="_blank">bylaws</Link> and <Link href="" target="_blank" className="underline">charter</Link> to learn more.
           </p>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
@@ -109,7 +108,7 @@ export default async function Home() {
               Find your claim <span aria-hidden="true">→</span>
             </Link>
             <span className="block py-2 text-sm leading-loose text-white opacity-30 sm:inline-block sm:opacity-100">
-              to get started
+              to join the voting block
             </span>
           </div>
           <div className="my-20">
