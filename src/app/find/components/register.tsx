@@ -1,13 +1,13 @@
 "use client";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
 
 export function Register() {
-  const [open, setOpen] = useState(false);
-
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
+  const isOpenByDefault = selectedClaims !== null && selectedClaims.length > 0;
+  const [open, setOpen] = useState(isOpenByDefault);
 
   const cancelButtonRef = useRef(null);
 
