@@ -19,7 +19,16 @@ export const useClaimsStore = create<SelectedClaimsState>()(
     devtools(
         (set) => ({
             selectedClaims: [],
-            selectClaim: (selectedClaim) => set((state) => ({ selectedClaims: [...state.selectedClaims, selectedClaim] })),
+            selectClaim: (selectedClaim) => set((state) => {
+                // Check if the selectedClaim's customerCode already exists in the selectedClaims array
+                const exists = state.selectedClaims.some(claim => claim.customerCode === selectedClaim.customerCode);
+
+                // If it doesn't exist, add it to the array; otherwise, leave the array unchanged
+                return {
+                    selectedClaims: exists ? state.selectedClaims : [...state.selectedClaims, selectedClaim]
+                };
+            }),
+
             removeClaimWithCode: (customerCode) => set((state) => {
                 return state.selectedClaims.filter((claim) => claim.customerCode !== customerCode)
             }),

@@ -5,29 +5,13 @@ import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
 
 export function Register() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
 
-  //   let alreadyStored = null;
-
-  //   useEffect(() => {
-  //     const handleStorage = () => {
-  //       console.log("Storage event");
-  //       try {
-  //         alreadyStored = localStorage.getItem("claims-to-register");
-  //       } catch (error) {
-  //         console.log("Error fetching claim from localStorage:", error);
-  //       }
-  //     };
-
-  //     window.addEventListener("storage", handleStorage);
-  //     return () => window.removeEventListener("storage", handleStorage);
-  //   }, []);
-
   const cancelButtonRef = useRef(null);
 
-  if (!open && selectedClaims !== null) {
+  if (!open && selectedClaims !== null && selectedClaims.length > 0) {
     return (
       <>
         {/* Global notification live region, render this permanently at the end of the document */}

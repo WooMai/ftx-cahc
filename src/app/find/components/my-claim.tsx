@@ -12,45 +12,6 @@ export function ThisIsMyClaim({ claim }: { claim: Claim }) {
       customerCode: claim.customerCode,
       totalPetitionValue: claim.totalPetitionValue,
     });
-
-    const alreadyStored = localStorage.getItem("claims-to-register");
-
-    if (alreadyStored === null) {
-      localStorage.setItem(
-        "claims-to-register",
-        JSON.stringify([
-          {
-            customerCode: claim.customerCode,
-            totalPetitionValue: claim.totalPetitionValue,
-          },
-        ]),
-      );
-      return;
-    } else {
-      try {
-        const temp: { customerCode: string; totalPetitionValue: string }[] =
-          JSON.parse(alreadyStored) as {
-            customerCode: string;
-            totalPetitionValue: string;
-          }[]; // Parse the stored data assume correctness
-
-        const exists = temp.some(
-          (item) => item.customerCode === claim.customerCode,
-        );
-
-        if (exists) {
-          return;
-        }
-
-        temp.push({
-          customerCode: claim.customerCode,
-          totalPetitionValue: claim.totalPetitionValue,
-        });
-        localStorage.setItem("claims-to-register", JSON.stringify(temp));
-      } catch (error) {
-        console.log("Error fetching claim from localStorage:", error);
-      }
-    }
   };
 
   return (
