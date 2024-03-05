@@ -1,26 +1,13 @@
-import { type IAsset } from "@/app/models/Claim.model";
-import { Link } from "@/components/link";
+import { Claim, type IAsset } from "@/app/models/Claim.model";
+import { ThisIsMyClaim } from "./my-claim";
 
-export function CoinsList({ coins }: { coins: IAsset[]}) {
+export function CoinsList({ coins, claim }: { coins: IAsset[], claim:Claim}) {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
   return (
-    <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">
-      <div className="mt-1 mb-6 px-4 sm:p-6">
-        <div className="bg-stone-800 shadow-sm ring-1 ring-stone-700 rounded-xl">
-          <div className="py-6 px-6 flex flex-col sm:flex-row justify-between">
-            <div className="mr-4 flex flex-row align-middle">
-              <p className="inline-block leading-9 text-sm text-stone-400 italic text-center sm:text-left">Register this claim to get started <span aria-hidden="true">&rarr;</span> </p>
-            </div>
-            <Link
-              href={""}
-                className="sm:inline-flex sm:mb-0 mb-2 items-center rounded-md bg-indigo-600 sm:px-3 sm:py-2 px-8 text-center inline-block py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" 
-                >This is my claim</Link>
-          </div>
-        </div>
-      </div>
-      
+    <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">     
+    <ThisIsMyClaim claim={claim} />
       <table className=" w-full whitespace-nowrap text-left">
         <colgroup>
           <col className="max-[640px]:max-w-8 sm:w-1/12" />

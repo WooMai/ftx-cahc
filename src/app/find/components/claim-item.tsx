@@ -3,6 +3,9 @@ import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; /
 import { CoinsList } from "./coins-list";
 import { Claim, type ClaimSchema } from "@/app/models/Claim.model";
 import { Text } from "@/components/text";
+import { Link } from "@/components/link";
+import { Button } from "@headlessui/react";
+import { useRouter } from "next/navigation";
 
 export default function ClaimItem({
   claimData,
@@ -11,7 +14,16 @@ export default function ClaimItem({
 }) {
   const [isVisible, setIsVisible] = useState(false); // State to manage visibility
 
-  let claimInstance;
+  let claimInstance: Claim;
+
+  const chooseClaim = (claim: Claim) => {
+    console.log(claim.customerCode);
+
+    const router = useRouter()
+
+    router.push('/register')
+  }
+
   try {
     claimInstance = new Claim(claimData);
   } catch (error) {
@@ -82,7 +94,12 @@ export default function ClaimItem({
           )}
         </div>
       </div>
-      {isVisible && <CoinsList coins={claimInstance.assets} />}
+      {isVisible && (
+        <>
+          
+          <CoinsList claim={claimInstance} coins={claimInstance.assets} />
+        </>
+      )}
     </li>
   );
 }
