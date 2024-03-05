@@ -1,11 +1,16 @@
 import { unstable_noStore as noStore } from "next/cache";
 
-import { ChevronRightIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowTopRightOnSquareIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/16/solid";
 import { CountStats } from "@/app/_components/count-stats";
 import { TopNavHome } from "@/app/_components/top-nav-home";
 import { FightingFor } from "@/app/_components/fighting-for";
-import { Anticipate } from "./_components/anticipate";
+import { Anticipate } from "@/app/_components/anticipate";
 import { Link } from "@/components/link";
+import { ScrollDownIndicator } from "@/app/_components/scroll-down-indicator";
+import BackToTopButton from "./_components/back-to-top";
 
 export default async function Home() {
   noStore();
@@ -97,11 +102,12 @@ export default async function Home() {
             <span className="font-bold">McCarter & English, LLP</span> have
             filed customer property litigation:{" "}
             <Link
-              className="underline"
+              className="text-indigo-300 underline"
               href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo"
               target="_blank"
             >
               docket 6863
+              <ArrowTopRightOnSquareIcon className="mb-1 ml-1  inline h-4 w-4" />
             </Link>
           </p>
           <hr className="mt-10 opacity-20" />
@@ -112,18 +118,20 @@ export default async function Home() {
             Read our{" "}
             <Link
               href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
-              className="underline"
+              className="text-indigo-300 underline"
               target="_blank"
             >
               bylaws
+              <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
             </Link>{" "}
             and{" "}
             <Link
               href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing"
               target="_blank"
-              className="underline"
+              className="text-indigo-300 underline"
             >
               charter
+              <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
             </Link>{" "}
             to learn more.
           </p>
@@ -160,6 +168,8 @@ export default async function Home() {
           }}
         />
       </div>
+      <ScrollDownIndicator />
+      <BackToTopButton />
       <Anticipate />
     </div>
   );

@@ -16,7 +16,7 @@ const features = [
   {
     name: "No 30% withholding tax.",
     description:
-      "Since the large majority of creditors are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
+      "Since the large majority of customers are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
     icon: ChevronDoubleUpIcon,
   },
   {
@@ -36,7 +36,8 @@ export function FightingFor() {
             Issues with current plan
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            We vote &apos;no&apos; on any plan unless the following issues are addressed
+            We vote &apos;no&apos; on any plan unless the following issues are
+            addressed
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
             The debtors have filed a half-baked and value-destructive plan. We

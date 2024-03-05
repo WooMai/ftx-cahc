@@ -34,7 +34,7 @@
 //   );
 // }
 const stats = [
-  { name: "Creditors Joined", stat: "332" },
+  { name: "Customers Joined", stat: "332" },
   { name: "Petition Date Claims", stat: "$101,434,943" },
 ];
 
