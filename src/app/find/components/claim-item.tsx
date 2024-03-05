@@ -3,9 +3,6 @@ import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; /
 import { CoinsList } from "./coins-list";
 import { Claim, type ClaimSchema } from "@/app/models/Claim.model";
 import { Text } from "@/components/text";
-import { Link } from "@/components/link";
-import { Button } from "@headlessui/react";
-import { useRouter } from "next/navigation";
 
 export default function ClaimItem({
   claimData,
@@ -15,14 +12,6 @@ export default function ClaimItem({
   const [isVisible, setIsVisible] = useState(false); // State to manage visibility
 
   let claimInstance: Claim;
-
-  const chooseClaim = (claim: Claim) => {
-    console.log(claim.customerCode);
-
-    const router = useRouter()
-
-    router.push('/register')
-  }
 
   try {
     claimInstance = new Claim(claimData);
@@ -46,29 +35,29 @@ export default function ClaimItem({
             <p className="mt-1 block text-xs leading-5 text-stone-400">
               Customer code
             </p>
-            <p className="text-lg font-semibold leading-6 text-white flex flex-row align-middle">
+            <p className="flex flex-row align-middle text-lg font-semibold leading-6 text-white">
               <span className="font-semibold">
                 {claimInstance.customerCode}
               </span>
               {claimInstance.earnIndicator ? (
                 <span
                   style={{ marginTop: -3 }}
-                  className="ml-2 hidden rounded-md bg-cyan-800/50 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/25 sm:inline-block">
-                <span className="text-xs leading-5">
-                  Earn enabled
-                </span></span>
+                  className="ml-2 hidden rounded-md bg-cyan-800/50 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/25 sm:inline-block"
+                >
+                  <span className="text-xs leading-5">Earn enabled</span>
+                </span>
               ) : null}
-              {claimInstance.contingentIndicator.length > 1 ? (
-                claimInstance.contingentIndicator.map((indicator, index) => (
-                <span
-                key={index}
-                  style={{ marginTop: -3 }}
-                  className="ml-2 hidden rounded-md bg-indigo-600/25 px-2 py-1 text-xs font-medium text-indigo-300 ring-1 ring-inset ring-indigo-500/25 sm:inline-block">
-                  <span className="text-xs leading-5">
-                    {indicator}
-                  </span>
-                </span>))
-              ) : null}
+              {claimInstance.contingentIndicator.length > 1
+                ? claimInstance.contingentIndicator.map((indicator, index) => (
+                    <span
+                      key={index}
+                      style={{ marginTop: -3 }}
+                      className="ml-2 hidden rounded-md bg-indigo-600/25 px-2 py-1 text-xs font-medium text-indigo-300 ring-1 ring-inset ring-indigo-500/25 sm:inline-block"
+                    >
+                      <span className="text-xs leading-5">{indicator}</span>
+                    </span>
+                  ))
+                : null}
             </p>
           </div>
         </div>
@@ -96,7 +85,6 @@ export default function ClaimItem({
       </div>
       {isVisible && (
         <>
-          
           <CoinsList claim={claimInstance} coins={claimInstance.assets} />
         </>
       )}

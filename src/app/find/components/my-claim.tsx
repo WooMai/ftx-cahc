@@ -1,5 +1,5 @@
 "use client";
-import { Claim } from "@/app/models/Claim.model";
+import { type Claim } from "@/app/models/Claim.model";
 
 export function ThisIsMyClaim({ claim }: { claim: Claim }) {
   const chooseClaim = (claim: Claim) => {
