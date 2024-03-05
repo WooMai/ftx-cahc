@@ -87,17 +87,45 @@ export default async function Home() {
             <br />
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            With over <span className="font-bold">300+ former FTX customers</span> holding{" "}
+            With over{" "}
+            <span className="font-bold">300+ former FTX customers</span> holding{" "}
             <span className="font-bold">9-figures in claims</span>, we have
             formed the largest voting block in the FTX bankruptcy cases.
-            <br /><br/>
-            Our legal counsel <span className="font-bold">McCarter & English, LLP</span> have filed customer property litigation: <Link className="underline" href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo" target="_blank">docket 6863</Link>
+            <br />
+            <br />
+            Our legal counsel{" "}
+            <span className="font-bold">McCarter & English, LLP</span> have
+            filed customer property litigation:{" "}
+            <Link
+              className="underline"
+              href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo"
+              target="_blank"
+            >
+              docket 6863
+            </Link>
           </p>
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            Join us in voting &apos;no&apos; on any plan that fails to addresses serious issues impacting recovery of customer's property.
-            <br/>
-            Read our <Link href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing" className="underline" target="_blank">bylaws</Link> and <Link href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing" target="_blank" className="underline">charter</Link> to learn more.
+            Join us in voting &apos;no&apos; on any plan that fails to addresses
+            serious issues impacting recovery of customer property.
+            <br />
+            Read our{" "}
+            <Link
+              href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
+              className="underline"
+              target="_blank"
+            >
+              bylaws
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing"
+              target="_blank"
+              className="underline"
+            >
+              charter
+            </Link>{" "}
+            to learn more.
           </p>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
