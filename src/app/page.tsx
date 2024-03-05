@@ -95,7 +95,7 @@ export default async function Home() {
           </p>
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            Join us in voting 'no' on any plan that fails to addresses serious issues impacting recovery of customer's property.
+            Join us in voting &apos;no&apos; on any plan that fails to addresses serious issues impacting recovery of customer's property.
             <br/>
             Read our <Link href="https://ftx-cahc.notion.site/CAHC-Bylaws-f8cc70b98b734f7680648e3d7b994df1" className="underline" target="_blank">bylaws</Link> and <Link href="" target="_blank" className="underline">charter</Link> to learn more.
           </p>
