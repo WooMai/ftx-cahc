@@ -30,7 +30,8 @@ export const useClaimsStore = create<SelectedClaimsState>()(
             }),
 
             removeClaimWithCode: (customerCode) => set((state) => {
-                return state.selectedClaims.filter((claim) => claim.customerCode !== customerCode)
+                console.log('Removing claim with customerCode:', customerCode);
+                return { selectedClaims: state.selectedClaims.filter((claim) => claim.customerCode !== customerCode) }
             }),
         })
     )
