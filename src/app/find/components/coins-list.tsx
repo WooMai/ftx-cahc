@@ -1,13 +1,13 @@
 import { Claim, type IAsset } from "@/app/models/Claim.model";
 import { ThisIsMyClaim } from "./my-claim";
 
-export function CoinsList({ coins, claim }: { coins: IAsset[], claim:Claim}) {
+export function CoinsList({ coins, claim }: { coins: IAsset[]; claim: Claim }) {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
   return (
-    <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">     
-    <ThisIsMyClaim claim={claim} />
+    <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">
+      <ThisIsMyClaim claim={claim} />
       <table className=" w-full whitespace-nowrap text-left">
         <colgroup>
           <col className="max-[640px]:max-w-8 sm:w-1/12" />

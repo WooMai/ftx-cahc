@@ -25,7 +25,7 @@ export function Search({ assets }: { assets: { name: string }[] }) {
   ) => {
     setSearchConditions(searchRequest);
   };
-  
+
   return (
     <>
       <SearchForm
@@ -54,30 +54,36 @@ function SearchResults({
     return (
       <>
         <div>
-          <p className="my-3 pr-3 w-full text-right text-xs italic text-stone-500">
-            {' '}&nbsp;
+          <p className="my-3 w-full pr-3 text-right text-xs italic text-stone-500">
+            {" "}
+            &nbsp;
           </p>
         </div>
         <ul
-        key="search-results"
+          key="search-results"
           role="list"
           className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
         >
           <nav
-              className="flex items-center justify-between border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"
-              aria-label="Pagination"
-            >
-              <div className="sm:block">
-                <p className="text-sm text-stone-400 italic">
-                  Searching through millions of claims... <span className="text-stone-500"><Suspense><Stopwatch /></Suspense></span>
-                </p>
-              </div>
-              {/* <div className="flex flex-1 justify-between sm:justify-end">
+            className="flex items-center justify-between border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"
+            aria-label="Pagination"
+          >
+            <div className="sm:block">
+              <p className="text-sm italic text-stone-400">
+                Searching through millions of claims...{" "}
+                <span className="text-stone-500">
+                  <Suspense>
+                    <Stopwatch />
+                  </Suspense>
+                </span>
+              </p>
+            </div>
+            {/* <div className="flex flex-1 justify-between sm:justify-end">
                 <p className="text-right text-xs italic text-stone-500">
                   
                 </p>
               </div> */}
-            </nav>
+          </nav>
         </ul>
       </>
     );
@@ -92,7 +98,7 @@ function SearchResults({
   return (
     <>
       <div>
-        <p className="my-3 pr-3 w-full text-right text-xs italic text-stone-500">
+        <p className="my-3 w-full pr-3 text-right text-xs italic text-stone-500">
           Showing <span className="font-medium">{searchConditions.page}</span>{" "}
           to <span className="font-medium">{searchConditions.page_size}</span>{" "}
           of <span className="font-medium">{searchResponse.total_records}</span>{" "}
@@ -100,7 +106,7 @@ function SearchResults({
         </p>
       </div>
       <ul
-      key="search-results"
+        key="search-results"
         role="list"
         className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
       >

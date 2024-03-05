@@ -1,8 +1,18 @@
 "use client";
 import { type Claim } from "@/app/models/Claim.model";
+import { useClaimsStore } from "@/app/store/useClaimsStore";
 
 export function ThisIsMyClaim({ claim }: { claim: Claim }) {
+  // update state store
+
+  const selectClaim = useClaimsStore((state) => state.selectClaim);
+
   const chooseClaim = (claim: Claim) => {
+    selectClaim({
+      customerCode: claim.customerCode,
+      totalPetitionValue: claim.totalPetitionValue,
+    });
+
     const alreadyStored = localStorage.getItem("claims-to-register");
 
     if (alreadyStored === null) {

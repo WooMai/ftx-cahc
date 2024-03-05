@@ -8,7 +8,7 @@ import { useState } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { type AppRouter } from "@/server/api/root";
-import { getUrl, transformer } from "./shared";
+import { getUrl } from "./shared";
 
 import superjson from "superjson";
 
@@ -61,7 +61,7 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
         }),
         unstable_httpBatchStreamLink({
           url: getUrl(),
-          transformer: superjson
+          transformer: superjson,
         }),
       ],
     }),
