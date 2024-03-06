@@ -8,10 +8,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
-  {
-    name: "In the Press",
-    href: "https://www.wired.com/story/ftx-bankruptcy-bitcoin-value/",
-  },
+  { name: "In the Press", href: "#" },
 ];
 
 export function TopNavHome() {
