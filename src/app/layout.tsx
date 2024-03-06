@@ -7,6 +7,7 @@ import { Footer } from "@/app/_components/footer";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { Clerk } from "@clerk/nextjs/server";
+import { dark } from "@clerk/themes";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
           <TRPCReactProvider>{children}</TRPCReactProvider>

@@ -99,7 +99,7 @@ export function SearchForm({
                       <div className="isolate flex flex-row rounded-md bg-stone-700 shadow-inner shadow-stone-900/50">
                         <div className="relative inline-block basis-3/6 rounded-md rounded-r-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600 sm:col-span-1">
                           <label
-                            htmlFor="name"
+                            htmlFor={`conditions-${index}-min_balance`}
                             className="block text-xs font-medium text-stone-400"
                           >
                             Minimum
@@ -118,7 +118,7 @@ export function SearchForm({
                         </div>
                         <div className="relative inline-block basis-3/6 rounded-md rounded-l-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600 sm:col-span-1">
                           <label
-                            htmlFor="job-title"
+                            htmlFor={`conditions-${index}-max_balance`}
                             className="block text-xs font-medium text-stone-400"
                           >
                             Maximum
@@ -140,7 +140,7 @@ export function SearchForm({
                   </div>
                 ))}
                 <button
-                  className="mb-4 sm:mb-0 mt-10 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                  className="mb-4 mt-10 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
                   type="submit"
                 >
                   Search
