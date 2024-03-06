@@ -49,7 +49,7 @@ export function Register() {
                       </p>
                       <button
                         type="button"
-                        className="inline-flex flex-shrink-0 items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
+                        className="inline-flex flex-shrink-0 animate-bounce items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
                       >
                         Register
                       </button>
@@ -180,9 +180,10 @@ export function Register() {
                             />
                           </div>
                           <p className="py-4 text-left text-sm text-stone-300">
-                            By confirming you agree to include your claim in the
-                            Customer Ad-Hoc Committee 2019 declaration to the
-                            court and to abide by our{" "}
+                            By confirming you agree the CAHC represents you in
+                            preserving customer property rights, to publish your
+                            name (not customer code) in the 2019 declaration to
+                            the court, and to abide by our{" "}
                             <Link
                               href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
                               className="text-indigo-300 underline"
@@ -191,6 +192,12 @@ export function Register() {
                               bylaws
                               <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" />
                             </Link>
+                            .{" "}
+                            <span className="font-semibold text-white">
+                              If you DO NOT confirm, the court will assume
+                              customers agree with the debtors{"'"} proposed
+                              petition date recoveries.
+                            </span>
                           </p>
                         </div>
                       </div>

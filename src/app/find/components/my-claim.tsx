@@ -6,6 +6,10 @@ export function ThisIsMyClaim({ claim }: { claim: Claim }) {
   // update state store
 
   const selectClaim = useClaimsStore((state) => state.selectClaim);
+  const selectedClaims = useClaimsStore((state) => state.selectedClaims);
+  const isSelected = selectedClaims.some(
+    (selectedClaim) => selectedClaim.customerCode === claim.customerCode,
+  );
 
   const chooseClaim = (claim: Claim) => {
     selectClaim({
@@ -14,6 +18,9 @@ export function ThisIsMyClaim({ claim }: { claim: Claim }) {
     });
   };
 
+  if (isSelected) {
+    return null;
+  }
   return (
     <div className="mt-1 px-4 sm:px-6 sm:py-3">
       {/* <div className="bg-stone-800 shadow-sm ring-1 ring-stone-700 rounded-xl"> */}
