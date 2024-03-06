@@ -46,7 +46,9 @@ export default async function Find() {
         <hr className="opacity-10" />
         <div className="min-h-screen w-full  bg-stone-900">
           <div className="mx-auto max-w-screen-md sm:py-10">
-            <Search assets={assets} />
+            <Search
+              assets={assets.map((asset) => ({ name: asset.name ?? "" }))}
+            />
           </div>
         </div>
       </div>
