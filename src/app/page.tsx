@@ -66,19 +66,25 @@ export default async function Home() {
           fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
         />
       </svg>
-      <div className="px-6 py-8 sm:px-6 sm:py-24 lg:px-8">
+      <div className="px-6 py-8 pt-0 sm:px-6 sm:py-24 sm:pt-8 lg:px-8">
         <div className="mx-auto max-w-2xl pb-20 text-center">
-          <div className="mt-24 hidden sm:mt-32 sm:block lg:mt-16">
+          <div className="sm:mt-24 sm:block lg:mt-16">
+            <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20 sm:hidden">
+              Latest News
+            </span>
             <a
-              href="https://x.com/sunil_trades/status/1763120860829716758?s=20"
+              href="https://x.com/MHE_BE3ET/status/1765258417890033876?s=20"
               target="_blank"
               className="mb-10 inline-flex space-x-6"
             >
-              <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20">
-                Introducing
+              <span className="hidden rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20 sm:inline">
+                Latest
               </span>
               <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
-                <span>A new FTX Customer Ad-Hoc Committee</span>
+                <span>
+                  Mar 6: FTX Debtors request 4 month delay, pay US Gov with
+                  customer assets
+                </span>
                 <ChevronRightIcon
                   className="h-5 w-5 text-gray-500"
                   aria-hidden="true"
@@ -93,7 +99,7 @@ export default async function Home() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
             With over{" "}
-            <span className="font-bold">300+ former FTX customers</span> holding{" "}
+            <span className="font-bold">400+ former FTX customers</span> holding{" "}
             <span className="font-bold">9-figures in claims</span>, we have
             formed the largest voting block in the FTX bankruptcy cases.
             <br />

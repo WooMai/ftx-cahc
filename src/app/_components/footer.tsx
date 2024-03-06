@@ -20,11 +20,11 @@ const navigation = {
   support: [
     {
       name: "CAHC Bylaws",
-      href: "https://file.notion.so/f/f/09d510f2-14cd-448e-b84f-fa371f5ebeb4/184051bb-3a10-4ec9-8d5d-b991adee7222/FTX_CAHC_-_Bylaws.pdf?id=606f80bb-5a69-422d-9d40-f1a55ad7d128&table=block&spaceId=09d510f2-14cd-448e-b84f-fa371f5ebeb4&expirationTimestamp=1709316000000&signature=i0WmXtQi0odkyfUq-r97-_DLNxCwypnX4_BV9WghORk&downloadName=FTX+CAHC+-+Bylaws.pdf",
+      href: "https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing",
     },
     {
       name: "CAHC Charter",
-      href: "https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing",
+      href: "https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/view?usp=sharing",
     },
   ],
   company: [

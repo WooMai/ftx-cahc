@@ -18,6 +18,7 @@ export const digitalAssetPrices = pgTable("digital_asset_prices", {
 	name: varchar("name", { length: 255 }),
 	petitionPrice: varchar("petition_price", { length: 255 }),
 	type: varchar("type", { length: 255 }),
+	snapshot_latest: varchar("snapshot_latest", { length: 255 }),
 },
 	(table) => {
 		return {
@@ -53,12 +54,12 @@ export const customers = pgTable("customers", {
  * */
 
 
-export const users = pgTable("users", {
-	id: serial("id").primaryKey().notNull(),
-	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
-	fullName: text("full_name"),
-	phone: varchar("phone", { length: 256 }),
-	email: varchar("email", { length: 256 }),
-	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
-	updatedAt: timestamp("updated_at", { mode: 'string' }),
-});
+// export const users = pgTable("users", {
+// 	id: serial("id").primaryKey().notNull(),
+// 	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
+// 	fullName: text("full_name"),
+// 	phone: varchar("phone", { length: 256 }),
+// 	email: varchar("email", { length: 256 }),
+// 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
+// 	updatedAt: timestamp("updated_at", { mode: 'string' }),
+// });

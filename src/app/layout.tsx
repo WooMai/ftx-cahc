@@ -5,6 +5,9 @@ import { Inter } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 import { Footer } from "@/app/_components/footer";
 
+import { ClerkProvider } from "@clerk/nextjs";
+import { Clerk } from "@clerk/nextjs/server";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -23,14 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-        <div>
-          <Footer />
-        </div>
-        <div id="modal-root" />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`font-sans ${inter.variable}`}>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <div>
+            <Footer />
+          </div>
+          <div id="modal-root" />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

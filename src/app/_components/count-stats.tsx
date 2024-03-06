@@ -34,14 +34,14 @@
 //   );
 // }
 const stats = [
-  { name: "Customers Joined", stat: "332" },
-  { name: "Petition Date Claims", stat: "$101,434,943" },
+  { name: "Customers Joined", stat: "401" },
+  { name: "Claim value", stat: "$423,340,064" },
 ];
 
 export function CountStats() {
   return (
     <div>
-      <dl className="mt-5 grid grid-cols-1 grid-cols-2 gap-3">
+      <dl className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
         {stats.map((item) => (
           <div
             key={item.name}

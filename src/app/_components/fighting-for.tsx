@@ -10,7 +10,7 @@ const features = [
   {
     name: "Theft of property damages.",
     description:
-      "Although the judge ruled to estimate claims at petition-date, customers should still recover today's valuation of their crypto assets due to a theft of property claim and/or post-petition interest.",
+      "Customers should recover today's valuation of their crypto assets due to theft of property.",
     icon: ChevronDoubleUpIcon,
   },
   {

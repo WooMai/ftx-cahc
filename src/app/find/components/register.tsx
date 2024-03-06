@@ -24,7 +24,7 @@ export function Register() {
           aria-live="assertive"
           className="pointer-events-none fixed inset-0 flex items-end px-4 py-4 sm:items-start sm:p-6"
         >
-          <div className="flex w-full flex-col items-center space-y-4  sm:items-center">
+          <div className="flex w-full flex-col items-center space-y-4  sm:items-end">
             {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
             <Transition
               show={!open}
@@ -121,7 +121,7 @@ export function Register() {
                             {selectedClaims.map((claim, index) => (
                               <div
                                 key={index}
-                                className="mb-2 flex flex-row items-center justify-between rounded-md bg-stone-700 p-4"
+                                className="mb-2 flex flex-row items-center justify-between rounded-md bg-stone-700 p-4 shadow-inner ring-1 ring-inset ring-stone-600"
                               >
                                 <p className="text-sm font-bold text-white">
                                   {claim.customerCode}
@@ -149,9 +149,24 @@ export function Register() {
                               : "this claim?"}
                             <br />
                           </p>
+                          <div className="relative mb-4 inline-block w-full rounded-md bg-stone-700 px-3 pb-1.5 pt-2.5 text-left shadow-inner ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600">
+                            <label
+                              htmlFor="full-name"
+                              className="block text-xs font-medium text-stone-400"
+                            >
+                              Full name
+                            </label>
+                            <input
+                              id="full-name"
+                              name="full-name"
+                              className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600 focus:ring-0 sm:text-sm sm:leading-6"
+                              placeholder="Your Name"
+                              type="text"
+                            />
+                          </div>
                           <div className="relative inline-block w-full rounded-md bg-stone-700 px-3 pb-1.5 pt-2.5 text-left shadow-inner ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600">
                             <label
-                              htmlFor="job-title"
+                              htmlFor="register-email"
                               className="block text-xs font-medium text-stone-400"
                             >
                               Contact email
@@ -159,7 +174,7 @@ export function Register() {
                             <input
                               id="register-email"
                               name="register-email"
-                              className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600/80 focus:ring-0 sm:text-sm sm:leading-6"
+                              className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600 focus:ring-0 sm:text-sm sm:leading-6"
                               placeholder="your@email.com"
                               type="email"
                             />
@@ -195,7 +210,7 @@ export function Register() {
                       onClick={() => setOpen(false)}
                       ref={cancelButtonRef}
                     >
-                      Add another claim
+                      Cancel
                     </button>
                   </div>
                 </Dialog.Panel>

@@ -33,6 +33,24 @@ const AssetSchema = z.object({
         // but is left here for completeness and future adjustments if needed.
         return usdValue;
     }),
+    usd_latest: z.union([z.string(), z.null()]).transform((usdValue) => {
+        // If the value is null, return "Undetermined"
+        if (usdValue === null) {
+            return "Undetermined";
+        }
+
+        // Attempt to parse the number, removing the $ and commas
+        const parsedValue = parseFloat(usdValue.replace(/[$,]/g, ''));
+        if (!isNaN(parsedValue)) {
+            // If it's a valid number, round it and format back to currency string
+            return formatUsdCurrency(parsedValue);
+        }
+
+        // Return the original string if parsing fails or it's already "Undetermined"
+        // This branch might be unnecessary given the updated requirements,
+        // but is left here for completeness and future adjustments if needed.
+        return usdValue;
+    }),
 });
 
 // Enum-like structure for contingentIndicator values
@@ -47,6 +65,7 @@ export const ClaimSchema = z.object({
     token_fiat_lend: z.array(AssetSchema),
     uuid: z.string(),
     total_petition_value: z.string(),
+    total_latest_value: z.string(),
 });
 
 // TypeScript interface for Asset
@@ -55,6 +74,7 @@ export interface IAsset {
     type: string;
     balance: number;
     usdPetition: string;
+    usdLatest: string;
 }
 
 // TypeScript interface for Claim
@@ -76,6 +96,7 @@ export class Claim implements IClaim {
     assetsLend: IAsset[] | null;
     uuid: string;
     totalPetitionValue: string;
+    totalLatestValue: string;
 
     constructor(data: typeof ClaimSchema) {
         // We assume api returns good data
@@ -92,17 +113,20 @@ export class Claim implements IClaim {
             name: item.name,
             type: item.type,
             balance: item.balance,
-            usdPetition: item.usd_petition
+            usdPetition: item.usd_petition,
+            usdLatest: item.usd_latest
         }));
         this.earnIndicator = validatedData.earn_indicator!;
         this.assetsLend = validatedData.token_fiat_lend.map((item) => ({
             name: item.name,
             type: item.type,
             balance: item.balance,
-            usdPetition: item.usd_petition
+            usdPetition: item.usd_petition,
+            usdLatest: item.usd_latest
         }));
         this.uuid = validatedData.uuid!;
         this.totalPetitionValue = validatedData.total_petition_value!;
+        this.totalLatestValue = validatedData.total_latest_value!;
     }
 }
 

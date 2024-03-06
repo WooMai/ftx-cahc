@@ -30,12 +30,12 @@ export default function ClaimItem({
         className="relative flex cursor-pointer justify-between gap-x-6 px-4 py-5 hover:bg-stone-700/25 sm:px-6"
         onClick={() => setIsVisible(!isVisible)} // Toggle visibility on click
       >
-        <div className="flex min-w-0 gap-x-4">
+        <div className="flex min-w-0 gap-x-6">
           <div className="min-w-0 flex-auto">
             <p className="mt-1 block text-xs leading-5 text-stone-400">
               Customer code
             </p>
-            <p className="flex flex-row align-middle text-lg font-semibold leading-6 text-white">
+            <p className="flex flex-row align-middle text-xs font-semibold leading-6 text-white sm:text-base">
               <span className="font-semibold">
                 {claimInstance.customerCode}
               </span>
@@ -60,14 +60,23 @@ export default function ClaimItem({
                 : null}
             </p>
           </div>
+          <div className="sm:ml-20 sm:flex sm:flex-col sm:items-start">
+            <p className="mt-1 text-xs leading-5 text-stone-400/50">
+              Petition value
+            </p>
+            <p className="truncate font-mono text-xs leading-6 text-white/25 sm:text-base">
+              {claimInstance.totalPetitionValue}
+            </p>
+          </div>
         </div>
+
         <div className="flex shrink-0 items-center gap-x-4">
           <div className="sm:flex sm:flex-col sm:items-end">
             <p className="mt-1 text-xs leading-5 text-stone-400">
-              {claimInstance.assets.length} assets
+              Today{"'"}s value
             </p>
-            <p className="text-md font-mono leading-6 text-white">
-              {claimInstance.totalPetitionValue}
+            <p className="font-mono text-xs leading-6 text-white sm:text-base">
+              {claimInstance.totalLatestValue}
             </p>
           </div>
           {isVisible ? (

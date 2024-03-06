@@ -1,19 +1,20 @@
-import { pgTable, unique, uuid, varchar, foreignKey, serial, integer, jsonb, boolean, text, timestamp } from "drizzle-orm/pg-core"
-import { sql } from "drizzle-orm"
+import { pgTable, unique, uuid, varchar, foreignKey, serial, integer, jsonb, boolean } from "drizzle-orm/pg-core"
+  import { sql } from "drizzle-orm"
 
 
 
 export const digitalAssetPrices = pgTable("digital_asset_prices", {
 	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
-	name: varchar("name", { length: 255 }).notNull(),
+	name: varchar("name", { length: 255 }),
 	petitionPrice: varchar("petition_price", { length: 255 }),
 	type: varchar("type", { length: 255 }),
+	snapshotLatest: varchar("snapshot_latest", { length: 255 }),
 },
-	(table) => {
-		return {
-			digitalAssetPricesNameKey: unique("digital_asset_prices_name_key").on(table.name),
-		}
-	});
+(table) => {
+	return {
+		digitalAssetPricesNameKey: unique("digital_asset_prices_name_key").on(table.name),
+	}
+});
 
 export const claims = pgTable("claims", {
 	id: serial("id").primaryKey().notNull(),
@@ -32,18 +33,8 @@ export const customers = pgTable("customers", {
 	customerCategory: varchar("customer_category", { length: 255 }).notNull(),
 	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
 },
-	(table) => {
-		return {
-			customersCustomerCodeKey: unique("customers_customer_code_key").on(table.customerCode),
-		}
-	});
-
-export const users = pgTable("users", {
-	id: serial("id").primaryKey().notNull(),
-	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
-	fullName: text("full_name"),
-	phone: varchar("phone", { length: 256 }),
-	email: varchar("email", { length: 256 }),
-	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
-	updatedAt: timestamp("updated_at", { mode: 'string' }),
+(table) => {
+	return {
+		customersCustomerCodeKey: unique("customers_customer_code_key").on(table.customerCode),
+	}
 });
