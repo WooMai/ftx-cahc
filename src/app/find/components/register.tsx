@@ -196,7 +196,7 @@ export function Register() {
                             <span className="font-semibold text-white">
                               If you DO NOT confirm, the court will assume
                               customers agree with the debtors{"'"} proposed
-                              petition date recoveries.
+                              petition value recoveries.
                             </span>
                           </p>
                         </div>

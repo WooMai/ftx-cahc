@@ -33,7 +33,8 @@ export default function ClaimItem({
         <div className="flex min-w-0 gap-x-6">
           <div className="min-w-0 flex-auto">
             <p className="mt-1 block text-xs leading-5 text-stone-400">
-              Customer code
+              <span className="hidden sm:inline">Customer code</span>
+              <span className="sm:hidden">Code</span>
             </p>
             <p className="flex flex-row align-middle text-xs font-semibold leading-6 text-white sm:text-base">
               <span className="font-semibold">
