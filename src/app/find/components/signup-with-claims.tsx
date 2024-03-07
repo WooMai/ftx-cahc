@@ -104,13 +104,19 @@ export const SignUpWithClaims = ({
           "no user returned from successful mutation for " + emailAddress,
         );
       await createClerkUser(result.user.id);
-    } catch (error) {
-      if (
-        error.shape?.message ===
-        'duplicate key value violates unique constraint "users_email_unique"'
-      ) {
-        console.log(error.shape?.message);
-        setCreateUserAlreadyExists(true);
+    } catch (error: unknown) {
+      if ((error as { shape?: { message: string } }).shape) {
+        if (
+          (error as { shape?: { message: string } }).shape?.message ===
+          'duplicate key value violates unique constraint "users_email_unique"'
+        ) {
+          console.log(
+            (error as { shape?: { message: string } }).shape?.message,
+          );
+          setCreateUserAlreadyExists(true);
+        }
+      } else {
+        console.log("Unexpected error", error);
       }
     }
   };
