@@ -19,7 +19,6 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
-    NODE_PUBLIC_DOMAIN: z.string(),
   },
 
   /**
@@ -29,7 +28,7 @@ export const env = createEnv({
    */
   client: {
     // commented because env vars are not availble here on railway. seems to be a railway issue
-    // NEXT_PUBLIC_DOMAIN: z.string(), 
+    NEXT_PUBLIC_DOMAIN: z.string(), 
   },
 
   /**
