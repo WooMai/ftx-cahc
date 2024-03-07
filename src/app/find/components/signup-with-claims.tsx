@@ -1,6 +1,13 @@
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
-import { useSignUp } from "@clerk/nextjs";
+import {
+  useSignUp,
+  useSignIn,
+  EmailLinkErrorCode,
+  isEmailLinkError,
+  useClerk,
+  SignInButton,
+} from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { api } from "@/trpc/react";
 
@@ -35,32 +42,60 @@ export const SignUpWithClaims = ({
   const [verified, setVerified] = useState(false);
   const router = useRouter();
   const { signUp, isLoaded, setActive } = useSignUp();
+  const { signIn } = useSignIn();
+
+  const [createUserSuccess, setCreateUserSuccess] = useState(false);
+  const [createUserAlreadyExists, setCreateUserAlreadyExists] = useState(false);
 
   console.log("rendering");
   // trpc
-  const mutation = api.user.userCreateWithClaims.useMutation();
+  const mutation = api.user.userCreateWithClaims.useMutation({
+    onError: (error, variables, context) => {
+      // An error happened!
+      if (
+        error.shape?.message ===
+        'duplicate key value violates unique constraint "users_email_unique"'
+      ) {
+        console.log(error.shape?.message);
+        setCreateUserAlreadyExists(true);
+      }
+    },
+    onSuccess: (data, variables, context) => {
+      // Boom baby!
+      return typeof data === "undefined"
+        ? console.log("no data")
+        : createClerkUser(data.user.id);
+    },
+  });
 
   if (!isLoaded) {
     return null;
   }
+
   const { startEmailLinkFlow, cancelEmailLinkFlow } =
     signUp.createEmailLinkFlow();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // create user if doesn't already exist. throw error if user already exists
+
     const result = mutation.mutate({
       user: { email: emailAddress, fullName: fullName },
       claims: selectedClaims,
     });
-    // handle mutation errors
+  };
 
+  const createClerkUser = async (withUUID: string) => {
     console.log("starting");
     setExpired(false);
     setVerified(false);
     // Start the sign up flow, by collecting
     // the user's email address.
-    await signUp.create({ emailAddress });
+    await signUp.create({
+      emailAddress,
+      unsafeMetadata: { external_id: withUUID },
+    });
     // Start the magic link flow.
     // Pass your app URL that users will be navigated
     // when they click the magic link from their
@@ -96,7 +131,6 @@ export const SignUpWithClaims = ({
       return;
     }
   };
-
   return (
     <form className="relative" onSubmit={handleSubmit}>
       <div className="relative bg-stone-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
@@ -204,15 +238,35 @@ export const SignUpWithClaims = ({
           </div>
         </div>
       </div>
-      {mutation.isError && <div>{JSON.stringify(mutation.error)}</div>}
+      {mutation.isError && createUserAlreadyExists && (
+        <div className="bg-stone-800 px-4 pb-6 sm:my-3 sm:flex sm:px-6">
+          <div className="w-full rounded-md border-l-4 border-yellow-400 bg-yellow-50 p-4 sm:mx-14">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <ExclamationTriangleIcon
+                  className="h-5 w-5 text-yellow-400"
+                  aria-hidden="true"
+                />
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-yellow-700">
+                  Email already in use. <SignInButton>Sign-in.</SignInButton>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="bg-stone-800 px-4 pb-6 sm:my-3 sm:ml-14 sm:flex sm:px-6">
-        <button
-          disabled={mutation.isPending}
-          type="submit"
-          className="inline-flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:w-auto"
-        >
-          Yes, I Confirm
-        </button>
+        {!mutation.isError && !createUserAlreadyExists && (
+          <button
+            disabled={mutation.isPending}
+            type="submit"
+            className="inline-flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:w-auto"
+          >
+            Yes, I Confirm
+          </button>
+        )}
         <button
           type="button"
           className="mt-3 inline-flex w-full justify-center rounded-md px-3 py-2 text-sm text-stone-400 shadow-sm hover:bg-stone-700 hover:text-stone-200 sm:ml-3 sm:mt-0 sm:w-auto"
