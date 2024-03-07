@@ -19,6 +19,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    NODE_PUBLIC_DOMAIN: z.string(),
   },
 
   /**

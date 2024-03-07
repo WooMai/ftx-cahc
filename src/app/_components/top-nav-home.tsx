@@ -2,8 +2,6 @@
 import { Link } from "@/components/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-// import { useState } from "react";
-
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
