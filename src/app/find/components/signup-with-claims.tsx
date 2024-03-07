@@ -1,35 +1,23 @@
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
-import {
-  useSignUp,
-  useSignIn,
-  EmailLinkErrorCode,
-  isEmailLinkError,
-  useClerk,
-  SignInButton,
-} from "@clerk/nextjs";
+import { useSignUp, useSignIn, SignInButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { api } from "@/trpc/react";
 
 import {
   UserPlusIcon,
   ArrowTopRightOnSquareIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
 import { CheckIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 export const SignUpWithClaims = ({
-  //   selectedClaims,
-  onSignupSuccess,
   onCancel,
-  //   removeClaim,
   cancelButtonRef,
 }: {
-  //   selectedClaims: any;
-  onSignupSuccess: () => void;
   onCancel: () => void;
-  //   removeClaim: any;
   cancelButtonRef: React.RefObject<HTMLButtonElement> | null;
 }) => {
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
@@ -42,31 +30,12 @@ export const SignUpWithClaims = ({
   const [verified, setVerified] = useState(false);
   const router = useRouter();
   const { signUp, isLoaded, setActive } = useSignUp();
-  const { signIn } = useSignIn();
 
-  const [createUserSuccess, setCreateUserSuccess] = useState(false);
   const [createUserAlreadyExists, setCreateUserAlreadyExists] = useState(false);
 
   console.log("rendering");
   // trpc
-  const mutation = api.user.userCreateWithClaims.useMutation({
-    onError: (error, variables, context) => {
-      // An error happened!
-      if (
-        error.shape?.message ===
-        'duplicate key value violates unique constraint "users_email_unique"'
-      ) {
-        console.log(error.shape?.message);
-        setCreateUserAlreadyExists(true);
-      }
-    },
-    onSuccess: (data, variables, context) => {
-      // Boom baby!
-      return typeof data === "undefined"
-        ? console.log("no data")
-        : createClerkUser(data.user.id);
-    },
-  });
+  const mutation = api.user.userCreateWithClaims.useMutation();
 
   if (!isLoaded) {
     return null;
@@ -74,17 +43,6 @@ export const SignUpWithClaims = ({
 
   const { startEmailLinkFlow, cancelEmailLinkFlow } =
     signUp.createEmailLinkFlow();
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // create user if doesn't already exist. throw error if user already exists
-
-    const result = mutation.mutate({
-      user: { email: emailAddress, fullName: fullName },
-      claims: selectedClaims,
-    });
-  };
 
   const createClerkUser = async (withUUID: string) => {
     console.log("starting");
@@ -131,6 +89,32 @@ export const SignUpWithClaims = ({
       return;
     }
   };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // create user if doesn't already exist. throw error if user already exists
+    try {
+      const result = await mutation.mutateAsync({
+        user: { email: emailAddress, fullName: fullName },
+        claims: selectedClaims,
+      });
+      if (!result)
+        throw Error(
+          "no user returned from successful mutation for " + emailAddress,
+        );
+      await createClerkUser(result.user.id);
+    } catch (error) {
+      if (
+        error.shape?.message ===
+        'duplicate key value violates unique constraint "users_email_unique"'
+      ) {
+        console.log(error.shape?.message);
+        setCreateUserAlreadyExists(true);
+      }
+    }
+  };
+
   return (
     <form className="relative" onSubmit={handleSubmit}>
       <div className="relative bg-stone-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
@@ -272,7 +256,31 @@ export const SignUpWithClaims = ({
             type="submit"
             className="inline-flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:w-auto"
           >
-            Yes, I Confirm
+            {mutation.isPending && (
+              <span>
+                <svg
+                  className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </span>
+            )}
+            <span>Yes, I Confirm</span>
           </button>
         )}
         <button
@@ -285,30 +293,34 @@ export const SignUpWithClaims = ({
         </button>
       </div>
       {mutation.isSuccess && (
-        <div className="absolute left-0 top-0 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
+        <div className="absolute left-0 top-0 z-20 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
           <div className="h-full self-center text-center">
-            <CheckIcon className="inline-block h-10 w-10 text-indigo-300" />
-            <p className="py-4 text-left text-sm text-stone-300">
-              Success! Check your email for next steps.
+            <EnvelopeIcon className="inline-block h-10 w-10 animate-bounce text-indigo-300" />
+            <p className="text-md py-4 text-center text-stone-300">
+              You have successfully registered!
+              <br />
+              <span className="font-semibold text-white">
+                Check your email for next steps.
+              </span>
             </p>
           </div>
         </div>
       )}
       {expired && (
-        <div className="absolute left-0 top-0 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
+        <div className="absolute left-0 top-0 z-20 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
           <div className="h-full self-center text-center">
             <ExclamationTriangleIcon className="inline-block h-10 w-10 text-indigo-300" />
-            <p className="py-4 text-left text-sm text-stone-300">
+            <p className="text-md py-4 text-left text-stone-300">
               Email link has expired
             </p>
           </div>
         </div>
       )}
       {verified && (
-        <div className="absolute left-0 top-0 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
+        <div className="absolute left-0 top-0 z-20 flex min-h-full w-full justify-center bg-stone-800/90 align-middle">
           <div className="h-full self-center text-center">
             <CheckIcon className="inline-block h-10 w-10 text-indigo-300" />
-            <p className="py-4 text-left text-sm text-stone-300">
+            <p className="text-md py-4 text-left text-stone-300">
               Sign in on other tab
             </p>
           </div>

@@ -99,7 +99,6 @@ export function Register() {
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-stone-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:py-4">
                   <SignUpWithClaims
-                    onSignupSuccess={() => onSignupSuccess(false)}
                     onCancel={() => setOpen(false)}
                     cancelButtonRef={cancelButtonRef}
                   />
