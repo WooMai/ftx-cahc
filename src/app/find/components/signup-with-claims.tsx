@@ -250,7 +250,15 @@ export const SignUpWithClaims = ({
               </div>
               <div className="ml-3">
                 <p className="text-sm text-yellow-700">
-                  Email already in use. <SignInButton>Sign-in.</SignInButton>
+                  Email already in use.{" "}
+                  <SignInButton mode="modal" afterSignInUrl="/dashboard">
+                    <span className="cursor-pointer">
+                      <span className="underline hover:text-yellow-600">
+                        Sign-in
+                      </span>
+                      .
+                    </span>
+                  </SignInButton>
                 </p>
               </div>
             </div>

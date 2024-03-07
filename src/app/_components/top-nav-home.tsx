@@ -12,8 +12,6 @@ const navigation = [
 ];
 
 export function TopNavHome() {
-  //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <header className="bg-transparent">
       <nav
