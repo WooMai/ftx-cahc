@@ -27,7 +27,8 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_DOMAIN: z.string(),
+    // commented because env vars are not availble here on railway. seems to be a railway issue
+    // NEXT_PUBLIC_DOMAIN: z.string(), 
   },
 
   /**
