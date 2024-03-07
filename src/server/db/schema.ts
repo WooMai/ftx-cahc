@@ -69,13 +69,8 @@ export const user_claims = pgTable("user_claims", {
 	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
 	userId: uuid("user_id").references(() => users.id),
 	customerCode: varchar("customer_code", { length: 8 }).notNull(),
-	totalPetitionValue: varchar("total_petition_value", { length: 255 }).notNull(),
-
+	totalPetitionValue: varchar("total_petition_value", { length: 255 }),
 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
-}, (table) => {
-	return {
-		userClaimsCustomerCodeKey: unique("user_claims_customer_code_key").on(table.customerCode),
-	};
 });
 
 export type User = typeof users.$inferSelect; // return type when queried

@@ -4,55 +4,6 @@
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "digital_asset_prices": {
-      "name": "digital_asset_prices",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "uuid_generate_v4()"
-        },
-        "name": {
-          "name": "name",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "petition_price": {
-          "name": "petition_price",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "type": {
-          "name": "type",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "snapshot_latest": {
-          "name": "snapshot_latest",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "digital_asset_prices_name_key": {
-          "columns": [
-            "name"
-          ],
-          "nullsNotDistinct": false,
-          "name": "digital_asset_prices_name_key"
-        }
-      }
-    },
     "claims": {
       "name": "claims",
       "schema": "",
@@ -170,8 +121,8 @@
         }
       }
     },
-    "users": {
-      "name": "users",
+    "digital_asset_prices": {
+      "name": "digital_asset_prices",
       "schema": "",
       "columns": {
         "id": {
@@ -181,28 +132,27 @@
           "notNull": true,
           "default": "uuid_generate_v4()"
         },
-        "full_name": {
-          "name": "full_name",
-          "type": "text",
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
         },
-        "email": {
-          "name": "email",
-          "type": "varchar(256)",
+        "petition_price": {
+          "name": "petition_price",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
         },
-        "created_at": {
-          "name": "created_at",
-          "type": "timestamp",
+        "type": {
+          "name": "type",
+          "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
+          "notNull": false
         },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "timestamp",
+        "snapshot_latest": {
+          "name": "snapshot_latest",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
         }
@@ -210,7 +160,15 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "digital_asset_prices_name_key": {
+          "columns": [
+            "name"
+          ],
+          "nullsNotDistinct": false,
+          "name": "digital_asset_prices_name_key"
+        }
+      }
     },
     "user_claims": {
       "name": "user_claims",
@@ -234,6 +192,12 @@
           "type": "varchar(8)",
           "primaryKey": false,
           "notNull": true
+        },
+        "total_petition_value": {
+          "name": "total_petition_value",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",
@@ -262,9 +226,74 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
+    },
+    "users": {
+      "name": "users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "uuid_generate_v4()"
+        },
+        "full_name": {
+          "name": "full_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "role",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'user'"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "users_email_unique": {
+          "columns": [
+            "email"
+          ],
+          "nullsNotDistinct": false,
+          "name": "users_email_unique"
+        }
+      }
     }
   },
-  "enums": {},
+  "enums": {
+    "role": {
+      "name": "role",
+      "values": {
+        "user": "user",
+        "admin": "admin"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "schemas": {},

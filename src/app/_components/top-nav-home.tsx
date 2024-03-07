@@ -1,6 +1,6 @@
 "use-client";
-
 import { Link } from "@/components/link";
+import { UserButton } from "@clerk/nextjs";
 
 // import { useState } from "react";
 
@@ -54,9 +54,16 @@ export function TopNavHome() {
           ))}
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end">
-          <Link href="#" className="text-sm font-semibold leading-6 text-white">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          <UserButton afterSignOutUrl="/" />
+          {/* {isLoaded && userId && ( 
+            
+            // <Link
+            //   href="#"
+            //   className="text-sm font-semibold leading-6 text-white"
+            // >
+            //   Sign out <span aria-hidden="true">&rarr;</span>
+            // </Link>
+          // )}*/}
         </div>
       </nav>
     </header>
