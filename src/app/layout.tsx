@@ -6,7 +6,6 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { Footer } from "@/app/_components/footer";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { Clerk } from "@clerk/nextjs/server";
 import { dark } from "@clerk/themes";
 
 const inter = Inter({

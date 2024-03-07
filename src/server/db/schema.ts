@@ -1,4 +1,4 @@
-import { pgTable, unique, uuid, varchar, serial, integer, jsonb, boolean, timestamp, text } from "drizzle-orm/pg-core"
+import { pgTable, unique, uuid, varchar, serial, integer, jsonb, boolean, timestamp, text, pgEnum } from "drizzle-orm/pg-core"
 import { sql } from "drizzle-orm"
 
 /**
@@ -18,7 +18,7 @@ export const digitalAssetPrices = pgTable("digital_asset_prices", {
 	name: varchar("name", { length: 255 }),
 	petitionPrice: varchar("petition_price", { length: 255 }),
 	type: varchar("type", { length: 255 }),
-	snapshot_latest: varchar("snapshot_latest", { length: 255 }),
+	snapshotLatest: varchar("snapshot_latest", { length: 255 }),
 },
 	(table) => {
 		return {
@@ -53,13 +53,31 @@ export const customers = pgTable("customers", {
  *  END remember to comment out before running db:push else it will DELETE ALL DATA IN THESE TABLES
  * */
 
+// declaring enum in database
+export const roleEnum = pgEnum('role', ['admin', 'user']);
 
-// export const users = pgTable("users", {
-// 	id: serial("id").primaryKey().notNull(),
-// 	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
-// 	fullName: text("full_name"),
-// 	phone: varchar("phone", { length: 256 }),
-// 	email: varchar("email", { length: 256 }),
-// 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
-// 	updatedAt: timestamp("updated_at", { mode: 'string' }),
-// });
+export const users = pgTable("users", {
+	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
+	fullName: text("full_name"),
+	email: varchar("email", { length: 256 }).notNull().unique(),
+	role: roleEnum('role').notNull().default('user'),
+	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
+	updatedAt: timestamp("updated_at", { mode: 'string' })
+});
+
+export const user_claims = pgTable("user_claims", {
+	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
+	userId: uuid("user_id").references(() => users.id),
+	customerCode: varchar("customer_code", { length: 8 }).notNull(),
+	totalPetitionValue: varchar("total_petition_value", { length: 255 }).notNull(),
+
+	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
+}, (table) => {
+	return {
+		userClaimsCustomerCodeKey: unique("user_claims_customer_code_key").on(table.customerCode),
+	};
+});
+
+export type User = typeof users.$inferSelect; // return type when queried
+export type NewUser = typeof users.$inferInsert; // insert type
+export type NewUserClaim = typeof user_claims.$inferInsert; // insert type

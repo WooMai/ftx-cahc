@@ -5,7 +5,7 @@ export default authMiddleware({
     publicRoutes: ['/find'],
     // Routes that can always be accessed, and have
     // no authentication information
-    ignoredRoutes: ['/'],
+    ignoredRoutes: ['/', '/api/trpc/user.userCreateWithClaims', '/verification'],
 });
 
 export const config = {
