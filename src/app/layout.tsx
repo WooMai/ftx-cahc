@@ -29,6 +29,14 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         baseTheme: dark,
+        variables: { colorPrimary: "#6365f1" },
+        signIn: {
+          elements: {
+            footer: "hidden",
+            formFieldInput:
+              "rounded-md bg-stone-700 border-stone-600 shadow-inner shadow-lg shadow-sm focus-visible:ring-2 focus-visible:ring-indigo-500",
+          },
+        },
       }}
     >
       <html lang="en">

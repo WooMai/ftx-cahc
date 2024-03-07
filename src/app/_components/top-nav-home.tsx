@@ -1,6 +1,6 @@
 "use-client";
 import { Link } from "@/components/link";
-import { UserButton } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 // import { useState } from "react";
 
@@ -54,7 +54,17 @@ export function TopNavHome() {
           ))}
         </div>
         <div className="lg:flex lg:flex-1 lg:justify-end">
-          <UserButton afterSignOutUrl="/" />
+          <SignedOut>
+            <SignInButton mode="modal" afterSignInUrl="/dashboard">
+              <span className="cursor-pointer text-sm leading-6 text-white">
+                Sign In
+              </span>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+
           {/* {isLoaded && userId && ( 
             
             // <Link
