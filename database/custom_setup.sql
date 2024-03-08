@@ -50,6 +50,8 @@ GROUP BY
 
 
 
+ALTER TABLE "user_claims" 
+ADD CONSTRAINT "user_claims_user_id_customer_code_unique" UNIQUE ("user_id", "customer_code");
 
 
 

@@ -1,5 +1,4 @@
 import { TopNavHome } from "@/app/_components/top-nav-home";
-
 import { Search } from "./components/search";
 import { getAssets } from "@/app/actions";
 import { Register } from "@/app/find/components/register";

@@ -2,9 +2,9 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
-import { SignUpWithClaims } from "./signup-with-claims";
+import { SignedInRegisterWithClaims } from "./signed-in-register-with-claims";
 
-export function Register() {
+export function SignedInRegisterClaim() {
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
 
   const isOpenByDefault = selectedClaims !== null && selectedClaims.length > 0;
@@ -21,9 +21,9 @@ export function Register() {
         {/* Global notification live region, render this permanently at the end of the document */}
         <div
           aria-live="assertive"
-          className="pointer-events-none fixed inset-0 flex items-end px-4 py-4 sm:items-start sm:p-6"
+          className="pointer-events-none fixed inset-0 flex items-start px-4 py-4 sm:items-start sm:p-6"
         >
-          <div className="flex w-full flex-col items-center space-y-4  sm:items-end">
+          <div className="flex w-full flex-col items-center space-y-4  sm:items-center">
             {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
             <Transition
               show={!open}
@@ -50,7 +50,7 @@ export function Register() {
                         type="button"
                         className="inline-flex flex-shrink-0 animate-bounce items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
                       >
-                        Register
+                        Register Claim
                       </button>
                     </div>
                   </div>
@@ -98,7 +98,7 @@ export function Register() {
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-stone-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:py-4">
-                  <SignUpWithClaims
+                  <SignedInRegisterWithClaims
                     onCancel={() => setOpen(false)}
                     cancelButtonRef={cancelButtonRef}
                   />

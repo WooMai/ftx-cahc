@@ -1,5 +1,5 @@
 import { type Claim, type IAssetDeprecated } from "@/app/models/Claim.model";
-import { ThisIsMyClaim } from "./my-claim";
+import { ThisIsMyClaim } from "./signed-in-my-claim";
 import { SignedOut } from "@clerk/nextjs";
 
 export function CoinsList({
@@ -15,6 +15,7 @@ export function CoinsList({
   return (
     <div className="overfow-y-scroll border-t border-t-stone-700 bg-stone-700/40 py-4 shadow-inner shadow-stone-950/20">
       <ThisIsMyClaim claim={claim} />
+
       <table className=" w-full whitespace-nowrap text-left">
         <colgroup>
           <col className="max-[640px]:max-w-8 sm:w-1/12" />

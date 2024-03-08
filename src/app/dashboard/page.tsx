@@ -31,8 +31,6 @@ export default async function Page() {
           and 9-figures in claims.
         </span>
       </p>
-      <br />
-      <br />
       <div className="border-b border-stone-700 bg-stone-900">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-px bg-white/5 sm:grid-cols-2">
@@ -57,7 +55,7 @@ export default async function Page() {
           </div>
         </div>
       </div>
-      <div className="mt-10  pb-5">
+      <div className="mt-16 pb-5">
         <h3 className="text-base font-semibold leading-6 text-stone-200">
           Your Claim
         </h3>
@@ -67,15 +65,14 @@ export default async function Page() {
       </HydrationBoundary>
       <div className="flex flex-col-reverse justify-between py-5 sm:row-auto sm:flex-row">
         <p className="text-md max-w-4xl text-center leading-8 text-stone-500 sm:text-left">
-          Verify ownership by logging in to claims.ftx.com{" "}
-          <span className="italic text-white">(coming soon)</span>
+          Verify ownership of this claim by logging in to claims.ftx.com
         </p>
         <button
           type="button"
           disabled
           className="w-full cursor-not-allowed rounded-md bg-indigo-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:opacity-80 sm:w-auto"
         >
-          Verify on ftx.com
+          Verify on ftx.com (coming soon)
         </button>
       </div>
       <div className="mt-20 border-t border-stone-700 pb-5 pt-10">
