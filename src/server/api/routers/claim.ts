@@ -3,11 +3,11 @@ import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { digitalAssetPrices, userClaims } from "drizzle/schema";
 
-import { auth } from '@clerk/nextjs';
 import { eq, sql } from "drizzle-orm";
 import { json } from "drizzle-orm/pg-core";
-import { batchSearch } from "@/server/api/search";
+
 import { claimAssetsView, claims, claimsView } from "@/server/db/schema";
+import { IClaimsResponse } from "@/app/models/Claim.model";
 
 export const claimRouter = createTRPCRouter({
 
@@ -17,7 +17,7 @@ export const claimRouter = createTRPCRouter({
         });
     }),
 
-    getClaimsForUserWithId: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input, ctx }): Promise<IClaimsResponse[]> => {
+    getClaimsForUserWithId: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input, ctx }) => {
 
         // const results = await ctx.db.select().from(claims)
         //     .innerJoin(userClaims, eq(claims.customerCode, userClaims.customerCode))

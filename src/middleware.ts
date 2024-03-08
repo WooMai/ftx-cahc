@@ -7,12 +7,12 @@ export default authMiddleware({
     // Routes that can always be accessed, and have
     // no authentication information
     ignoredRoutes: [],
-    afterAuth(auth, req, evt) {
+    afterAuth(auth, req) {
         // When using afterAuth, the checks must handle all cases — a custom afterAuth completely overrides the default behavior covered earlier, aside from adding sign-in and sign-up to publicRoutes. afterAuth does not allow you to add just one check and rely on the default behavior otherwise
 
         // Handle users who aren't authenticated
         if (!auth.userId && !auth.isPublicRoute) {
-            return redirectToSignIn({ returnBackUrl: req.url });
+            return redirectToSignIn({ returnBackUrl: req.url }) as NextResponse;
         }
         // Redirect signed in users to organization selection page if they are not active in an organization
         // if (

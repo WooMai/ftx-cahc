@@ -21,7 +21,7 @@ export const SignedInRegisterWithClaims = ({
   cancelButtonRef: React.RefObject<HTMLButtonElement> | null;
 }) => {
   const { user, isLoaded, isSignedIn } = useUser();
-  let external_id: string = "";
+  let external_id = "";
   if (isLoaded && isSignedIn) {
     external_id = user.unsafeMetadata.external_id! as string;
   }
@@ -82,9 +82,7 @@ export const SignedInRegisterWithClaims = ({
               Register this claim as yours
             </Dialog.Title>
             <div className="mt-2">
-              <p className="text-sm text-stone-500">
-                Review the terms below
-              </p>
+              <p className="text-sm text-stone-500">Review the terms below</p>
               <div className="mt-8">
                 {selectedClaims.map((claim, index) => (
                   <div
@@ -136,7 +134,7 @@ export const SignedInRegisterWithClaims = ({
           </div>
         </div>
       </div>
-      {mutation.isError && (
+      {mutation.isError && alreadyAdded && (
         <div className="bg-stone-800 px-4 pb-6 sm:my-3 sm:flex sm:px-6">
           <div className="w-full rounded-md border-l-4 border-yellow-400 bg-yellow-50 p-4 sm:mx-14">
             <div className="flex">
@@ -153,7 +151,7 @@ export const SignedInRegisterWithClaims = ({
               </div>
             </div>
           </div>
-        </div>,
+        </div>
       )}
       <div className="bg-stone-800 px-4 pb-6 sm:my-3 sm:ml-14 sm:flex sm:px-6">
         {!mutation.isError && (

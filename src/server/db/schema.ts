@@ -34,7 +34,7 @@ export const claims = pgTable("claims", {
 	tokenFiatNftBalance: jsonb("token_fiat_nft_balance"),
 	earnIndicator: boolean("earn_indicator").notNull(),
 	tokenFiatLend: jsonb("token_fiat_lend"),
-	uuid: uuid("uuid").default(sql`uuid_generate_v4()`),
+	uuid: uuid("uuid").default(sql`uuid_generate_v4()`).notNull(),
 });
 
 export const customers = pgTable("customers", {

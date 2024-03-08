@@ -64,7 +64,7 @@ export function MyClaims({ userId }: { userId: string }) {
         </ul>
       </>
     );
-  if (error || !data) {
+  if (error ?? !data) {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else {
@@ -72,7 +72,7 @@ export function MyClaims({ userId }: { userId: string }) {
     }
   }
 
-  const myClaims: IClaimsResponse[] = data!;
+  const myClaims = data;
 
   return (
     <div>
@@ -94,8 +94,7 @@ export function MyClaims({ userId }: { userId: string }) {
             className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
           >
             {myClaims.map((claimData, idx: Key | null | undefined) => {
-              let claimInstance: Claim = new ClaimDrizzle(claimData);
-              //   claimInstance = claimInstance();
+              const claimInstance: Claim = new ClaimDrizzle(claimData);
               return <ClaimItem key={idx} claimInstance={claimInstance} />;
             })}
           </ul>

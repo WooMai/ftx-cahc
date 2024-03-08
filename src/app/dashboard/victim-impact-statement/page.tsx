@@ -1,5 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
-import { HydrationBoundary, dehydrate } from "@tanstack/react-query";
+
 import Link from "next/link";
 
 export default function VictimImpactStatementPage() {
@@ -11,8 +11,9 @@ export default function VictimImpactStatementPage() {
       <p className="text-md max-w-4xl text-stone-500">
         <span className="">
           Impacted customers have been requested by the DOJ to submit a victim
-          impact statement to make it clear that "100% petition date" is in fact
-          not being made whole when the stolen property is now worth much more.
+          impact statement to make it clear that {'"'}100% petition date{'"'} is
+          in fact not being made whole when the stolen property is now worth
+          much more.
         </span>
         <br />
         <br />
@@ -53,9 +54,11 @@ export default function VictimImpactStatementPage() {
               financial losses, psychological and emotional damage as a result
               of the theft of my assets. SBFs legal team is representing that
               FTX customers are being made whole. I want to make it clear that
-              it is a false representation, that "100% petition date value" is
-              in fact not being made whole when the stolen property is now worth
-              much more.
+              it is a false representation, that {'"'}100% petition date value
+              {'"'} is in fact not being made whole when the stolen property is
+              now worth much more. This has drastically changed the course of my
+              life and I want to ensure that justice is served and not
+              manipulated by a false narrative.
             </p>
           </div>
           <p className="text-md max-w-4xl pt-4 text-stone-500">

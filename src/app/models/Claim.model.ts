@@ -1,4 +1,3 @@
-import { IClaimsResponse } from '@/server/api/routers/claim';
 import { z } from 'zod';
 
 // Helper function to format numbers as USD currency strings
@@ -146,7 +145,7 @@ export class ClaimDrizzle implements IClaimDeprecated {
     totalPetitionValue: string;
     totalLatestValue: string;
 
-    constructor(data: IClaimsResponse) {
+    constructor(data: unknown) { // its actually not IClaimsResponse but follows that shape
         const validatedData = ClaimsViewSchema.parse(data);
         // Explicitly map and assign properties
         this.customerCode = validatedData.customerCode!;
