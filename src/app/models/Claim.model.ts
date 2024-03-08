@@ -1,3 +1,4 @@
+import { IClaimsResponse } from '@/server/api/routers/claim';
 import { z } from 'zod';
 
 // Helper function to format numbers as USD currency strings
@@ -69,7 +70,7 @@ export const ClaimSchema = z.object({
 });
 
 // TypeScript interface for Asset
-export interface IAsset {
+export interface IAssetDeprecated {
     name: string;
     type: string;
     balance: number;
@@ -78,27 +79,38 @@ export interface IAsset {
 }
 
 // TypeScript interface for Claim
-export interface IClaim {
+export interface IClaimDeprecated {
     customerCode: string;
     contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed">;
-    assets: IAsset[];
+    assets: IAssetDeprecated[];
     earnIndicator: boolean;
-    assetsLend: IAsset[] | null;
+    // assetsLend: IAssetDeprecated[] | null;
     uuid: string;
+    totalPetitionValue: string;
+    totalLatestValue: string;
 }
 
-// Claim class implementing the IClaim interface, with explicit assignment in constructor
-export class Claim implements IClaim {
+
+
+// Claim class implementing the IClaimDeprecated { interface, with explicit assignment in constructor
+export class Claim implements IClaimDeprecated {
     customerCode: string;
-    contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed">;
-    assets: IAsset[];
+    contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed"> = [];
+    assets: IAssetDeprecated[];
     earnIndicator: boolean;
-    assetsLend: IAsset[] | null;
     uuid: string;
     totalPetitionValue: string;
     totalLatestValue: string;
 
     constructor(data: typeof ClaimSchema) {
+        // Example usage (assuming dataFromApi is defined elsewhere, received in snake_case)
+        // try {
+        //     const claimInstance = new Claim(dataFromApi);
+        //     console.log('Claim created successfully:', claimInstance);
+        // } catch (error) {
+        //     console.error('Error creating claim:', error);
+        // }
+
         // We assume api returns good data
         // if it doesn't it will be caught in the instantiation 
         // we dont want to put try catch here
@@ -117,70 +129,77 @@ export class Claim implements IClaim {
             usdLatest: item.usd_latest
         }));
         this.earnIndicator = validatedData.earn_indicator!;
-        this.assetsLend = validatedData.token_fiat_lend.map((item) => ({
-            name: item.name,
-            type: item.type,
-            balance: item.balance,
-            usdPetition: item.usd_petition,
-            usdLatest: item.usd_latest
-        }));
+
         this.uuid = validatedData.uuid!;
         this.totalPetitionValue = validatedData.total_petition_value!;
         this.totalLatestValue = validatedData.total_latest_value!;
     }
+
 }
 
-export class ClaimFromDrizzle implements IClaim {
+export class ClaimDrizzle implements IClaimDeprecated {
     customerCode: string;
-    contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed">;
-    assets: IAsset[];
+    contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed"> = [];
+    assets: IAssetDeprecated[];
     earnIndicator: boolean;
-    assetsLend: IAsset[] | null;
     uuid: string;
     totalPetitionValue: string;
     totalLatestValue: string;
 
-    constructor(data: typeof ClaimSchema) {
-        // We safeParse here while our drizzle implementation is incomplete some fields are missing
-        let validatedData;
-        try {
-            validatedData = ClaimSchema.parse(data);
-        } catch (error) {
-            // surpress validation error while trpc is incomplete
-            validatedData = data;
-        }
-
+    constructor(data: IClaimsResponse) {
+        const validatedData = ClaimsViewSchema.parse(data);
         // Explicitly map and assign properties
-        this.customerCode = validatedData.customer_code!;
-        this.contingentIndicator = validatedData.contingent_indicator;
-        this.assets = validatedData.token_fiat_nft_balance.map((item) => ({
+        this.customerCode = validatedData.customerCode!;
+        this.contingentIndicator = validatedData.contingentIndicator;
+        this.assets = validatedData.assets.map((item) => ({
             name: item.name,
             type: item.type,
             balance: item.balance,
-            usdPetition: item.usd_petition,
-            usdLatest: item.usd_latest
+            usdPetition: item.usd_petition_currency,
+            usdLatest: item.usd_latest_currency
         }));
-        this.earnIndicator = validatedData.earn_indicator!;
-        this.assetsLend = validatedData.token_fiat_lend.map((item) => ({
-            name: item.name,
-            type: item.type,
-            balance: item.balance,
-            usdPetition: item.usd_petition,
-            usdLatest: item.usd_latest
-        }));
-        this.uuid = validatedData.uuid!;
-        this.totalPetitionValue = validatedData.total_petition_value!;
-        this.totalLatestValue = validatedData.total_latest_value!;
+        this.earnIndicator = validatedData.earnIndicator!;
+        this.uuid = validatedData.id!;
+        this.totalPetitionValue = validatedData.totalPetitionValueCurrency;
+        this.totalLatestValue = validatedData.totalLatestValueCurrency;
     }
 }
 
+export interface IClaimAssetsResponse {
+    name: string;
+    type: string;
+    balance: number;
+    usdPetitionCurrency: string;
+    usdLatestCurrency: string;
+}
 
-// Example usage (assuming dataFromApi is defined elsewhere, received in snake_case)
-// try {
-//     const claimInstance = new Claim(dataFromApi);
-//     console.log('Claim created successfully:', claimInstance);
-// } catch (error) {
-//     console.error('Error creating claim:', error);
-// }
+export interface IClaimsResponse {
+    id: string;
+    customerCode: string;
+    contingentIndicator: string[];
+    earnIndicator: boolean;
+    totalPetitionValueCurrency: string;
+    totalLatestValueCurrency: string;
+    assets: IClaimAssetsResponse[];
+}
 
+// Define a Zod schema for an Asset
+export const ClaimAssetsViewSchema = z.object({
+    name: z.string(),
+    type: z.string(),
+    balance: z.number(),
+    usd_petition_currency: z.string(),
+    usd_latest_currency: z.string(),
+});
+
+// Zod schema for Claim with constraints for contingentIndicator
+export const ClaimsViewSchema = z.object({
+    id: z.string(),
+    customerCode: z.string(),
+    contingentIndicator: z.array(ContingentIndicatorEnum).max(3), // Ensures max length of 3 and uniqueness
+    assets: z.array(ClaimAssetsViewSchema),
+    earnIndicator: z.boolean(),
+    totalPetitionValueCurrency: z.string(),
+    totalLatestValueCurrency: z.string(),
+});
 

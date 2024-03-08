@@ -4,25 +4,10 @@ import { CoinsList } from "./coins-list";
 import { Claim, type ClaimSchema } from "@/app/models/Claim.model";
 import { Text } from "@/components/text";
 
-export default function ClaimItem({
-  claimData,
-}: {
-  claimData: typeof ClaimSchema;
-}) {
+export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
   const [isVisible, setIsVisible] = useState(false); // State to manage visibility
 
-  let claimInstance: Claim;
-
-  try {
-    claimInstance = new Claim(claimData);
-  } catch (error) {
-    console.error("Error creating claim:", error);
-    return (
-      <li key="error" className="gap-x-6 py-5">
-        <Text>Something went wrong fetching the claim</Text>
-      </li>
-    );
-  }
+  // let claimInstance: Claim;
 
   return (
     <li key={claimInstance.uuid} className="gap-x-6 bg-stone-800">

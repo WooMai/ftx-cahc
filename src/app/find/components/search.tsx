@@ -3,7 +3,7 @@
 import { searchWithConditions } from "@/server/api/search";
 import { useQuery } from "@tanstack/react-query";
 import ClaimItem from "./claim-item";
-import { type ClaimSchema } from "@/app/models/Claim.model";
+import { Claim, type ClaimSchema } from "@/app/models/Claim.model";
 import { type Key, type SetStateAction, useState, Suspense } from "react";
 import SearchForm from "@/app/_components/search-form";
 import {
@@ -111,9 +111,20 @@ export function SearchResults({
         className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
       >
         {claims.map(
-          (claimData: typeof ClaimSchema, idx: Key | null | undefined) => (
-            <ClaimItem key={idx} claimData={claimData} />
-          ),
+          (claimData: typeof ClaimSchema, idx: Key | null | undefined) => {
+            let claimInstance: Claim;
+            try {
+              claimInstance = new Claim(claimData);
+            } catch (error) {
+              console.error("Error creating claim:", error);
+              return (
+                <li key="error" className="gap-x-6 py-5">
+                  <span>Something went wrong fetching the claim</span>
+                </li>
+              );
+            }
+            return <ClaimItem key={idx} claimInstance={claimInstance} />;
+          },
         )}
         <nav
           className="flex items-center justify-between border-stone-700 bg-stone-800 px-4 py-3 sm:px-6"

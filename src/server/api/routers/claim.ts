@@ -4,9 +4,10 @@ import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { digitalAssetPrices, userClaims } from "drizzle/schema";
 
 import { auth } from '@clerk/nextjs';
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
+import { json } from "drizzle-orm/pg-core";
 import { batchSearch } from "@/server/api/search";
-import { claims } from "@/server/db/schema";
+import { claimAssetsView, claims, claimsView } from "@/server/db/schema";
 
 export const claimRouter = createTRPCRouter({
 
@@ -16,19 +17,34 @@ export const claimRouter = createTRPCRouter({
         });
     }),
 
-    getClaimsForUserWithId: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input, ctx }) => {
-        // const result = await ctx.db.query.userClaims.findMany({
-        //     where: eq(userClaims.userId, input.userId),
-        // })
-        // const customerCodeResults = result.map((r) => r.customerCode);
+    getClaimsForUserWithId: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input, ctx }): Promise<IClaimsResponse[]> => {
 
-        // results;
+        // const results = await ctx.db.select().from(claims)
+        //     .innerJoin(userClaims, eq(claims.customerCode, userClaims.customerCode))
+        //     .where(eq(userClaims.userId, input.userId));
+        // return results
 
-        const results = await ctx.db.select().from(claims)
-            .innerJoin(userClaims, eq(claims.customerCode, userClaims.customerCode))
-            .where(eq(userClaims.userId, input.userId));
-        return results
-
+        return await ctx.db.select({
+            id: claims.uuid, // Fix: Ensure id is of type string
+            customerCode: claims.customerCode,
+            contingentIndicator: claims.contingentIndicator,
+            earnIndicator: claims.earnIndicator,
+            totalPetitionValueCurrency: claimsView.totalPetitionValueCurrency,
+            totalLatestValueCurrency: claimsView.totalLatestValueCurrency,
+            assets: sql<typeof json>`json_agg(${claimAssetsView})`.as('assets'),
+        }).from(userClaims)
+            .innerJoin(claims, eq(userClaims.customerCode, claims.customerCode))
+            .innerJoin(claimsView, eq(claimsView.customerCode, claims.customerCode))
+            .leftJoin(claimAssetsView, eq(claims.customerCode, claimAssetsView.customerCode))
+            .where(eq(userClaims.userId, input.userId))
+            .groupBy(
+                claims.id,
+                claims.customerCode,
+                claims.contingentIndicator,
+                claims.earnIndicator,
+                claimsView.totalPetitionValueCurrency,
+                claimsView.totalLatestValueCurrency,
+            );
 
     }),
 

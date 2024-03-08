@@ -103,7 +103,7 @@ const dates = [
   {
     YYYYMMDD: "2024-07-01",
     dayMonthDate: "Jul 1",
-    description: "PSA Vote Deadline (Blown)",
+    description: "Plan Vote Deadline (Blown)",
   },
   {
     YYYYMMDD: "2024-07-12",

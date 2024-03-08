@@ -1,6 +1,12 @@
 "use client";
-import ClaimItem from "@/app/find/components/claim-item-2";
-import type { ClaimSchema } from "@/app/models/Claim.model";
+import ClaimItem from "@/app/find/components/claim-item";
+import {
+  Claim,
+  type ClaimSchema,
+  type IClaimDeprecated,
+  IClaimsResponse,
+  ClaimDrizzle,
+} from "@/app/models/Claim.model";
 import { api } from "@/trpc/react";
 import { MagnifyingGlassPlusIcon } from "@heroicons/react/20/solid";
 import { useQuery } from "@tanstack/react-query";
@@ -13,14 +19,18 @@ export function MyClaims({ userId }: { userId: string }) {
     userId,
   });
   //
+
   if (isLoading) return <div>Loading...</div>;
-  if (error) {
-    console.log(error);
-    return <div>Error: {error.message}</div>;
+  if (error || !data) {
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else {
+      return <div>error with no message</div>;
+    }
   }
 
-  const myClaims: (typeof ClaimSchema)[] = data?.map((d) => d.claims);
-  console.log(myClaims);
+  const myClaims: IClaimsResponse[] = data!;
+
   return (
     <div>
       {!myClaims || myClaims.length === 0 ? (
@@ -40,11 +50,11 @@ export function MyClaims({ userId }: { userId: string }) {
             role="list"
             className="divide-y divide-stone-700 overflow-hidden bg-stone-900 shadow-xl ring-1 ring-stone-700 sm:rounded-xl"
           >
-            {myClaims.map(
-              (claimData: typeof ClaimSchema, idx: Key | null | undefined) => (
-                <ClaimItem key={idx} claimData={claimData} />
-              ),
-            )}
+            {myClaims.map((claimData, idx: Key | null | undefined) => {
+              let claimInstance: Claim = new ClaimDrizzle(claimData);
+              //   claimInstance = claimInstance();
+              return <ClaimItem key={idx} claimInstance={claimInstance} />;
+            })}
           </ul>
         </>
       )}

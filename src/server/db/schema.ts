@@ -1,5 +1,5 @@
-import { pgTable, unique, uuid, varchar, serial, integer, jsonb, boolean, timestamp, text, pgEnum } from "drizzle-orm/pg-core"
-import { sql } from "drizzle-orm"
+import { pgTable, unique, uuid, varchar, serial, integer, jsonb, boolean, timestamp, text, pgEnum, pgView, numeric, primaryKey, pgMaterializedView } from "drizzle-orm/pg-core"
+import { relations, sql } from "drizzle-orm"
 
 /**
  * BEGIN remember to comment out before running db:push else it will DELETE ALL DATA IN THESE TABLES
@@ -65,6 +65,14 @@ export const users = pgTable("users", {
 	updatedAt: timestamp("updated_at", { mode: 'string' })
 });
 
+export const usersRelations = relations(users, ({ many }) => ({
+	userClaims: many(userClaims),
+}));
+
+export const claimsRelations = relations(claims, ({ many }) => ({
+	userClaims: many(userClaims),
+}));
+
 export const userClaims = pgTable("user_claims", {
 	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
 	userId: uuid("user_id").references(() => users.id),
@@ -72,6 +80,36 @@ export const userClaims = pgTable("user_claims", {
 	totalPetitionValue: varchar("total_petition_value", { length: 255 }),
 	createdAt: timestamp("created_at", { mode: 'string' }).defaultNow().notNull(),
 });
+
+export const usersToClaimsRelations = relations(userClaims, ({ one }) => ({
+	claim: one(claims, {
+		fields: [userClaims.customerCode],
+		references: [claims.customerCode],
+	}),
+	user: one(users, {
+		fields: [userClaims.userId],
+		references: [users.id],
+	}),
+}));
+
+export const claimsView = pgMaterializedView("claims_view", {
+	customerCode: varchar("customer_code", { length: 8 }).notNull(),
+	totalPetitionValue: numeric("total_petition_value"),
+	totalPetitionValueCurrency: text("total_petition_value_currency").notNull(),
+	totalLatestValue: numeric("total_latest_value"),
+	totalLatestValueCurrency: text("total_latest_value_currency").notNull(),
+}).existing(); // existing() tells drizzle that this view already exists in the db
+
+export const claimAssetsView = pgMaterializedView("claim_assets_view", {
+	customerCode: varchar("customer_code", { length: 8 }).notNull(),
+	name: text("name").notNull(),
+	type: text("type").notNull(),
+	balance: numeric("balance").notNull(),
+	usdPetition: numeric("usd_petition"),
+	usdPetitionCurrency: text("usd_petition").notNull(),
+	usdLatest: numeric("usd_latest"),
+	usdLatestCurrency: text("usd_latest").notNull(),
+}).existing(); // existing() tells drizzle that this view already exists in the db
 
 export type User = typeof users.$inferSelect; // return type when queried
 export type NewUser = typeof users.$inferInsert; // insert type

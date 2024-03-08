@@ -3,11 +3,16 @@ import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; /
 import { CoinsList } from "./coins-list";
 import type { Claims } from "@/server/db/schema";
 import { Text } from "@/components/text";
+import { IClaimsResponse } from "@/server/api/routers/claim";
 
-export default function ClaimItem({ claimData }: { claimData: typeof Claim }) {
+export default function ClaimItem({
+  claimData,
+}: {
+  claimData: IClaimsResponse;
+}) {
   const [isVisible, setIsVisible] = useState(false); // State to manage visibility
 
-  const claimInstance: Claims = claimData;
+  //   const claimInstance:  = claimData;
 
   return (
     <li key={claimInstance.uuid} className="gap-x-6 bg-stone-800">
@@ -80,10 +85,7 @@ export default function ClaimItem({ claimData }: { claimData: typeof Claim }) {
       </div>
       {isVisible && (
         <>
-          <CoinsList
-            claim={claimInstance}
-            coins={claimInstance.tokenFiatNftBalance}
-          />
+          <CoinsList claim={claimInstance} coins={claimInstance.assets} />
         </>
       )}
     </li>

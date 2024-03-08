@@ -1,8 +1,14 @@
-import { type Claim, type IAsset } from "@/app/models/Claim.model";
+import { type Claim, type IAssetDeprecated } from "@/app/models/Claim.model";
 import { ThisIsMyClaim } from "./my-claim";
 import { SignedOut } from "@clerk/nextjs";
 
-export function CoinsList({ coins, claim }: { coins: IAsset[]; claim: Claim }) {
+export function CoinsList({
+  coins,
+  claim,
+}: {
+  coins: IAssetDeprecated[];
+  claim: Claim;
+}) {
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
@@ -48,7 +54,7 @@ export function CoinsList({ coins, claim }: { coins: IAsset[]; claim: Claim }) {
           </tr>
         </thead>
         <tbody className="divide-y divide-white/5">
-          {coins.map((coin: IAsset) => (
+          {coins.map((coin: IAssetDeprecated) => (
             <tr key={coin.name}>
               <td className="py-4 pl-4 pr-4 max-[640px]:max-w-8 sm:pl-6 lg:pl-8">
                 <div className="flex items-center gap-x-4">
