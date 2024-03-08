@@ -19,7 +19,7 @@ export default function VictimImpactStatementPage() {
         <br />
         Here is a resource to learn{" "}
         <Link
-          href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
+          href="https://www.justice.gov/criminal/criminal-vns/victim-impact-statements#:~:text=What%20is%20the%20purpose%20of,ordeal%20the%20crime%20has%20caused"
           className="text-indigo-300 underline"
           target="_blank"
         >
