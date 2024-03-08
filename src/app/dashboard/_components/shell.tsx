@@ -49,6 +49,12 @@ const dates = [
     cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
   },
   {
+    YYYYMMDD: "2024-03-28",
+    dayMonthDate: "Mar 28",
+    description: "SBF Sentencing",
+    easternTime: "13:00 ET",
+  },
+  {
     YYYYMMDD: "2024-05-15",
     dayMonthDate: "Mar 30",
     description: "Disclosure Statement Confirmation Hearing (Blown)",
@@ -109,12 +115,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
       current: pathname.endsWith("/dashboard/find-claims"),
     },
     // { name: "Objections", href: "#", icon: MegaphoneIcon, current: false },
-    // {
-    //   name: "Send Letters",
-    //   href: "/dashboard/letters",
-    //   icon: EnvelopeIcon,
-    //   current: pathname.endsWith("/dashboard/letters"),
-    // },
+    {
+      name: "Victim Impact Statement",
+      href: "/dashboard/victim-impact-statement",
+      icon: EnvelopeIcon,
+      current: pathname.endsWith("/dashboard/victim-impact-statement"),
+    },
     // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
     // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
     {

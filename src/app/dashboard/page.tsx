@@ -65,7 +65,7 @@ export default async function Page() {
       </HydrationBoundary>
       <div className="flex flex-col-reverse justify-between py-5 sm:row-auto sm:flex-row">
         <p className="text-md max-w-4xl text-center leading-8 text-stone-500 sm:text-left">
-          Verify ownership of this claim by logging in to claims.ftx.com
+          Verify ownership of this claim
         </p>
         <button
           type="button"
