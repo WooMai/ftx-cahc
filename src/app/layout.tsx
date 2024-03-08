@@ -39,8 +39,8 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en">
-        <body className={`font-sans ${inter.variable}`}>
+      <html lang="en" className="h-full bg-stone-950">
+        <body className={`h-full font-sans ${inter.variable}`}>
           <TRPCReactProvider>{children}</TRPCReactProvider>
           <div>
             <Footer />

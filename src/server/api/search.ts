@@ -1,10 +1,14 @@
 
 // import { claims } from "@/server/db/schema";
 import axios, { AxiosError, AxiosResponse } from "axios";
-import type { ISearchRequest, ISearchResponse } from "@/app/models/Search.model";
+import type { IBatchSearchRequest, IBatchSearchResponse, ISearchRequest, ISearchResponse } from "@/app/models/Search.model";
 
 export const searchWithConditions: (queryData: ISearchRequest) => Promise<AxiosResponse<ISearchResponse, unknown>> = async function (queryData: ISearchRequest) {
     return await axios.post(`https://fastapi-production-c0c6.up.railway.app/search`, queryData);
+}
+export const batchSearch: (queryData: IBatchSearchRequest) => Promise<AxiosResponse<IBatchSearchResponse, unknown>> = async function (queryData: IBatchSearchRequest) {
+    console.log(queryData)
+    return await axios.post(`https://fastapi-production-c0c6.up.railway.app/batch-claims`, queryData);
 }
 // perhaps some error handling
 // if (!statsRes.ok) {

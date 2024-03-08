@@ -65,7 +65,7 @@ export const users = pgTable("users", {
 	updatedAt: timestamp("updated_at", { mode: 'string' })
 });
 
-export const user_claims = pgTable("user_claims", {
+export const userClaims = pgTable("user_claims", {
 	id: uuid("id").default(sql`uuid_generate_v4()`).primaryKey().notNull(),
 	userId: uuid("user_id").references(() => users.id),
 	customerCode: varchar("customer_code", { length: 8 }).notNull(),
@@ -75,4 +75,5 @@ export const user_claims = pgTable("user_claims", {
 
 export type User = typeof users.$inferSelect; // return type when queried
 export type NewUser = typeof users.$inferInsert; // insert type
-export type NewUserClaim = typeof user_claims.$inferInsert; // insert type
+export type NewUserClaim = typeof userClaims.$inferInsert; // insert type
+export type Claims = typeof claims.$inferSelect; // return type when queried

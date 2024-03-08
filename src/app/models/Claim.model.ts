@@ -130,6 +130,50 @@ export class Claim implements IClaim {
     }
 }
 
+export class ClaimFromDrizzle implements IClaim {
+    customerCode: string;
+    contingentIndicator: Array<"Contingent" | "Unliquidated" | "Disputed">;
+    assets: IAsset[];
+    earnIndicator: boolean;
+    assetsLend: IAsset[] | null;
+    uuid: string;
+    totalPetitionValue: string;
+    totalLatestValue: string;
+
+    constructor(data: typeof ClaimSchema) {
+        // We safeParse here while our drizzle implementation is incomplete some fields are missing
+        let validatedData;
+        try {
+            validatedData = ClaimSchema.parse(data);
+        } catch (error) {
+            // surpress validation error while trpc is incomplete
+            validatedData = data;
+        }
+
+        // Explicitly map and assign properties
+        this.customerCode = validatedData.customer_code!;
+        this.contingentIndicator = validatedData.contingent_indicator;
+        this.assets = validatedData.token_fiat_nft_balance.map((item) => ({
+            name: item.name,
+            type: item.type,
+            balance: item.balance,
+            usdPetition: item.usd_petition,
+            usdLatest: item.usd_latest
+        }));
+        this.earnIndicator = validatedData.earn_indicator!;
+        this.assetsLend = validatedData.token_fiat_lend.map((item) => ({
+            name: item.name,
+            type: item.type,
+            balance: item.balance,
+            usdPetition: item.usd_petition,
+            usdLatest: item.usd_latest
+        }));
+        this.uuid = validatedData.uuid!;
+        this.totalPetitionValue = validatedData.total_petition_value!;
+        this.totalLatestValue = validatedData.total_latest_value!;
+    }
+}
+
 
 // Example usage (assuming dataFromApi is defined elsewhere, received in snake_case)
 // try {

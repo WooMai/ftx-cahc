@@ -31,3 +31,17 @@ export interface ISearchResponse {
     total_pages: number,
     total_records: number,
 }
+
+
+export interface IBatchSearchRequest {
+    customer_codes: string[];
+}
+
+export interface IBatchSearchResponse {
+    customer_count: number;
+    invalid_count: number;
+    not_found_count: number;
+    total_sum: string;
+    total_sum_latest: string;
+    claims: typeof ClaimSchema[];
+}

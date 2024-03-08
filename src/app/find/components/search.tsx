@@ -39,7 +39,7 @@ export function Search({ assets }: { assets: { name: string }[] }) {
   );
 }
 
-function SearchResults({
+export function SearchResults({
   searchConditions,
 }: {
   searchConditions: ISearchRequest;

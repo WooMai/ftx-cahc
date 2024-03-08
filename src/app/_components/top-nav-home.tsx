@@ -6,7 +6,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
-  { name: "In the Press", href: "#" },
+  { name: "My Claim Dashboard", href: "/dashboard" },
 ];
 
 export function TopNavHome() {
@@ -38,17 +38,30 @@ export function TopNavHome() {
             </svg>
           </Link>
         </div>
+
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-white"
-            >
-              {item.name}
-            </Link>
+            <>
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                {item.name}
+              </Link>
+            </>
           ))}
         </div>
+        <SignedIn>
+          <div className="sm:hidden">
+            <Link
+              href="/dashboard"
+              className="text-sm font-semibold leading-6 text-white"
+            >
+              Go to Claim Dashboard
+            </Link>
+          </div>
+        </SignedIn>
         <div className="lg:flex lg:flex-1 lg:justify-end">
           <SignedOut>
             <SignInButton mode="modal" afterSignInUrl="/dashboard">
