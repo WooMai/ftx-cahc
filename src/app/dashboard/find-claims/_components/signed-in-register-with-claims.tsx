@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
 import { CheckIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
+import { userRouter } from "@/server/api/routers/user";
 
 export const SignedInRegisterWithClaims = ({
   onCancel,
@@ -28,6 +29,8 @@ export const SignedInRegisterWithClaims = ({
 
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
   const removeClaim = useClaimsStore((state) => state.removeClaimWithCode);
+  const reset = useClaimsStore((state) => state.reset);
+  const router = useRouter();
 
   const [alreadyAdded, setAlreadyAdded] = useState(false);
 
@@ -44,7 +47,12 @@ export const SignedInRegisterWithClaims = ({
           return { userId: external_id, customerCode: claim.customerCode };
         },
       );
-      const result = await mutation.mutateAsync(buildRequestArray);
+
+      await mutation.mutateAsync(buildRequestArray);
+
+      // wipe the store
+      reset();
+      router.push("/dashboard");
     } catch (error: unknown) {
       // we handle the database validation error here
 
