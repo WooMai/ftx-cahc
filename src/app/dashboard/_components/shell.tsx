@@ -1,5 +1,6 @@
 "use client";
 import { Children, Fragment, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
@@ -18,30 +19,6 @@ import { TopNavHome } from "@/app/_components/top-nav-home";
 import { SignOutButton, UserButton } from "@clerk/nextjs";
 import { PgDateString } from "drizzle-orm/pg-core";
 
-const navigation = [
-  { name: "My Claim", href: "#", icon: HomeIcon, current: true },
-  {
-    name: "Find Claim",
-    href: "/dashboard/find",
-    icon: MagnifyingGlassIcon,
-    current: false,
-  },
-  // { name: "Objections", href: "#", icon: MegaphoneIcon, current: false },
-  {
-    name: "Send Letters",
-    href: "/dashboard/letters",
-    icon: EnvelopeIcon,
-    current: false,
-  },
-  // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
-  // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  {
-    name: "Recovery Analysis",
-    href: "/dashboard/analysis",
-    icon: ChartPieIcon,
-    current: false,
-  },
-];
 const teams = [
   {
     id: 1,
@@ -111,13 +88,42 @@ const dates = [
     description: "Solicitation exlcusivity expires",
   },
 ];
-function classNames(...classes) {
+function classNames(...classes: (string | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const pathname = usePathname();
+  const navigation = [
+    {
+      name: "My Claim",
+      href: "/dashboard",
+      icon: HomeIcon,
+      current: pathname.endsWith("/dashboard"),
+    },
+    {
+      name: "Find Claim",
+      href: "/dashboard/find-claims",
+      icon: MagnifyingGlassIcon,
+      current: pathname.endsWith("/dashboard/find-claims"),
+    },
+    // { name: "Objections", href: "#", icon: MegaphoneIcon, current: false },
+    // {
+    //   name: "Send Letters",
+    //   href: "/dashboard/letters",
+    //   icon: EnvelopeIcon,
+    //   current: pathname.endsWith("/dashboard/letters"),
+    // },
+    // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
+    // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
+    {
+      name: "Recovery Analysis",
+      href: "/dashboard/analysis",
+      icon: ChartPieIcon,
+      current: pathname.endsWith("/dashboard/analysis"),
+    },
+  ];
   return (
     <>
       <div>

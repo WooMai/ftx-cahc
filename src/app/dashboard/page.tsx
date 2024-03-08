@@ -1,11 +1,9 @@
-import { api } from "@/trpc/server";
 import { currentUser } from "@clerk/nextjs";
 
 import {
   dehydrate,
   HydrationBoundary,
   QueryClient,
-  useQuery,
 } from "@tanstack/react-query";
 import { MyClaims } from "./_components/my-claims";
 
@@ -67,6 +65,19 @@ export default async function Page() {
       <HydrationBoundary state={dehydrate(queryClient)}>
         <MyClaims userId={userId} />
       </HydrationBoundary>
+      <div className="flex flex-col-reverse justify-between py-5 sm:row-auto sm:flex-row">
+        <p className="text-md max-w-4xl text-center leading-8 text-stone-500 sm:text-left">
+          Verify ownership by logging in to claims.ftx.com{" "}
+          <span className="italic text-white">(coming soon)</span>
+        </p>
+        <button
+          type="button"
+          disabled
+          className="w-full cursor-not-allowed rounded-md bg-indigo-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:opacity-80 sm:w-auto"
+        >
+          Verify on ftx.com
+        </button>
+      </div>
       <div className="mt-20 border-t border-stone-700 pb-5 pt-10">
         <p className="text-md max-w-4xl text-stone-500">
           Thus far the FTX Debtors have proposed a value destructive plan.
