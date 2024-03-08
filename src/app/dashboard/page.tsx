@@ -8,7 +8,7 @@ import {
 import { MyClaims } from "./_components/my-claims";
 
 const stats = [
-  { name: "Customers Joined", value: "494" },
+  { name: "Customers Joined", value: "552" },
   { name: "Claims Represented", value: "$439,934,583", unit: "USD" },
 ];
 

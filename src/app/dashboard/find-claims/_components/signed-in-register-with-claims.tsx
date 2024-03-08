@@ -7,12 +7,10 @@ import { api } from "@/trpc/react";
 import {
   UserPlusIcon,
   ArrowTopRightOnSquareIcon,
-  EnvelopeIcon,
 } from "@heroicons/react/16/solid";
 import Link from "next/link";
 import { useClaimsStore } from "@/app/store/useClaimsStore";
-import { CheckIcon, ExclamationTriangleIcon } from "@heroicons/react/20/solid";
-import { userRouter } from "@/server/api/routers/user";
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 export const SignedInRegisterWithClaims = ({
   onCancel,

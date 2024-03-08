@@ -34,8 +34,8 @@
 //   );
 // }
 const stats = [
-  { name: "Customers Joined", stat: "455" },
-  { name: "Claim value", stat: "$423,340,064" },
+  { name: "Customers Joined", stat: "552" },
+  { name: "Claim value", stat: "$433,340,064" },
 ];
 
 export function CountStats() {
