@@ -2,15 +2,25 @@ import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { eq } from "drizzle-orm/expressions";
-import { count } from 'drizzle-orm'
+import { count, sum } from 'drizzle-orm'
 
-import { type User, users } from "@/server/db/schema";
+import { type User, users, claimsView } from "@/server/db/schema";
 import { userClaims } from "drizzle/schema";
 
 export const userRouter = createTRPCRouter({
     userCount: publicProcedure.query(async ({ ctx }) => {
-        const result: { value: number }[] = await ctx.db.select({ value: count() }).from(users);
-        return result[0] ? result[0].value : 0;
+        const result: { count: number }[] = await ctx.db.select({ count: count() }).from(users);
+        const result2: { count: string | null }[] = await ctx.db.select({ count: sum(claimsView.totalLatestValue) }).from(userClaims).innerJoin(claimsView, eq(userClaims.customerCode, claimsView.customerCode));
+        // turn result2 into currency
+        const number = parseInt(result2[0]!.count ?? '0');
+        const formattedValue = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            // Optional: specify the number of decimal places you want
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(number);
+        return { count: result[0]!.count, value: formattedValue };
     }),
     userById: publicProcedure.input(z.string()).query(async ({ input, ctx }) => {
         const result: User[] = await ctx.db.select().from(users).where(eq(users.id, input));

@@ -7,7 +7,6 @@ import { eq, sql } from "drizzle-orm";
 import { json } from "drizzle-orm/pg-core";
 
 import { claimAssetsView, claims, claimsView } from "@/server/db/schema";
-import { IClaimsResponse } from "@/app/models/Claim.model";
 
 export const claimRouter = createTRPCRouter({
 
@@ -16,7 +15,9 @@ export const claimRouter = createTRPCRouter({
             orderBy: (claims, { desc }) => [desc(claims.id)],
         });
     }),
-
+    getTotalMemberClaimValue: publicProcedure.query(async ({ ctx }) => {
+        return await ctx.db.select().from(userClaims).innerJoin(claimsView, eq(userClaims.customerCode, claimsView.customerCode)).limit(1);
+    }),
     getClaimsForUserWithId: publicProcedure.input(z.object({ userId: z.string() })).query(async ({ input, ctx }) => {
 
         // const results = await ctx.db.select().from(claims)
