@@ -1,23 +1,16 @@
 "use client";
-import { Children, Fragment, useState } from "react";
+import { Fragment, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  Bars3Icon,
-  CalendarIcon,
-  DocumentDuplicateIcon,
-  HomeIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChartPieIcon,
   EnvelopeIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import { Link } from "@/components/link";
-import { TopNavHome } from "@/app/_components/top-nav-home";
+
 import { SignOutButton, UserButton } from "@clerk/nextjs";
-import { PgDateString } from "drizzle-orm/pg-core";
 
 const teams = [
   {
@@ -255,7 +248,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                               </li>
                             ))}
                             <li key="sign-out">
-                              <SignOutButton>
+                              <SignOutButton redirectUrl="https://ftxvote.com">
                                 <a
                                   href="#"
                                   className="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400"
@@ -348,12 +341,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
                     ))}
                     <li key="sign-out">
                       <SignOutButton>
-                        <a
-                          href="#"
-                          className="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400"
-                        >
-                          <span className="truncate">Sign Out</span>
-                        </a>
+                        <span className="group flex cursor-pointer gap-x-3 truncate rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400">
+                          Sign Out
+                        </span>
                       </SignOutButton>
                     </li>
                   </ul>
