@@ -248,7 +248,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                               </li>
                             ))}
                             <li key="sign-out">
-                              <SignOutButton redirectUrl="https://ftxvote.com">
+                              <SignOutButton>
                                 <a
                                   href="#"
                                   className="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400"

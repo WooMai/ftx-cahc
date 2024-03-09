@@ -1,6 +1,5 @@
 "use client";
 import { api } from "@/trpc/react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 export function CountStats() {
   const { data, isLoading, error } = api.user.userCount.useQuery();
@@ -8,11 +7,11 @@ export function CountStats() {
   const stats = [
     {
       name: "Customers Joined",
-      stat: !isLoading && !error ? (data.count as number) : "",
+      stat: !isLoading && !error ? data!.count : "",
     },
     {
       name: "Claim value",
-      stat: !isLoading && !error ? (data.value as string) : "",
+      stat: !isLoading && !error ? data!.value : "",
     },
   ];
 

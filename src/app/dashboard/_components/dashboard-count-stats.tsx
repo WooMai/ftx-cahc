@@ -7,11 +7,11 @@ export const DashboardCountStats = () => {
   const stats = [
     {
       name: "Customers Joined",
-      stat: !isLoading && !error ? (data.count as number) : "",
+      stat: !isLoading && !error ? data!.count : "",
     },
     {
       name: "Claim value",
-      stat: !isLoading && !error ? (data.value as string) : "",
+      stat: !isLoading && !error ? data!.value : "",
     },
   ];
   return (
@@ -29,9 +29,6 @@ export const DashboardCountStats = () => {
               <span className="text-4xl font-semibold tracking-tight text-white">
                 {!isLoading && !error ? stat.stat : ""}&nbsp;
               </span>
-              {stat.unit ? (
-                <span className="text-sm text-stone-400">{stat.unit}</span>
-              ) : null}
             </p>
           </div>
         ))}
