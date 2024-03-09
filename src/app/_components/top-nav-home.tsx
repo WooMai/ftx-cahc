@@ -5,6 +5,7 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
+  { name: "SBF Sentencing", href: "/dashboard/victim-impact-statement" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
   { name: "My Claim Dashboard", href: "/dashboard" },
 ];
@@ -39,7 +40,7 @@ export function TopNavHome() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden sm:flex sm:gap-x-4 lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <>
               <Link
