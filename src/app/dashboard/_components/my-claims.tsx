@@ -6,6 +6,7 @@ import {
   ChevronRightIcon,
   MagnifyingGlassPlusIcon,
 } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 import type { Key } from "react";
 
@@ -77,15 +78,15 @@ export function MyClaims({ userId }: { userId: string }) {
   return (
     <div>
       {!myClaims || myClaims.length === 0 ? (
-        <button
-          type="button"
+        <Link
+          href="/dashboard/find-claims"
           className="relative block w-full rounded-lg border-2 border-dashed border-stone-600 p-12 text-center hover:border-stone-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
           <MagnifyingGlassPlusIcon className="mx-auto h-12 w-12 text-stone-300" />
           <span className="mt-2 block text-sm font-semibold text-stone-300">
             Find your claim to join the Customer Ad-Hoc Committee
           </span>
-        </button>
+        </Link>
       ) : (
         <>
           <ul
@@ -98,6 +99,18 @@ export function MyClaims({ userId }: { userId: string }) {
               return <ClaimItem key={idx} claimInstance={claimInstance} />;
             })}
           </ul>
+          <div className="flex flex-col-reverse justify-between py-5 sm:row-auto sm:flex-row">
+            <p className="text-md max-w-4xl text-center leading-8 text-stone-500 sm:text-left">
+              Verify ownership of this claim
+            </p>
+            <button
+              type="button"
+              disabled
+              className="w-full cursor-not-allowed rounded-md bg-indigo-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:opacity-80 sm:w-auto"
+            >
+              Verify on ftx.com (coming soon)
+            </button>
+          </div>
         </>
       )}
     </div>
