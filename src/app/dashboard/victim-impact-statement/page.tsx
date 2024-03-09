@@ -40,6 +40,11 @@ export default function VictimImpactStatementPage() {
               ,
               <br />
               <span className="font-mono text-white">
+                Wendy.Olsen@usdoj.gov
+              </span>
+              ,
+              <br />
+              <span className="font-mono text-white">
                 joseph@moskowitz-law.com
               </span>
               ,

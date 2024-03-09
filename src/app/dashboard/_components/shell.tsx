@@ -35,10 +35,10 @@ const dates = [
     description: "Disclosure Statement Due (Blown)",
   },
   {
-    YYYYMMDD: "2024-03-19",
-    dayMonthDate: "Mar 19",
+    YYYYMMDD: "2024-03-20",
+    dayMonthDate: "Mar 20",
     description: "Omnibus Hearing",
-    easternTime: "13:00 ET",
+    easternTime: "10:00 ET",
     cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
   },
   {
