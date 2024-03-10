@@ -3,8 +3,19 @@
 
 // We can not useState or useRef in a server component, which is why we are
 // extracting this part out into it's own file with 'use client' on top
-import { useState } from "react";
+import posthog from "posthog-js";
+import { PostHogProvider } from "posthog-js/react";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+if (typeof window !== "undefined") {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+  });
+}
+export function CSPostHogProvider({ children }) {
+  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
+}
 
 function makeQueryClient() {
   return new QueryClient({

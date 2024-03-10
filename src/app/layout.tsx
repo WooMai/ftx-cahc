@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { CSPostHogProvider } from "./providers";
 
 import { Inter } from "next/font/google";
 
@@ -40,13 +41,15 @@ export default function RootLayout({
       }}
     >
       <html lang="en" className="h-full bg-stone-950">
-        <body className={`h-full font-sans ${inter.variable}`}>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-          <div>
-            <Footer />
-          </div>
-          <div id="modal-root" />
-        </body>
+        <CSPostHogProvider>
+          <body className={`h-full font-sans ${inter.variable}`}>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+            <div>
+              <Footer />
+            </div>
+            <div id="modal-root" />
+          </body>
+        </CSPostHogProvider>
       </html>
     </ClerkProvider>
   );
