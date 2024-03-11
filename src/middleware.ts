@@ -6,7 +6,7 @@ export default authMiddleware({
     publicRoutes: ['/', '/find', '/api/trpc/user.userCreateWithClaims',
         '/api/trpc/user.userCount',
         '/api/trpc/claim.getTotalMemberClaimValue',
-        '/verification', '/dashboard/victim-impact-statement'],
+        '/verification', '/dashboard/victim-impact-statement', '/api/inngest'],
     // Routes that can always be accessed, and have
     // no authentication information
     ignoredRoutes: [],
