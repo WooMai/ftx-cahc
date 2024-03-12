@@ -50,8 +50,9 @@ export const SignUpWithClaims = ({
     setVerified(false);
     // Start the sign up flow, by collecting
     // the user's email address.
+
     await signUp.create({
-      emailAddress,
+      emailAddress: emailAddress.toLowerCase(),
       unsafeMetadata: { external_id: withUUID },
     });
     // Start the magic link flow.
@@ -96,7 +97,7 @@ export const SignUpWithClaims = ({
     // create user if doesn't already exist. throw error if user already exists
     try {
       const result = await mutation.mutateAsync({
-        user: { email: emailAddress, fullName: fullName },
+        user: { email: emailAddress.toLowerCase(), fullName: fullName },
         claims: selectedClaims,
       });
       if (!result)

@@ -99,9 +99,9 @@ export default async function Home() {
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
             With over{" "}
-            <span className="font-bold">400+ former FTX customers</span> holding{" "}
-            <span className="font-bold">9-figures in claims</span>, we have
-            formed the largest voting block in the FTX bankruptcy cases.
+            <span className="font-bold">1000+ former FTX customers</span>{" "}
+            holding <span className="font-bold">9-figures in claims</span>, we
+            have formed the largest voting block in the FTX bankruptcy cases.
             <br />
             <br />
             Our legal counsel{" "}
