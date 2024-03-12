@@ -10,7 +10,7 @@ import { DashboardCountStats } from "./_components/dashboard-count-stats";
 
 export default async function Page() {
   const { sessionClaims } = auth();
-  let userId: string | undefined | null = sessionClaims?.external_id;
+  let userId: string | undefined | null = sessionClaims?.external_id as string;
   console.log("userId found on auth", userId);
   if (typeof userId === "undefined" || userId === null) {
     // fetch user
