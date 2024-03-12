@@ -6,7 +6,7 @@ type AppUserCreated = {
         primary_email_address_id: string;
         email_addresses: {
             id: string;
-            email: string;
+            email_address: string;
         }[];
     };
 };

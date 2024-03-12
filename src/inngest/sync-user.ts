@@ -16,7 +16,7 @@ export const syncUser =
             }
             const email = user.email_addresses.find((e) =>
                 e.id === user.primary_email_address_id
-            )?.email;
+            )?.email_address;
             if (!email) {
                 console.log('webhook:sync-user-from-clerk:email-not-found', { id });
                 return; // If the user's primary email address is not found, we can't sync them

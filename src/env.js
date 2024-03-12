@@ -7,9 +7,6 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    INNGEST_SIGNING_KEY: z
-      .string()
-      .min(1),
     CLAIMS_API_HOST: z
     .string(),
     DATABASE_URL: z
@@ -41,7 +38,6 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
-    INNGEST_SIGNING_KEY: process.env.INNGEST_SIGNING_KEY,
     CLAIMS_API_HOST: process.env.CLAIMS_API_HOST,
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
