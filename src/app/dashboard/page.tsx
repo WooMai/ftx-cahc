@@ -1,4 +1,4 @@
-import { currentUser } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 
 import {
   dehydrate,
@@ -9,8 +9,23 @@ import { MyClaims } from "./_components/my-claims";
 import { DashboardCountStats } from "./_components/dashboard-count-stats";
 
 export default async function Page() {
-  const user = await currentUser();
-  const userId: string = user?.unsafeMetadata.external_id as string;
+  const { sessionClaims } = auth();
+  let userId: string | undefined | null = sessionClaims?.external_id;
+  console.log("userId found on auth", userId);
+  if (typeof userId === "undefined" || userId === null) {
+    // fetch user
+    const user = await currentUser();
+    userId = user?.publicMetadata.external_id as string | undefined;
+    console.log("userId found on public metadata", userId);
+    if (!userId) {
+      userId = user?.unsafeMetadata.external_id as string | undefined;
+      console.log("userId found on unsafe metadata", userId);
+    }
+    if (!userId) {
+      // if still no userId, error
+      console.error("No session claims found, no metadata found");
+    }
+  }
 
   const queryClient = new QueryClient();
 
@@ -35,9 +50,20 @@ export default async function Page() {
           Your Claim
         </h3>
       </div>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <MyClaims userId={userId} />
-      </HydrationBoundary>
+      {typeof userId !== "undefined" && (
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <MyClaims userId={userId} />
+        </HydrationBoundary>
+      )}
+      {!userId && (
+        <p className="text-md max-w-4xl text-center leading-8 text-rose-500">
+          Error `${JSON.stringify(sessionClaims)}`:, please contact us on{" "}
+          <a href="https://t.me/ftxcoalition" target="_blank">
+            Telegram
+          </a>{" "}
+          for support.
+        </p>
+      )}
 
       <div className="mt-20 border-t border-stone-700 pb-5 pt-10">
         <p className="text-md max-w-4xl text-stone-500">

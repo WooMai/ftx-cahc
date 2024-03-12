@@ -1,11 +1,6 @@
-import { api } from "@/trpc/server";
 import { currentUser } from "@clerk/nextjs";
 
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 const stats = [
   { name: "Estate Assets (est)", value: "$16.1", unit: "billion" },
@@ -21,8 +16,6 @@ const stats = [
 export default async function RecoveryAnalysis() {
   const user = await currentUser();
   const userId: string = user?.unsafeMetadata.external_id as string;
-
-  const queryClient = new QueryClient();
 
   return (
     <div className="mt-8">

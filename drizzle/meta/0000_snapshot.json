@@ -225,7 +225,16 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "user_claims_user_id_customer_code_unique": {
+          "columns": [
+            "user_id",
+            "customer_code"
+          ],
+          "nullsNotDistinct": false,
+          "name": "user_claims_user_id_customer_code_unique"
+        }
+      }
     },
     "users": {
       "name": "users",

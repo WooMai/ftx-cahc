@@ -165,7 +165,7 @@ export const SignUpWithClaims = ({
                 ))}
               </div>
               <p className="my-6 text-left text-sm text-stone-300">
-                Do you confirm, under penalty of purgery, that you are the owner
+                Do you confirm, under penalty of perjury, that you are the owner
                 of {selectedClaims.length > 1 ? "these claims?" : "this claim?"}
                 <br />
               </p>

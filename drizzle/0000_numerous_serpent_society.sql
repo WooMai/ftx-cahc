@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS "user_claims" (
 	"user_id" uuid,
 	"customer_code" varchar(8) NOT NULL,
 	"total_petition_value" varchar(255),
-	"created_at" timestamp DEFAULT now() NOT NULL
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "user_claims_user_id_customer_code_unique" UNIQUE("user_id","customer_code")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "users" (
