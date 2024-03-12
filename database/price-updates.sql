@@ -5,6 +5,7 @@ UPDATE "public"."digital_asset_prices" SET "snapshot_latest"='$3,949.8400000' WH
 UPDATE "public"."digital_asset_prices" SET "snapshot_latest"='$0.137700000' WHERE "id"='725569ea-b1df-4d21-abbd-e15d0bb2ba99' RETURNING "id", "name", "petition_price", "type", "snapshot_latest";
 UPDATE "public"."digital_asset_prices" SET "snapshot_latest"='$1.16' WHERE "id"='c9de7730-10a3-4319-93fa-a17e87c2e4b7' RETURNING "id", "name", "petition_price", "type", "snapshot_latest";
 UPDATE "public"."digital_asset_prices" SET "snapshot_latest"='$0.62580000' WHERE "id"='e8c1e95b-859d-461b-b616-feba76ba54f2' RETURNING "id", "name", "petition_price", "type", "snapshot_latest";
+UPDATE "public"."digital_asset_prices" SET "snapshot_latest"='$61.9053969' WHERE "id"='d87fe3c8-0f3e-490e-9a70-3c6c833cf1ca' RETURNING "id", "name", "petition_price", "type", "snapshot_latest";
 
 REFRESH MATERIALIZED VIEW claim_assets_with_values;
 REFRESH MATERIALIZED VIEW claims_totals;
