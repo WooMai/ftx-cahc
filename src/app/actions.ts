@@ -13,7 +13,13 @@ export const getAssets = async () => {
 export const insertUserFromClerk = async (email: string, clerkId: string) => {
     let insertedId;
     try {
-        const response = await db.insert(users).values({ email, clerkId }).returning({ insertedId: users.id });
+        const response = await db.insert(users)
+            .values({ email, clerkId })
+            .onConflictDoUpdate({
+                target: users.email,
+                set: { clerkId },
+            })
+            .returning({ insertedId: users.id });
         // response[0] could technically be undefined, but we know it's not unless someone broke something
         insertedId = response[0]?.insertedId;
 
