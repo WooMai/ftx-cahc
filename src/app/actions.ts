@@ -3,7 +3,6 @@ import { db } from "@/server/db";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
 import { digitalAssetPrices } from "drizzle/schema";
-import { err } from "node_modules/inngest/types";
 
 export const getAssets = async () => {
     const data = await db.selectDistinct({ name: digitalAssetPrices.name }).from(digitalAssetPrices).orderBy(digitalAssetPrices.name);
