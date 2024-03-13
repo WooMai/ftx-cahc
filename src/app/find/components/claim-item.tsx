@@ -24,14 +24,14 @@ export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
               <span className="font-semibold">
                 {claimInstance.customerCode}
               </span>
-              {claimInstance.earnIndicator ? (
+              {/* {claimInstance.earnIndicator ? (
                 <span
                   style={{ marginTop: -3 }}
                   className="ml-2 hidden rounded-md bg-cyan-800/50 px-2 py-1 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/25 sm:inline-block"
                 >
                   <span className="text-xs leading-5">Earn enabled</span>
                 </span>
-              ) : null}
+              ) : null} */}
               {claimInstance.contingentIndicator.length > 1
                 ? claimInstance.contingentIndicator.map((indicator, index) => (
                     <span
