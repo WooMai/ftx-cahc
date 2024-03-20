@@ -26,6 +26,14 @@ const navigation = {
       name: "CAHC Charter",
       href: "https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/view?usp=sharing",
     },
+    {
+      name: "Terms of Service",
+      href: "https://ftx-cahc.notion.site/Terms-of-Service-2e66cdc363324c648245f77b5ecbb7b3",
+    },
+    {
+      name: "Privacy Policy",
+      href: "https://ftx-cahc.notion.site/Privacy-Policy-5a0b5bdde3534dcba03ccd01bf88344d",
+    },
   ],
   company: [
     { name: "CAHC Telegram", href: "https://t.me/ftxcoalition" },
