@@ -60,6 +60,11 @@ const dates = [
     cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
   },
   {
+    YYYYMMDD: "2024-05-01",
+    dayMonthDate: "May 1",
+    description: "IRS Estimation Hearing",
+  },
+  {
     YYYYMMDD: "2024-05-12",
     dayMonthDate: "May 12",
     description: "Debtor Exclusivity Expires",
@@ -70,10 +75,9 @@ const dates = [
     description: "Omnibus Hearing",
     easternTime: "13:00 ET",
   },
-
   {
-    YYYYMMDD: "2024-05-15",
-    dayMonthDate: "May 15",
+    YYYYMMDD: "2024-06-15",
+    dayMonthDate: "June 15",
     description: "Bahamas Bar Date",
   },
   {
