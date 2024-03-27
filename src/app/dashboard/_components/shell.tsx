@@ -45,7 +45,7 @@ const dates = [
     YYYYMMDD: "2024-03-28",
     dayMonthDate: "Mar 28",
     description: "SBF Sentencing",
-    easternTime: "13:00 ET",
+    easternTime: "09:30 ET",
   },
   {
     YYYYMMDD: "2024-05-15",
