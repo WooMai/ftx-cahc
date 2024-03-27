@@ -52,9 +52,6 @@ export default function VictimImpactStatementPage() {
               <span className="font-mono text-white">
                 rejane@moskowitz-law.com
               </span>
-              <br />
-              <br />
-              before Mar 25th, 2024 to give them time to review
             </p>
           </div>
         </div>
