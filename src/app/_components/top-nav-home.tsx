@@ -5,7 +5,7 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Find Claim", href: "/find" },
-  { name: "SBF Sentencing", href: "/dashboard/victim-impact-statement" },
+  // { name: "SBF Sentencing", href: "/dashboard/victim-impact-statement" },
   { name: "Telegram", href: "https://t.me/ftxcoalition" },
   { name: "My Claim Dashboard", href: "/dashboard" },
 ];

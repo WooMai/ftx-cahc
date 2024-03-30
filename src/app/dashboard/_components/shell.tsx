@@ -112,12 +112,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
       current: pathname.endsWith("/dashboard/find-claims"),
     },
     // { name: "Objections", href: "#", icon: MegaphoneIcon, current: false },
-    {
-      name: "Victim Impact Statement",
-      href: "/dashboard/victim-impact-statement",
-      icon: EnvelopeIcon,
-      current: pathname.endsWith("/dashboard/victim-impact-statement"),
-    },
+    // {
+    //   name: "Victim Impact Statement",
+    //   href: "/dashboard/victim-impact-statement",
+    //   icon: EnvelopeIcon,
+    //   current: pathname.endsWith("/dashboard/victim-impact-statement"),
+    // },
     // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
     // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
     {

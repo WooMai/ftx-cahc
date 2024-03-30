@@ -207,10 +207,9 @@ export const SignUpWithClaims = ({
                 />
               </div>
               <p className="py-4 text-left text-sm text-stone-300">
-                By confirming you agree to joining the CAHC plaintiffs in
-                defending your property rights, to publish your name (no other
-                personal info) in the 2019 declaration to the court, and to
-                abide by our{" "}
+                By confirming you agree to the CAHC defending your property
+                rights, to publish your name in a declaration to the court, to
+                receive emails and to abide by our{" "}
                 <Link
                   href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
                   className="text-indigo-300 underline"
