@@ -7,6 +7,8 @@ import {
 } from "@tanstack/react-query";
 import { MyClaims } from "./_components/my-claims";
 import { DashboardCountStats } from "./_components/dashboard-count-stats";
+import { Link } from "@/components/link";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
 
 export default async function Page() {
   const { sessionClaims } = auth();
@@ -64,10 +66,40 @@ export default async function Page() {
           for support.
         </p>
       )}
-
-      <div className="mt-20 border-t border-stone-700 pb-5 pt-10">
+      <div className="pt-10">
+        <h3 className="text-base font-semibold leading-6 text-stone-200">
+          Now what?
+        </h3>
+        <br />
         <p className="text-md max-w-4xl text-stone-500">
+          Join the{" "}
+          <Link
+            href="https://t.me/ftxcoalition"
+            className="text-indigo-300 underline"
+            target="_blank"
+          >
+            Telegram
+            <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-3 w-3" />
+          </Link>{" "}
+          group.
+          <br />
+          <br />
+          Look out for emails from{" "}
+          <span className="text-white"> updates@ftxvote.com</span> for further
+          instructions.
+          <br />
+          <br />
+          We will be releasing more information on how to navigate the
+          bankruptcy process soon.
+        </p>
+      </div>
+      <div className="mt-10 border-t border-stone-700 pb-5 pt-10">
+        <h3 className="text-base font-semibold leading-6 text-stone-200">
+          About us
+        </h3>
+        <p className="text-md mt-10 max-w-4xl text-stone-500">
           Thus far the FTX Debtors have proposed a value destructive plan.
+          <br />
           <br />
           Since the Unsecured Creditors Committee has a fiduciary duty to all
           unsecured creditors including Alameda creditors, they are unable to
