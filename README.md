@@ -1,6 +1,6 @@
 # ftxvote.com
 
-This is the application powering [ftxvote.com](https://ftxvote.com). Your contributions are very welcome, take a look at the [open issues](https://github.com/arush/ftx-cahc/issues) and submit a PR.
+This is the application powering [ftxvote.com](https://ftxvote.com). Your contributions are very welcome, take a look at the [Contributing PRs](https://github.com/arush/ftx-cahc?tab=readme-ov-file#contributing-prs) for how.
 
 ## Discord
 
