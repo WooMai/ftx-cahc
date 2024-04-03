@@ -21,9 +21,19 @@ We run postgres and the nextjs server on Railway, Customer.io for emails, Postho
 
 ## How do I develop on this locally?
 
-First set up a new postgres database locally. You can use `psql` like this. Make sure to replace with your postgres username that has permissions to createdb.
+First set up a new postgres database locally. You can either run `start_database.sh` to run a db in docker, but that can be slow and resource intensive. I prefer to [install postgres](https://www.postgresql.org/download/) and `psql` directly into it without docker.
 
-### Setup local database
+### Setup local database without docker
+
+You can use `psql` like this. Make sure to replace with your postgres username that has permissions to createdb.
+
+Login
+
+```
+psql -h hostname -d databasename -U username -p portnumber
+```
+
+Create the database if you haven't already
 
 ```
 createdb -U username ftx
