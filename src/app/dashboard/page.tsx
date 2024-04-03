@@ -81,16 +81,9 @@ export default async function Page() {
             Telegram
             <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-3 w-3" />
           </Link>{" "}
-          group.
-          <br />
-          <br />
-          Look out for emails from{" "}
+          group. Look out for emails from{" "}
           <span className="text-white"> updates@ftxvote.com</span> for further
           instructions.
-          <br />
-          <br />
-          We will be releasing more information on how to navigate the
-          bankruptcy process soon.
         </p>
       </div>
       <div className="mt-10 border-t border-stone-700 pb-5 pt-10">
