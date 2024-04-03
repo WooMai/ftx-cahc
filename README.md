@@ -7,8 +7,6 @@ This is the application powering [ftxvote.com](https://ftxvote.com). Your contri
 We have a discord for developers and customer support. Please join our [Discord](https://discord.gg/RfYm9S8g).
 We also have a [Telegram group](https://t.me/ftxcoalition) with over 3000 people.
 
-## What's next? How do I make an app with this?
-
 ## What technologies are used
 
 If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind,
