@@ -9,7 +9,7 @@ We also have a [Telegram group](https://t.me/ftxcoalition) with over 3000 people
 
 ## What technologies are used
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind,
+If you are not familiar with the different technologies used in this project, please refer to the respective docs.
 
 - [Next.js](https://nextjs.org) - App Router
 - [Clerk](https://clerk.com)
