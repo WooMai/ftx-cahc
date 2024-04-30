@@ -1,60 +1,64 @@
+import { useTranslations } from "next-intl";
+
 const navigation = {
   solutions: [
     {
-      name: "Adversary Proceeding",
+      name: "adversary_proceeding",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA1NjA5Mg==&id2=-1",
     },
     {
-      name: "Anthropic Objection",
+      name: "anthropic_objection",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA2Nzk0MA==&id2=-1",
     },
     {
-      name: "Estimation Objection",
+      name: "estimation_objection",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MzA2Nzk0MA==&id2=-1",
     },
     {
-      name: "Letter to UCC",
+      name: "letter_to_ucc",
       href: "https://ftx-cahc.notion.site/CAHC-Charter-ddcecf6857ba44cd970b3afc5ccc26ca",
     },
   ],
   support: [
     {
-      name: "CAHC Bylaws",
+      name: "cahc_bylaws",
       href: "https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing",
     },
     {
-      name: "CAHC Charter",
+      name: "cahc_charter",
       href: "https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/view?usp=sharing",
     },
     {
-      name: "Terms of Service",
+      name: "terms_of_service",
       href: "https://ftx-cahc.notion.site/Terms-of-Service-2e66cdc363324c648245f77b5ecbb7b3",
     },
     {
-      name: "Privacy Policy",
+      name: "privacy_policy",
       href: "https://ftx-cahc.notion.site/Privacy-Policy-5a0b5bdde3534dcba03ccd01bf88344d",
     },
   ],
   company: [
-    { name: "CAHC Telegram", href: "https://t.me/ftxcoalition" },
+    { name: "cahc_telegram", href: "https://t.me/ftxcoalition" },
     {
-      name: "CAHC Twitter",
+      name: "cahc_twitter",
       href: "https://x.com/sunil_trades/status/1763120860829716758?s=20",
     },
   ],
   legal: [
     {
-      name: "Debtor's Plan",
+      name: "debtors_plan",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MjYxMDM2Mw==&id2=-1",
     },
     {
-      name: "Disclosure Statement",
+      name: "disclosure_statement",
       href: "https://restructuring.ra.kroll.com/FTX/Home-DownloadPDF?id1=MjYxMDM2NA==&id2=-1",
     },
   ],
 };
 
 export function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer
       className="relative z-0 bg-stone-950 sm:z-50"
@@ -86,7 +90,7 @@ export function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Court Filings
+                  {t("court_filings")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
@@ -96,7 +100,7 @@ export function Footer() {
                         target="_blank"
                         className="text-sm leading-6 text-gray-300 hover:text-white"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -104,7 +108,7 @@ export function Footer() {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Documents
+                  {t("documents")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
@@ -114,7 +118,7 @@ export function Footer() {
                         target="_blank"
                         className="text-sm leading-6 text-gray-300 hover:text-white"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -124,7 +128,7 @@ export function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Links
+                  {t("links")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
@@ -134,7 +138,7 @@ export function Footer() {
                         href={item.href}
                         className="text-sm leading-6 text-gray-300 hover:text-white"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}
@@ -142,7 +146,7 @@ export function Footer() {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Debtors Filings
+                  {t("debtors_filings")}
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
@@ -151,7 +155,7 @@ export function Footer() {
                         href={item.href}
                         className="text-sm leading-6 text-gray-300 hover:text-white"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </a>
                     </li>
                   ))}

@@ -1,9 +1,9 @@
 {
-  "Index": {
-    "title": "Vote NO to John Ray's plan",
+  "Home": {
+    "title": "Join the FTX Customer Ad-Hoc Committee (CAHC) and Vote: NO",
     "latest_news": "Latest News",
     "latest": "Latest",
-    "latest_news_content": "May 2: FTX Debtors plan pays IRS with customer assets",
+    "latest_news_content": "Mar 6: FTX Debtors request 4 month delay, pay US Gov with customer assets",
     "description_part1": "With over",
     "former_ftx_customers": "1000+ former FTX customers",
     "description_part2": "holding",
@@ -23,5 +23,48 @@
     "to_learn_more": "to learn more.",
     "find_your_ftx_claim": "Find your FTX claim",
     "to_get_started": "to get started"
+  },
+  "CountStats": {
+    "stat1": "Customers Joined",
+    "stat2": "Total Claims"
+  },
+  "FightingFor": {
+    "issues_with_current_plan": "Issues with current plan",
+    "we_vote_no": "We vote 'no' on any plan unless the following issues are addressed",
+    "debtors_filed_plan": "The debtors have filed a half-baked and value-destructive plan. We aim to fix it by litigating our property rights and negotiating for common sense solutions like those below.",
+    "priority_for_customers": "Priority for customers.",
+    "priority_for_customers_desc": "If the current plan stands, upside goes to non-customers even from proceeds that were 100% traced to customer wallets, like Anthropic.",
+    "theft_of_property_damages": "Theft of property damages.",
+    "theft_of_property_damages_desc": "Customers should recover today's valuation of their crypto assets due to theft of property.",
+    "no_withholding_tax": "No 30% withholding tax.",
+    "no_withholding_tax_desc": "Since the large majority of customers are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
+    "digital_distributions": "Digital distributions.",
+    "digital_distributions_desc": "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries."
+  },
+  "TopNav": {
+    "home": "Home",
+    "find_claim": "Find Claim",
+    "telegram": "Telegram",
+    "my_claim_dashboard": "My Claim Dashboard",
+    "dashboard": "Dashboard",
+    "sign_in": "Sign In"
+  },
+  "Footer": {
+    "court_filings": "Court Filings",
+    "adversary_proceeding": "Adversary Proceeding",
+    "anthropic_objection": "Anthropic Objection",
+    "estimation_objection": "Estimation Objection",
+    "letter_to_ucc": "Letter to UCC",
+    "documents": "Documents",
+    "cahc_bylaws": "CAHC Bylaws",
+    "cahc_charter": "CAHC Charter",
+    "terms_of_service": "Terms of Service",
+    "privacy_policy": "Privacy Policy",
+    "links": "Links",
+    "cahc_telegram": "CAHC Telegram",
+    "cahc_twitter": "CAHC Twitter",
+    "debtors_filings": "Debtors Filings",
+    "debtors_plan": "Debtor's Plan",
+    "disclosure_statement": "Disclosure Statement"
   }
 }

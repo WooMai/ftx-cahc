@@ -16,7 +16,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
   noStore();
-  const t = await getTranslations("Index");
+  const t = await getTranslations("Home");
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-stone-950">
@@ -73,7 +73,7 @@ export default async function Home() {
         <div className="mx-auto max-w-2xl pb-20 text-center">
           <div className="sm:mt-24 sm:block lg:mt-16">
             <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20 sm:hidden">
-              Latest News
+              {t("latest_news")}
             </span>
             <a
               href="https://x.com/MHE_BE3ET/status/1765258417890033876?s=20"
@@ -81,13 +81,10 @@ export default async function Home() {
               className="mb-10 inline-flex space-x-6"
             >
               <span className="hidden rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-400 ring-1 ring-inset ring-indigo-500/20 sm:inline">
-                Latest
+                {t("latest")}
               </span>
               <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
-                <span>
-                  Mar 6: FTX Debtors request 4 month delay, pay US Gov with
-                  customer assets
-                </span>
+                <span>{t("latest_news_content")}</span>
                 <ChevronRightIcon
                   className="h-5 w-5 text-gray-500"
                   aria-hidden="true"
@@ -101,48 +98,48 @@ export default async function Home() {
             <br />
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            With over{" "}
-            <span className="font-bold">1000+ former FTX customers</span>{" "}
-            holding <span className="font-bold">9-figures in claims</span>, we
-            have formed the largest voting block in the FTX bankruptcy cases.
+            {t("description_part1")}{" "}
+            <span className="font-bold">{t("former_ftx_customers")}</span>{" "}
+            {t("description_part2")}{" "}
+            <span className="font-bold">{t("claims_amount")}</span>,{" "}
+            {t("description_part3")}
             <br />
             <br />
-            Our legal counsel{" "}
-            <span className="font-bold">McCarter & English, LLP</span> have
-            filed customer property litigation:{" "}
+            {t("legal_counsel")}{" "}
+            <span className="font-bold">{t("legal_counsel_name")}</span>{" "}
+            {t("legal_counsel_action")}{" "}
             <Link
               className="text-indigo-300 underline"
               href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo"
               target="_blank"
             >
-              docket 6863
+              {t("docket_number")}
               <ArrowTopRightOnSquareIcon className="mb-1 ml-1  inline h-4 w-4" />
             </Link>
           </p>
           <hr className="mt-10 opacity-20" />
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            Join us in voting &apos;no&apos; on any plan that fails to addresses
-            serious issues impacting recovery of customer property.
+            {t("join_us_part1")}&apos;{t("no")}&apos;{t("join_us_part2")}
             <br />
-            Read our{" "}
+            {t("read_our")}{" "}
             <Link
               href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
               className="text-indigo-300 underline"
               target="_blank"
             >
-              bylaws
+              {t("bylaws")}
               <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
             </Link>{" "}
-            and{" "}
+            {t("and")}{" "}
             <Link
               href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing"
               target="_blank"
               className="text-indigo-300 underline"
             >
-              charter
+              {t("charter")}
               <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
             </Link>{" "}
-            to learn more.
+            {t("to_learn_more")}
           </p>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
@@ -150,10 +147,10 @@ export default async function Home() {
               href="/find"
               className="w-full rounded-md bg-indigo-500 px-5 py-2.5 text-sm font-semibold leading-loose text-white shadow-inner shadow-lg shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 sm:w-fit"
             >
-              Find your FTX claim <span aria-hidden="true">→</span>
+              {t("find_your_ftx_claim")} <span aria-hidden="true">→</span>
             </Link>
             <span className="block py-2 text-sm leading-loose text-white opacity-30 sm:inline-block sm:opacity-100">
-              to get started
+              {t("to_get_started")}
             </span>
           </div>
           <div className="my-20">

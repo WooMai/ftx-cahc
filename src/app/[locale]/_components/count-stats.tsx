@@ -1,16 +1,18 @@
 "use client";
 import { api } from "@/trpc/react";
+import { NextIntlClientProvider, useTranslations } from "next-intl";
 
 export function CountStats() {
+  const t = useTranslations("CountStats");
   const { data, isLoading, error } = api.user.userCount.useQuery();
 
   const stats = [
     {
-      name: "Customers Joined",
+      name: t("stat1"),
       stat: !isLoading && !error ? data!.count : "",
     },
     {
-      name: "Claim value",
+      name: t("stat2"),
       stat: !isLoading && !error ? data!.value : "",
     },
   ];

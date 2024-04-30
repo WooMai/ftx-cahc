@@ -2,16 +2,18 @@
 import { Link } from "@/components/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { LanguageSelector } from "./language-selector";
+import { useTranslations } from "next-intl";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Find Claim", href: "/find" },
-  // { name: "SBF Sentencing", href: "/dashboard/victim-impact-statement" },
-  { name: "Telegram", href: "https://t.me/ftxcoalition" },
-  { name: "My Claim Dashboard", href: "/dashboard" },
+  { name: "home", href: "/" },
+  { name: "find_claim", href: "/find" },
+  { name: "telegram", href: "https://t.me/ftxcoalition" },
+  { name: "my_claim_dashboard", href: "/dashboard" },
 ];
 
 export function TopNavHome() {
+  const t = useTranslations("TopNav");
+
   return (
     <header className="bg-transparent">
       <nav
@@ -52,7 +54,7 @@ export function TopNavHome() {
                 href={item.href}
                 className="text-sm font-semibold leading-6 text-white"
               >
-                {item.name}
+                {t(item.name)}
               </Link>
             </>
           ))}
@@ -63,7 +65,7 @@ export function TopNavHome() {
               href="/dashboard"
               className="text-sm font-semibold leading-6 text-white"
             >
-              Dashboard
+              {t("dashboard")}
             </Link>
           </div>
         </SignedIn>
@@ -71,23 +73,13 @@ export function TopNavHome() {
           <SignedOut>
             <SignInButton mode="modal" afterSignInUrl="/dashboard">
               <span className="cursor-pointer text-sm leading-6 text-white">
-                Sign In
+                {t("sign_in")}
               </span>
             </SignInButton>
           </SignedOut>
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
-
-          {/* {isLoaded && userId && ( 
-            
-            // <Link
-            //   href="#"
-            //   className="text-sm font-semibold leading-6 text-white"
-            // >
-            //   Sign out <span aria-hidden="true">&rarr;</span>
-            // </Link>
-          // )}*/}
         </div>
       </nav>
     </header>

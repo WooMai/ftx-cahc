@@ -3,15 +3,10 @@ import { Fragment, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Dialog, Transition } from "@headlessui/react";
 import { Bars3Icon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  ChartPieIcon,
-  EnvelopeIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/20/solid";
+import { ChartPieIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Link } from "@/components/link";
 
 import { SignOutButton, UserButton } from "@clerk/nextjs";
-import { LanguageSelector } from "@/app/[locale]/_components/language-selector";
 
 const teams = [
   {
@@ -56,7 +51,7 @@ const dates = [
   {
     YYYYMMDD: "2024-04-18",
     dayMonthDate: "Apr 18",
-    description: "Omnibus Hearing",
+    description: "Hearing Cancelled",
     easternTime: "13:00 ET",
     cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
   },
@@ -72,7 +67,7 @@ const dates = [
   },
   {
     YYYYMMDD: "2024-05-15",
-    dayMonthDate: "May 15",
+    dayMonthDate: "May 23",
     description: "Omnibus Hearing",
     easternTime: "13:00 ET",
   },
