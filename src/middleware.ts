@@ -1,12 +1,40 @@
 import { NextResponse } from "next/server";
 import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
+import createMiddleware from "next-intl/middleware";
+
+const locales = ["en", "cn"];
+
+
+const intlMiddleware = createMiddleware({
+    locales: locales,
+    defaultLocale: "en",
+});
+
 
 export default authMiddleware({
+    beforeAuth: (req) => {
+
+        const { pathname } = req.nextUrl;
+
+        const shouldHandle = pathname === '/'
+            || pathname.startsWith('/find')
+            || pathname.startsWith('/dashboard')
+            || pathname.startsWith('/verification')
+            || new RegExp(`^/(${locales.join('|')})(/.*)?$`).test(req.nextUrl.pathname);
+        if (!shouldHandle) return;
+
+        // Execute next-intl middleware before Clerk's auth middleware
+        return intlMiddleware(req);
+    },
+
+
     // Routes that can be accessed while signed out
-    publicRoutes: ['/', '/find', '/api/trpc/user.userCreateWithClaims',
+    publicRoutes: ['/:locale', '/:locale/find',
+        '/api/trpc/user.userCreateWithClaims',
         '/api/trpc/user.userCount',
         '/api/trpc/claim.getTotalMemberClaimValue',
-        '/verification', '/dashboard/victim-impact-statement', '/api/inngest'],
+        '/api/inngest',
+        '/:locale/verification',],
     // Routes that can always be accessed, and have
     // no authentication information
     ignoredRoutes: [],
@@ -27,8 +55,8 @@ export default authMiddleware({
         //     return NextResponse.redirect(orgSelection);
         // }
 
-        if (auth.userId && req.nextUrl.pathname === "/find") {
-            return NextResponse.rewrite(new URL('/dashboard/find-claims', req.url))
+        if (auth.userId && req.nextUrl.pathname === "/:locale/find") {
+            return NextResponse.rewrite(new URL('/:locale/dashboard/find-claims', req.url))
         }
 
         // If the user is signed in and trying to access a protected route, allow them to access route

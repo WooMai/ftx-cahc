@@ -1,4 +1,4 @@
-import { insertUserFromClerk } from "@/app/actions";
+import { insertUserFromClerk } from "@/app/[locale]/actions";
 import { inngest } from "@/inngest/client";
 import { clerkClient } from "@clerk/nextjs/server";
 // import { api } from "@/trpc/server";
