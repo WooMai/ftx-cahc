@@ -1,15 +1,13 @@
 "use client";
-import React, { useState } from "react";
-import type { SetStateAction } from "react";
+import type {SetStateAction} from "react";
+import React, {useState} from "react";
 
-import type {
-  ISearchCondition,
-  ISearchRequest,
-} from "@/app/[locale]/models/Search.model";
-import { PlusIcon } from "@heroicons/react/20/solid";
-import { MinusIcon } from "@heroicons/react/16/solid";
+import type {ISearchCondition, ISearchRequest,} from "@/app/[locale]/models/Search.model";
+import {PlusIcon} from "@heroicons/react/20/solid";
+import {MinusIcon} from "@heroicons/react/16/solid";
 import SelectAsset from "@/app/[locale]/_components/select-asset";
-import { defaultSearchPayload } from "@/app/[locale]/_components/default-search-payload";
+import {defaultSearchPayload} from "@/app/[locale]/_components/default-search-payload";
+import {useTranslations} from "next-intl";
 
 export function SearchForm({
   assets,
@@ -20,6 +18,7 @@ export function SearchForm({
   searchConditions: ISearchRequest;
   performSearch: (arg0: SetStateAction<ISearchRequest>) => Promise<void>;
 }) {
+  const t = useTranslations("SearchForm");
   const [numConditions, setNumConditions] = useState<number>(1);
 
   const addCondition = () => {
@@ -70,7 +69,7 @@ export function SearchForm({
     <div className="bg-stone-800 shadow-xl ring-1 ring-stone-700 sm:rounded-xl">
       <div className="px-4 py-2 sm:p-6">
         <div className="mt-2 max-w-xl text-sm text-stone-400">
-          <p>Specify roughly how many tokens you had to identify your claim.</p>
+          <p>{t('description')}</p>
         </div>
 
         <div className="">
@@ -102,7 +101,7 @@ export function SearchForm({
                             htmlFor={`conditions-${index}-min_balance`}
                             className="block text-xs font-medium text-stone-400"
                           >
-                            Minimum
+                            {t("minimum")}
                           </label>
                           <input
                             type="number"
@@ -121,7 +120,7 @@ export function SearchForm({
                             htmlFor={`conditions-${index}-max_balance`}
                             className="block text-xs font-medium text-stone-400"
                           >
-                            Maximum
+                            {t("maximum")}
                           </label>
                           <input
                             id={`conditions-${index}-max_balance`}
@@ -143,7 +142,7 @@ export function SearchForm({
                   className="mb-4 mt-10 inline-flex items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
                   type="submit"
                 >
-                  Search
+                  {t("search")}
                 </button>
               </form>
             </div>

@@ -1,25 +1,28 @@
-import { Search } from "@/app/[locale]/find/components/search";
-import { getAssets } from "@/app/[locale]/actions";
+import {Search} from "@/app/[locale]/find/components/search";
+import {getAssets} from "@/app/[locale]/actions";
 
-import { Link } from "@/components/link";
-import { SignedInRegisterClaim } from "./_components/signed-in-register-claim";
+import {Link} from "@/components/link";
+import {SignedInRegisterClaim} from "./_components/signed-in-register-claim";
+import {getTranslations} from "next-intl/server";
+import {LanguageSelector} from "@/app/[locale]/_components/language-selector";
 
 export default async function Find() {
   const assets = await getAssets();
+  const t = await getTranslations('Find');
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden  bg-stone-900">
+      <div className="my-8 w-24">
+        <LanguageSelector/>
+      </div>
       <h3 className="mb-6 mt-8 text-base font-semibold leading-6 text-stone-200">
-        Find a claim
+        {t("title")}
       </h3>
       <p className="text-md max-w-4xl text-stone-500">
         <span className="">
-          For us to represent your voice in court, you must register your claim
-          with us. If your claim shows correctly in{" "}
-          <Link className="text-stone-300" href="/dashboard">
-            My Claims
-          </Link>{" "}
-          then you don{"'"}t need to do anything.
+            {t.rich('subtitle', {
+              MyClaims: text => <Link className="text-stone-300 whitespace-nowrap" href="/dashboard">{text}</Link>
+            })}
         </span>
       </p>
       <div className="">

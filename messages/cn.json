@@ -66,5 +66,58 @@
     "debtors_filings": "债务人文件",
     "debtors_plan": "债务人计划",
     "disclosure_statement": "披露声明"
+  },
+  "Shell": {
+    "my_claim": "我的索赔",
+    "find_claim": "查找索赔",
+    "recovery_analysis": "恢复率分析",
+    "sign_out": "退出账号",
+    "important_dates": "重要时间节点"
+  },
+  "Dashboard": {
+    "title": "欢迎来到 FTX 客户特设委员会投票团体",
+    "subtitle": "已经有拥有数亿美元的索赔价值的超过1000名前FTX客户加入了我们。",
+    "claim_list_title": "已注册的索赔",
+    "now_what": "接下来怎么做？",
+    "now_what_text": "加入我们的 <telegram>Telegram</telegram> 群组。来自 <white>updates@ftxvote.com</white> 的电子邮件将会及时通知您更多消息。",
+    "about_us": "关于我们",
+    "about_us_text": "目前 FTX 债务人提交了一个将会使 FTX 客户损失价值的计划。\n\n由于无担保债权人委员会 (UCC) 对包含 Alameda 债权人在内的所有无担保债权人负责，因此他们无法仅代表 FTX 客户进行抗争。由于 Eversheds 的特设委员会已经同意解决诉讼，现在与债权人站在同一边，所以也无法帮助我们。\n\n由于加密市场上涨，预计最终将会实现超过 100% 破产日的价值。但是 FTX 债务人计划使用出售客户资产的所得来支付给非客户和美国政府机构，而不是将盈余分配给客户。\n\n法官要求我们正式组织起来，以便能够在法庭上考虑我们的观点。"
+  },
+  "MyClaims": {
+    "customer_code_long": "客户代码",
+    "customer_code_short": "客户代码",
+    "petition_value": "破产时价值",
+    "today_value": "当前价值",
+    "verify_claim_text": "验证该索赔的所有权",
+    "verify_claim_btn": "在 FTX 门户上验证 (尚未开放)"
+  },
+  "CoinsList": {
+    "th_asset": "资产",
+    "th_balance": "金额",
+    "th_petition": "破产时价值 (USD)",
+    "th_today": "当前价值 (USD)",
+    "coin_type": {
+      "token": "代币"
+    }
+  },
+  "ThisIsMyClaim": {
+    "text": "注册该索赔以加入我们",
+    "btn": "这是我的索赔"
+  },
+  "Find": {
+    "title": "查找索赔",
+    "subtitle": "为了让我们能够在法庭上代表您的声音，您需要向我们注册您的 FTX 索赔。如果您的索赔已经正确显示在 <MyClaims>我的索赔</MyClaims> 中，则代表您目前已准备就绪。请留意我们通过邮件向您发送的通知以获取最新消息。"
+  },
+  "SearchForm": {
+    "description": "输入您持有的代币数量范围以查找您的索赔。",
+    "asset": "资产",
+    "minimum": "最小金额",
+    "maximum": "最大金额",
+    "search": "搜索",
+    "search_loading": "正在从数百万个索赔中查找..."
+  },
+  "RecoveryAnalysis": {
+    "title": "恢复率分析",
+    "subtitle": "FTX 遗产当前拥有的资产价值远多于按破产申请日期价格计算的客户资产，这将会导致超过 1:1 的资产返还。"
   }
 }
