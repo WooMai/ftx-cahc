@@ -62,7 +62,7 @@ export const LanguageSelector = function () {
             </g>
           </svg>
         </div>
-        <ListboxLabel>CN</ListboxLabel>
+        <ListboxLabel>中文</ListboxLabel>
       </ListboxOption>
     </Listbox>
   );

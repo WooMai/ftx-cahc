@@ -66,5 +66,58 @@
     "debtors_filings": "Debtors Filings",
     "debtors_plan": "Debtor's Plan",
     "disclosure_statement": "Disclosure Statement"
+  },
+  "Shell": {
+    "my_claim": "My Claim",
+    "find_claim": "Find Claim",
+    "recovery_analysis": "Recovery Analysis",
+    "sign_out": "Sign Out",
+    "important_dates": "Important Dates"
+  },
+  "Dashboard": {
+    "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
+    "subtitle": "We have now formed the largest voting block with hundreds of members and 9-figures in claims.",
+    "claim_list_title": "Your Claim",
+    "now_what": "Now What?",
+    "now_what_text": "Join the <telegram>Telegram</telegram> group. Look out for emails from <white>updates@ftxvote.com</white> for further instructions.",
+    "about_us": "About us",
+    "about_us_text": "Thus far the FTX Debtors have proposed a value destructive plan.\n\nSince the Unsecured Creditors Committee has a fiduciary duty to all unsecured creditors including Alameda creditors, they are unable to fight on behalf of only FTX customers. Nor is the Ad Hoc Committee counseled by Eversheds an option, as they already agreed to settle their litigation and are now bound to support the debtors.\n\nThe estate is due to recover well over 100% petition date value and instead of accruing the surplus back to customers, the debtors plan to use our assets to pay non-customers and US government regulators instead.\n\nThe judge requires us to formally organize in order for our point of view to be considered in court."
+  },
+  "MyClaims": {
+    "customer_code_long": "Customer code",
+    "customer_code_short": "Code",
+    "petition_value": "Petition value",
+    "today_value": "Today's value",
+    "verify_claim_text": "Verify ownership of this claim",
+    "verify_claim_btn": "Verify on ftx.com (coming soon)"
+  },
+  "CoinsList": {
+    "th_asset": "Asset",
+    "th_balance": "Balance",
+    "th_petition": "Petition USD",
+    "th_today": "Today's USD",
+    "coin_type": {
+      "token": "token"
+    }
+  },
+  "ThisIsMyClaim": {
+    "text": "Register this claim to get started",
+    "btn": "This is my claim"
+  },
+  "Find": {
+    "title": "Find a claim",
+    "subtitle": "For us to represent your voice in court, you must register your claim with us. If your claim shows correctly in <MyClaims>My Claims</MyClaims> then you don't need to do anything."
+  },
+  "SearchForm": {
+    "description": "Specify roughly how many tokens you had to identify your claim.",
+    "asset": "Asset",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "search": "Search",
+    "search_loading": "Searching through millions of claims..."
+  },
+  "RecoveryAnalysis": {
+    "title": "Recovery Analysis",
+    "subtitle": "The estate holds far more assets than the customer property valued at petition date prices which will lead to a >$1 plan."
   }
 }

@@ -1,10 +1,12 @@
 "use client";
 import { type Claim } from "@/app/[locale]/models/Claim.model";
 import { useClaimsStore } from "@/app/[locale]/store/useClaimsStore";
+import {useTranslations} from "next-intl";
 
 export function ThisIsMyClaim({ claim }: { claim: Claim }) {
   // update state store
 
+  const t = useTranslations('ThisIsMyClaim')
   const selectClaim = useClaimsStore((state) => state.selectClaim);
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
   const isSelected = selectedClaims.some(
@@ -27,7 +29,7 @@ export function ThisIsMyClaim({ claim }: { claim: Claim }) {
       <div className="flex flex-col justify-start px-0 pb-6 sm:flex-row">
         <div className="mb-3 mr-4 flex flex-row align-middle sm:mb-0">
           <p className="inline-block text-center text-sm italic leading-9 text-stone-400 sm:text-left">
-            Register this claim to get started{" "}
+            {t('text')}{" "}
             <span aria-hidden="true">&rarr;</span>{" "}
           </p>
         </div>
@@ -35,7 +37,7 @@ export function ThisIsMyClaim({ claim }: { claim: Claim }) {
           onClick={() => chooseClaim(claim)}
           className="mb-2 inline-block items-center rounded-md bg-indigo-600 px-8 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0 sm:inline-flex sm:px-3 sm:py-2"
         >
-          This is my claim
+          {t('btn')}
         </button>
       </div>
       {/* </div> */}

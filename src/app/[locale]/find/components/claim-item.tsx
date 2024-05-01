@@ -2,8 +2,10 @@ import React, { useState } from "react"; // Import useState
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/20/solid"; // Ensure ChevronDownIcon is imported
 import { CoinsList } from "./coins-list";
 import { Claim, type ClaimSchema } from "@/app/[locale]/models/Claim.model";
+import {useTranslations} from "next-intl";
 
 export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
+  const t = useTranslations("MyClaims");
   const [isVisible, setIsVisible] = useState(false); // State to manage visibility
 
   // let claimInstance: Claim;
@@ -17,8 +19,8 @@ export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
         <div className="flex min-w-0 gap-x-6">
           <div className="min-w-0 flex-auto">
             <p className="mt-1 block text-xs leading-5 text-stone-400">
-              <span className="hidden sm:inline">Customer code</span>
-              <span className="sm:hidden">Code</span>
+              <span className="hidden sm:inline">{t('customer_code_long')}</span>
+              <span className="sm:hidden">{t('customer_code_short')}</span>
             </p>
             <p className="flex flex-row align-middle text-xs font-semibold leading-6 text-white sm:text-base">
               <span className="font-semibold">
@@ -47,7 +49,7 @@ export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
           </div>
           <div className="sm:ml-20 sm:flex sm:flex-col sm:items-start">
             <p className="mt-1 text-xs leading-5 text-stone-400/50">
-              Petition value
+              {t('petition_value')}
             </p>
             <p className="truncate font-mono text-xs leading-6 text-white/25 sm:text-base">
               {claimInstance.totalPetitionValue}
@@ -58,7 +60,7 @@ export default function ClaimItem({ claimInstance }: { claimInstance: Claim }) {
         <div className="flex shrink-0 items-center gap-x-4">
           <div className="sm:flex sm:flex-col sm:items-end">
             <p className="mt-1 text-xs leading-5 text-stone-400">
-              Today{"'"}s value
+              {t('today_value')}
             </p>
             <p className="font-mono text-xs leading-6 text-white sm:text-base">
               {claimInstance.totalLatestValue}

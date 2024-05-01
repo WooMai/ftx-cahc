@@ -4,6 +4,7 @@ import {
 } from "@/app/[locale]/models/Claim.model";
 import { ThisIsMyClaim } from "./my-claim";
 import { SignedOut } from "@clerk/nextjs";
+import {useTranslations} from "next-intl";
 
 export function CoinsList({
   coins,
@@ -12,6 +13,7 @@ export function CoinsList({
   coins: IAssetDeprecated[];
   claim: Claim;
 }) {
+  const t = useTranslations("CoinsList");
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
   }
@@ -31,25 +33,25 @@ export function CoinsList({
               scope="col"
               className="py-2 pl-4 pr-4 font-semibold max-[640px]:max-w-8 sm:pl-6 lg:pl-8"
             >
-              Asset
+              {t('th_asset')}
             </th>
             <th
               scope="col"
               className="py-2 pl-0 pr-4 text-right font-semibold max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8"
             >
-              Balance
+              {t('th_balance')}
             </th>
             <th
               scope="col"
               className="py-2 pl-0 pr-4 text-right font-semibold max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8"
             >
-              Petition USD
+              {t('th_petition')}
             </th>
             <th
               scope="col"
               className="py-2 pl-0 pr-4 text-right font-semibold max-[640px]:max-w-8 sm:table-cell sm:pr-6 lg:pr-8"
             >
-              Today{"'"}s USD
+              {t('th_today')}
             </th>
           </tr>
         </thead>
@@ -62,7 +64,7 @@ export function CoinsList({
                     {coin.name}
                   </div>
                   <div className="hidden rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-stone-300 ring-1 ring-inset ring-white/10 sm:inline-block">
-                    {coin.type}
+                    {t(`coin_type.${coin.type}`)}
                   </div>
                 </div>
               </td>
