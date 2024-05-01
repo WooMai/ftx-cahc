@@ -45,7 +45,7 @@ export const LanguageSelector = function () {
         </div>
         <ListboxLabel>EN</ListboxLabel>
       </ListboxOption>
-      <ListboxOption value="cn" key="cn">
+      <ListboxOption value="zh" key="zh">
         <div className="w-5 sm:w-4">
           <svg
             enableBackground="new -49 141 512 512"
