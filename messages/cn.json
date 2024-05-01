@@ -26,7 +26,7 @@
   },
   "CountStats": {
     "stat1": "已加入客户数",
-    "stat2": "总索赔价值"
+    "stat2": "索赔总价值"
   },
   "FightingFor": {
     "issues_with_current_plan": "当前计划存在的问题",
