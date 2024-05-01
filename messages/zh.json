@@ -1,0 +1,221 @@
+{
+  "Home": {
+    "title": "加入 FTX 客户特设委员会 (CAHC) 并反对当前计划",
+    "latest_news": "最新消息",
+    "latest": "最新消息",
+    "latest_news_content": "3月6日：FTX债务人要求延期4个月，并且将客户资产支付给美国政府",
+    "description_part1": "我们已经形成了FTX破产案中最大的投票团体。持有",
+    "former_ftx_customers": "数亿美元的索赔价值",
+    "description_part2": "的",
+    "claims_amount": "超过1000名前FTX客户",
+    "description_part3": "已经加入了我们。",
+    "legal_counsel": "我们的法律顾问",
+    "legal_counsel_name": "McCarter & English, LLP",
+    "legal_counsel_action": "已经提起客户财产诉讼：",
+    "docket_number": "Docket 6863",
+    "join_us_part1": "加入我们，对任何未能解决影响客户财产追回的严重问题的计划投",
+    "no": "反对",
+    "join_us_part2": "票。",
+    "read_our": "请查看我们的",
+    "bylaws": "章程",
+    "and": "和",
+    "charter": "宪章",
+    "to_learn_more": "以了解更多信息。",
+    "find_your_ftx_claim": "查找您的 FTX 索赔",
+    "to_get_started": "并加入我们"
+  },
+  "CountStats": {
+    "stat1": "已加入客户数",
+    "stat2": "索赔总价值"
+  },
+  "FightingFor": {
+    "issues_with_current_plan": "当前计划存在的问题",
+    "we_vote_no": "在解决这些问题之前，我们将反对任何计划。",
+    "debtors_filed_plan": "FTX 债务人提交了一个粗劣且伤害客户的计划。我们的目标是对我们的财产权提起诉讼，并基于以下解决方案进行谈判，为客户争取更多权益。",
+    "priority_for_customers": "客户优先。",
+    "priority_for_customers_desc": "如果当前计划得到通过，即使是能100%追踪到客户资产的收益，如 Anthropic 的投资，也会被支付给非客户。",
+    "theft_of_property_damages": "财产被盗的损失。",
+    "theft_of_property_damages_desc": "由于用户的资产被盗走，客户应该按照今天的加密资产估值进行追偿，而不是破产当天的价值。",
+    "no_withholding_tax": "无30%预扣税。",
+    "no_withholding_tax_desc": "由于大多数客户都不是美国人，我们将被征收30%的预扣税，我们必须自行向美国国税局申请退税，这是债务人完全忽略的问题。",
+    "digital_distributions": "数字化/稳定币分配。",
+    "digital_distributions_desc": "债务人希望通过“现金”分配追偿款，对于律师来说，这通常意味着邮寄支票。这对大多数华人用户意味着非常难以兑现。同时也是巨大的行政负担，将会减少和延迟赔偿。"
+  },
+  "TopNav": {
+    "home": "首页",
+    "find_claim": "查找索赔",
+    "telegram": "Telegram",
+    "my_claim_dashboard": "我的索赔",
+    "dashboard": "仪表板",
+    "sign_in": "登录"
+  },
+  "Footer": {
+    "court_filings": "法庭文件",
+    "adversary_proceeding": "对手方诉讼",
+    "anthropic_objection": "Anthropic异议",
+    "estimation_objection": "估值异议",
+    "letter_to_ucc": "致无担保债权人委员会(UCC)的信",
+    "documents": "文件",
+    "cahc_bylaws": "CAHC章程",
+    "cahc_charter": "CAHC宪章",
+    "terms_of_service": "服务条款",
+    "privacy_policy": "隐私政策",
+    "links": "链接",
+    "cahc_telegram": "CAHC Telegram",
+    "cahc_twitter": "CAHC Twitter",
+    "debtors_filings": "债务人文件",
+    "debtors_plan": "债务人计划",
+    "disclosure_statement": "披露声明"
+  },
+  "Shell": {
+    "my_claim": "我的索赔",
+    "find_claim": "查找索赔",
+    "recovery_analysis": "恢复率分析",
+    "sign_out": "退出账号",
+    "important_dates": "重要时间节点"
+  },
+  "Dashboard": {
+    "title": "欢迎来到 FTX 客户特设委员会投票团体",
+    "subtitle": "已经有拥有数亿美元的索赔价值的超过1000名前FTX客户加入了我们。",
+    "claim_list_title": "已注册的索赔",
+    "now_what": "接下来怎么做？",
+    "now_what_text": "加入我们的 <telegram>Telegram</telegram> 群组。来自 <white>updates@ftxvote.com</white> 的电子邮件将会及时通知您更多消息。",
+    "about_us": "关于我们",
+    "about_us_text": "目前 FTX 债务人提交了一个将会使 FTX 客户损失价值的计划。\n\n由于无担保债权人委员会 (UCC) 对包含 Alameda 债权人在内的所有无担保债权人负责，因此他们无法仅代表 FTX 客户进行抗争。由于 Eversheds 的特设委员会已经同意解决诉讼，现在与债权人站在同一边，所以也无法帮助我们。\n\n由于加密市场上涨，预计最终将会实现超过 100% 破产日的价值。但是 FTX 债务人计划使用出售客户资产的所得来支付给非客户和美国政府机构，而不是将盈余分配给客户。\n\n法官要求我们正式组织起来，以便能够在法庭上考虑我们的观点。"
+  },
+  "MyClaims": {
+    "customer_code_long": "客户代码",
+    "customer_code_short": "客户代码",
+    "petition_value": "破产时价值",
+    "today_value": "当前价值",
+    "verify_claim_text": "验证该索赔的所有权",
+    "verify_claim_btn": "在 FTX 门户上验证 (尚未开放)"
+  },
+  "CoinsList": {
+    "th_asset": "资产",
+    "th_balance": "金额",
+    "th_petition": "破产时价值 (USD)",
+    "th_today": "当前价值 (USD)",
+    "coin_type": {
+      "token": "代币"
+    }
+  },
+  "ThisIsMyClaim": {
+    "text": "注册该索赔以加入我们",
+    "btn": "这是我的索赔"
+  },
+  "Find": {
+    "title": "查找索赔",
+    "subtitle": "为了让我们能够在法庭上代表您的声音，您需要向我们注册您的 FTX 索赔。如果您的索赔已经正确显示在 <MyClaims>我的索赔</MyClaims> 中，则代表您目前已准备就绪。请留意我们通过邮件向您发送的通知以获取最新消息。"
+  },
+  "SearchForm": {
+    "description": "输入您持有的代币数量范围以查找您的索赔。",
+    "asset": "资产",
+    "minimum": "最小金额",
+    "maximum": "最大金额",
+    "search": "搜索",
+    "search_loading": "正在从数百万个索赔中查找..."
+  },
+  "RecoveryAnalysis": {
+    "title": "恢复率分析",
+    "subtitle": "FTX 遗产当前拥有的资产价值远多于按破产申请日期价格计算的客户资产，这将会导致超过 1:1 的资产返还。"
+  },
+  "ImportantDates": {
+    "title": "重要日期",
+    "date1": {
+      "title": "3月1日",
+      "description": "披露声明到期（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date2": {
+      "title": "3月20日",
+      "description": "全体听证会",
+      "highlight": "yes",
+      "easternTime": "10:00 ET"
+    },
+    "date3": {
+      "title": "3月28日",
+      "description": "SBF 宣判",
+      "highlight": "yes",
+      "easternTime": "09:30 ET"
+    },
+    "date4": {
+      "title": "5月15日",
+      "description": "披露声明确认听证（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date5": {
+      "title": "4月18日",
+      "description": "听证取消",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date6": {
+      "title": "5月1日",
+      "description": "IRS 估算听证",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date7": {
+      "title": "5月12日",
+      "description": "债务人独家权到期",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date8": {
+      "title": "5月23日",
+      "description": "全体听证会",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date9": {
+      "title": "6月15日",
+      "description": "巴哈马截止日期",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date10": {
+      "title": "7月1日",
+      "description": "计划投票截止日期（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date11": {
+      "title": "7月12日",
+      "description": "征询独家权到期",
+      "highlight": "no",
+      "easternTime": ""
+    }
+  },
+  "Register": {
+    "notification": "已选 {count, plural, one {# 项索赔} other {# 项索赔}}",
+    "registerButton": "注册"
+  },
+  "SignUpWithClaims": {
+    "makeYourVoiceHeard": "让您的声音被听到",
+    "completeRegistrationForm": "请完成注册表格",
+    "removeButton": "移除",
+    "confirmOwnershipText": "您确认，如有伪证将受到惩罚，您是 {count, plural, one {这项索赔} other {这些索赔}} 的所有者吗？",
+    "fullNameLabel": "全名",
+    "fullNamePlaceholder": "您的姓名",
+    "emailLabel": "联系邮箱",
+    "emailPlaceholder": "您的邮箱",
+    "agreementText": "一旦确认，您同意 CAHC 为您的财产权利而抗争，同意公开您的名字在法庭声明中，同意接收电子邮件，并遵守我们的",
+    "bylawsLink": "章程",
+    "disagreementWarning": "如果您不确认，法庭将认为您同意债权人提出的破产价值追偿方案。",
+    "emailAlreadyInUseError": "该邮箱已经被使用。",
+    "signInLink": "登录",
+    "confirmButton": "是的，我确认",
+    "cancelButton": "取消",
+    "successMessage": "您已成功注册！",
+    "checkEmailMessage": "请查看邮箱获取后续步骤。",
+    "emailExpiredError": "邮箱验证链接已过期",
+    "signInOtherTabMessage": "请在其他标签页登录"
+  },
+  "SignedInRegisterClaim": {
+    "notification": "已选 {count, plural, one {# 项索赔} other {# 项索赔}}",
+    "registerClaimButton": "注册索赔"
+  }
+}
