@@ -71,8 +71,7 @@
     "my_claim": "我的索赔",
     "find_claim": "查找索赔",
     "recovery_analysis": "恢复率分析",
-    "sign_out": "退出账号",
-    "important_dates": "重要时间节点"
+    "sign_out": "退出账号"
   },
   "Dashboard": {
     "title": "欢迎来到 FTX 客户特设委员会投票团体",
@@ -124,90 +123,89 @@
     "title": "重要日期",
     "date1": {
       "title": "3月1日",
-      "description": "披露声明到期（过期）",
+      "description": "披露声明到期（已取消）",
       "highlight": "no",
       "easternTime": ""
     },
     "date2": {
       "title": "3月20日",
-      "description": "全体听证会",
+      "description": "综合听证会",
       "highlight": "yes",
-      "easternTime": "10:00 ET"
+      "easternTime": "22:00 (UTC+8)"
     },
     "date3": {
       "title": "3月28日",
-      "description": "SBF 宣判",
+      "description": "SBF 量刑听证会",
       "highlight": "yes",
-      "easternTime": "09:30 ET"
+      "easternTime": "21:30 (UTC+8)"
     },
     "date4": {
       "title": "5月15日",
-      "description": "披露声明确认听证（过期）",
+      "description": "披露声明确认听证会（已取消）",
       "highlight": "no",
       "easternTime": ""
     },
     "date5": {
-      "title": "4月18日",
-      "description": "听证取消",
-      "highlight": "yes",
-      "easternTime": "13:00 ET"
+      "title": "4月19日",
+      "description": "听证会已取消",
+      "highlight": "no",
+      "easternTime": "01:00 (UTC+8)"
     },
     "date6": {
       "title": "5月1日",
-      "description": "IRS 估算听证",
+      "description": "IRS 预计索赔听证会",
       "highlight": "no",
       "easternTime": ""
     },
     "date7": {
       "title": "5月12日",
-      "description": "债务人独家权到期",
+      "description": "债务人排他权到期",
       "highlight": "no",
       "easternTime": ""
     },
     "date8": {
-      "title": "5月23日",
-      "description": "全体听证会",
+      "title": "5月24日",
+      "description": "综合听证会",
       "highlight": "yes",
-      "easternTime": "13:00 ET"
+      "easternTime": "01:00 (UTC+8)"
     },
     "date9": {
       "title": "6月15日",
-      "description": "巴哈马截止日期",
+      "description": "巴哈马流程索赔提交截止日期",
       "highlight": "no",
       "easternTime": ""
     },
     "date10": {
       "title": "7月1日",
-      "description": "计划投票截止日期（过期）",
+      "description": "计划投票截止日期（已取消）",
       "highlight": "no",
       "easternTime": ""
     },
     "date11": {
       "title": "7月12日",
-      "description": "征询独家权到期",
+      "description": "债务人独家征求期结束",
       "highlight": "no",
       "easternTime": ""
     }
   },
   "Register": {
     "notification": "已选 {count, plural, one {# 项索赔} other {# 项索赔}}",
-    "registerButton": "注册"
+    "registerButton": "注册索赔"
   },
   "SignUpWithClaims": {
     "makeYourVoiceHeard": "让您的声音被听到",
     "completeRegistrationForm": "请完成注册表格",
     "removeButton": "移除",
-    "confirmOwnershipText": "您确认，如有伪证将受到惩罚，您是 {count, plural, one {这项索赔} other {这些索赔}} 的所有者吗？",
-    "fullNameLabel": "全名",
-    "fullNamePlaceholder": "您的姓名",
-    "emailLabel": "联系邮箱",
-    "emailPlaceholder": "您的邮箱",
-    "agreementText": "一旦确认，您同意 CAHC 为您的财产权利而抗争，同意公开您的名字在法庭声明中，同意接收电子邮件，并遵守我们的",
-    "bylawsLink": "章程",
-    "disagreementWarning": "如果您不确认，法庭将认为您同意债权人提出的破产价值追偿方案。",
-    "emailAlreadyInUseError": "该邮箱已经被使用。",
+    "confirmOwnershipText": "您确认，您是以上索赔的所有人。提供虚假信息将依法承担相应的法律责任。",
+    "fullNameLabel": "您的法定全名（英文）",
+    "fullNamePlaceholder": "ZHANG SAN",
+    "emailLabel": "联系邮箱（不必是FTX账户邮箱）",
+    "emailPlaceholder": "you@example.com",
+    "agreementText": "提交该表单，即代表您同意：\n1. CAHC 将代表您为您的财产权利而抗争；\n2. 您的姓名可能出现在法庭声明中；\n3. 同意接收我们发送的电子邮件通知；\n4. 遵守我们的 <bylaws>章程</bylaws>。",
+    "disagreementWarning": "如果您不做出行动，则法院将会默认您同意债权人提出的破坏资产价值的方案。",
+    "emailAlreadyInUseError": "该邮箱已经注册，请尝试直接登录。",
     "signInLink": "登录",
-    "confirmButton": "是的，我确认",
+    "confirmButton": "同意并注册",
     "cancelButton": "取消",
     "successMessage": "您已成功注册！",
     "checkEmailMessage": "请查看邮箱获取后续步骤。",

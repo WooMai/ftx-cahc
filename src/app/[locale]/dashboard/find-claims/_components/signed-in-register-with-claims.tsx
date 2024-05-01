@@ -137,21 +137,23 @@ export const SignedInRegisterWithClaims = ({
                 <br />
               </p>
 
-              <p className="py-4 text-left text-sm text-stone-300">
-                {t("agreementText")}{" "}
-                <Link
-                  href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
-                  className="text-indigo-300 underline"
-                  target="_blank"
-                >
-                  {t("bylawsLink")}
-                  <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" />
-                </Link>
-                . <br />
-                <span className="font-semibold text-white">
+              <div className="py-4 text-left text-sm text-stone-300">
+                <p className="mb-2.5 whitespace-pre-line">
+                  {t.rich("agreementText", {
+                    bylaws: text => <Link
+                        href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
+                        className="text-indigo-300 underline"
+                        target="_blank"
+                    >
+                      {text}
+                      <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" />
+                    </Link>
+                  })}
+                </p>
+                <p className="font-semibold text-white">
                   {t("disagreementWarning")}
-                </span>
-              </p>
+                </p>
+              </div>
             </div>
           </div>
         </div>

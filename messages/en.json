@@ -71,8 +71,7 @@
     "my_claim": "My Claim",
     "find_claim": "Find Claim",
     "recovery_analysis": "Recovery Analysis",
-    "sign_out": "Sign Out",
-    "important_dates": "Important Dates"
+    "sign_out": "Sign Out"
   },
   "Dashboard": {
     "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
@@ -149,7 +148,7 @@
     "date5": {
       "title": "Apr 18",
       "description": "Hearing Cancelled",
-      "highlight": "yes",
+      "highlight": "no",
       "easternTime": "13:00 ET"
     },
     "date6": {
@@ -202,8 +201,7 @@
     "fullNamePlaceholder": "Your Name",
     "emailLabel": "Contact email",
     "emailPlaceholder": "your@email.com",
-    "agreementText": "By confirming you agree to the CAHC defending your property rights, to publish your name in a declaration to the court, to receive emails and to abide by our",
-    "bylawsLink": "bylaws",
+    "agreementText": "By confirming you agree to the CAHC defending your property rights, to publish your name in a declaration to the court, to receive emails and to abide by our <bylaws>bylaws</bylaws>.",
     "disagreementWarning": "If you DO NOT confirm, the court will assume customers agree with the debtors' proposed petition value recoveries.",
     "emailAlreadyInUseError": "Email already in use.",
     "signInLink": "Sign-in",
