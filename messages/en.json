@@ -74,6 +74,75 @@
     "sign_out": "Sign Out",
     "important_dates": "Important Dates"
   },
+  "ImportantDates": {
+    "title": "Important Dates",
+    "date1": {
+      "title": "Mar 1",
+      "description": "Disclosure Statement Due (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date2": {
+      "title": "Mar 20",
+      "description": "Omnibus Hearing",
+      "highlight": "yes",
+      "easternTime": "10:00 ET"
+    },
+    "date3": {
+      "title": "Mar 28",
+      "description": "SBF Sentencing",
+      "highlight": "yes",
+      "easternTime": "09:30 ET"
+    },
+    "date4": {
+      "title": "May 15",
+      "description": "Disclosure Statement Confirmation Hearing (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date5": {
+      "title": "Apr 18",
+      "description": "Hearing Cancelled",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date6": {
+      "title": "May 1",
+      "description": "IRS Estimation Hearing",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date7": {
+      "title": "May 12",
+      "description": "Debtor Exclusivity Expires",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date8": {
+      "title": "May 23",
+      "description": "Omnibus Hearing",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date9": {
+      "title": "June 15",
+      "description": "Bahamas Bar Date",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date10": {
+      "title": "Jul 1",
+      "description": "Plan Vote Deadline (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date11": {
+      "title": "Jul 12",
+      "description": "Solicitation Exclusivity Expires",
+      "highlight": "no",
+      "easternTime": ""
+    }
+  },
   "Dashboard": {
     "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
     "subtitle": "We have now formed the largest voting block with hundreds of members and 9-figures in claims.",

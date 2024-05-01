@@ -1,13 +1,14 @@
 "use client";
-import {Fragment, useState} from "react";
-import {usePathname} from "next/navigation";
-import {Dialog, Transition} from "@headlessui/react";
-import {Bars3Icon, HomeIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {ChartPieIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
-import {Link} from "@/components/link";
+import { Fragment, useState } from "react";
+import { usePathname } from "next/navigation";
+import { Dialog, Transition } from "@headlessui/react";
+import { Bars3Icon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChartPieIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { Link } from "@/components/link";
 
-import {SignOutButton, UserButton} from "@clerk/nextjs";
-import {useTranslations} from "next-intl";
+import { SignOutButton, UserButton } from "@clerk/nextjs";
+import { useTranslations } from "next-intl";
+import { ImportantDates } from "@/app/[locale]/dashboard/_components/important-dates";
 
 const teams = [
   {
@@ -25,69 +26,6 @@ const teams = [
   },
 ];
 
-const dates = [
-  {
-    YYYYMMDD: "2024-03-01",
-    dayMonthDate: "Mar 1",
-    description: "Disclosure Statement Due (Blown)",
-  },
-  {
-    YYYYMMDD: "2024-03-20",
-    dayMonthDate: "Mar 20",
-    description: "Omnibus Hearing",
-    easternTime: "10:00 ET",
-    cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
-  },
-  {
-    YYYYMMDD: "2024-03-28",
-    dayMonthDate: "Mar 28",
-    description: "SBF Sentencing",
-    easternTime: "09:30 ET",
-  },
-  {
-    YYYYMMDD: "2024-05-15",
-    dayMonthDate: "Mar 30",
-    description: "Disclosure Statement Confirmation Hearing (Blown)",
-  },
-  {
-    YYYYMMDD: "2024-04-18",
-    dayMonthDate: "Apr 18",
-    description: "Hearing Cancelled",
-    easternTime: "13:00 ET",
-    cal: "https://restructuring.ra.kroll.com/FTX/Home-AddToCalendar?StartDate=04/18/2024%201:00:00%20PM&desc=Omnibus%20Hearing",
-  },
-  {
-    YYYYMMDD: "2024-05-01",
-    dayMonthDate: "May 1",
-    description: "IRS Estimation Hearing",
-  },
-  {
-    YYYYMMDD: "2024-05-12",
-    dayMonthDate: "May 12",
-    description: "Debtor Exclusivity Expires",
-  },
-  {
-    YYYYMMDD: "2024-05-15",
-    dayMonthDate: "May 23",
-    description: "Omnibus Hearing",
-    easternTime: "13:00 ET",
-  },
-  {
-    YYYYMMDD: "2024-06-15",
-    dayMonthDate: "June 15",
-    description: "Bahamas Bar Date",
-  },
-  {
-    YYYYMMDD: "2024-07-01",
-    dayMonthDate: "Jul 1",
-    description: "Plan Vote Deadline (Blown)",
-  },
-  {
-    YYYYMMDD: "2024-07-12",
-    dayMonthDate: "Jul 12",
-    description: "Solicitation exlcusivity expires",
-  },
-];
 function classNames(...classes: (string | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
 }
@@ -98,13 +36,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const navigation = [
     {
-      name: t('my_claim'),
+      name: t("my_claim"),
       href: "/dashboard",
       icon: HomeIcon,
       current: pathname.endsWith("/dashboard"),
     },
     {
-      name: t('find_claim'),
+      name: t("find_claim"),
       href: "/dashboard/find-claims",
       icon: MagnifyingGlassIcon,
       current: pathname.endsWith("/dashboard/find-claims"),
@@ -119,7 +57,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
     // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
     {
-      name: t('recovery_analysis'),
+      name: t("recovery_analysis"),
       href: "/dashboard/analysis",
       icon: ChartPieIcon,
       current: pathname.endsWith("/dashboard/analysis"),
@@ -255,7 +193,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
                                   href="#"
                                   className="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400"
                                 >
-                                  <span className="truncate">{t('sign_out')}</span>
+                                  <span className="truncate">
+                                    {t("sign_out")}
+                                  </span>
                                 </a>
                               </SignOutButton>
                             </li>
@@ -344,7 +284,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                     <li key="sign-out">
                       <SignOutButton>
                         <span className="group flex cursor-pointer gap-x-3 truncate rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400">
-                          {t('sign_out')}
+                          {t("sign_out")}
                         </span>
                       </SignOutButton>
                     </li>
@@ -399,46 +339,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </div>
         </main> */}
         <aside className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-stone-800 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-          <section className="mt-12">
-            <h2 className="text-base font-semibold leading-6 text-stone-300">
-              {t('important_dates')}
-            </h2>
-            <ol className="mt-2 divide-y divide-stone-800 text-sm leading-6 text-stone-500">
-              {dates.map((date, index) => (
-                <li key={index} className="py-4 sm:flex">
-                  <time
-                    dateTime={date.YYYYMMDD}
-                    className={classNames(
-                      date.easternTime ? "text-white" : "text-stone-600",
-                      "w-28 flex-none",
-                    )}
-                  >
-                    {date.dayMonthDate}
-                  </time>
-                  <p
-                    className={classNames(
-                      date.easternTime ? "text-white" : "text-stone-600",
-                      "mt-2 flex-auto sm:mt-0",
-                    )}
-                  >
-                    {date.description}
-                  </p>
-                  {date.easternTime && (
-                    <p
-                      className={classNames(
-                        date.easternTime ? "text-white" : "text-stone-600",
-                        "flex-none sm:ml-6",
-                      )}
-                    >
-                      <time dateTime={`${date.YYYYMMDD}T${date.easternTime}`}>
-                        {date.easternTime}
-                      </time>
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </section>
+          <ImportantDates />
         </aside>
       </div>
     </>

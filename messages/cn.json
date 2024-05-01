@@ -74,6 +74,75 @@
     "sign_out": "退出账号",
     "important_dates": "重要时间节点"
   },
+  "ImportantDates": {
+    "title": "重要日期",
+    "date1": {
+      "title": "3月1日",
+      "description": "披露声明到期（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date2": {
+      "title": "3月20日",
+      "description": "全体听证会",
+      "highlight": "yes",
+      "easternTime": "10:00 ET"
+    },
+    "date3": {
+      "title": "3月28日",
+      "description": "SBF 宣判",
+      "highlight": "yes",
+      "easternTime": "09:30 ET"
+    },
+    "date4": {
+      "title": "5月15日",
+      "description": "披露声明确认听证（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date5": {
+      "title": "4月18日",
+      "description": "听证取消",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date6": {
+      "title": "5月1日",
+      "description": "IRS 估算听证",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date7": {
+      "title": "5月12日",
+      "description": "债务人独家权到期",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date8": {
+      "title": "5月23日",
+      "description": "全体听证会",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date9": {
+      "title": "6月15日",
+      "description": "巴哈马截止日期",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date10": {
+      "title": "7月1日",
+      "description": "计划投票截止日期（过期）",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date11": {
+      "title": "7月12日",
+      "description": "征询独家权到期",
+      "highlight": "no",
+      "easternTime": ""
+    }
+  },
   "Dashboard": {
     "title": "欢迎来到 FTX 客户特设委员会投票团体",
     "subtitle": "已经有拥有数亿美元的索赔价值的超过1000名前FTX客户加入了我们。",

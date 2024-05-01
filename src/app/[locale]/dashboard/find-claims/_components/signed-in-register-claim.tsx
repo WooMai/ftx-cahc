@@ -11,9 +11,6 @@ export function SignedInRegisterClaim() {
   const [open, setOpen] = useState(isOpenByDefault);
 
   const cancelButtonRef = useRef(null);
-  const onSignupSuccess = (modalShouldBeOpen: boolean): void => {
-    setOpen(modalShouldBeOpen);
-  };
 
   if (!open && selectedClaims !== null && selectedClaims.length > 0) {
     return (
