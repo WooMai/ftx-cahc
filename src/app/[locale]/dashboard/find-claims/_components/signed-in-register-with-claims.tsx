@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { api } from "@/trpc/react";
+import { useTranslations } from "next-intl";
 
 import {
   UserPlusIcon,
@@ -40,6 +41,8 @@ export const SignedInRegisterWithClaims = ({
 
   // trpc
   const mutation = api.user.userClaimsCreate.useMutation();
+
+  const t = useTranslations("SignUpWithClaims");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -101,10 +104,12 @@ export const SignedInRegisterWithClaims = ({
               as="h3"
               className="text-base font-semibold leading-6 text-stone-100"
             >
-              Register this claim as yours
+              {t("makeYourVoiceHeard")}
             </Dialog.Title>
             <div className="mt-2">
-              <p className="text-sm text-stone-500">Review the terms below</p>
+              <p className="text-sm text-stone-500">
+                {t("completeRegistrationForm")}
+              </p>
               <div className="mt-8">
                 {selectedClaims.map((claim, index) => (
                   <div
@@ -122,34 +127,29 @@ export const SignedInRegisterWithClaims = ({
                       onClick={() => removeClaim(claim.customerCode)}
                       className="ml-3 flex-shrink-0 rounded-md text-sm font-medium text-stone-400 hover:text-stone-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                      Remove
+                      {t("removeButton")}
                     </button>
                   </div>
                 ))}
               </div>
               <p className="my-6 text-left text-sm text-stone-300">
-                Do you confirm, under penalty of perjury, that you are the owner
-                of {selectedClaims.length > 1 ? "these claims?" : "this claim?"}
+                {t("confirmOwnershipText", { count: selectedClaims.length })}
                 <br />
               </p>
 
               <p className="py-4 text-left text-sm text-stone-300">
-                By confirming you agree to joining the CAHC plaintiffs in
-                defending your property rights, to publish your name (no other
-                personal info) in the 2019 declaration to the court, and to
-                abide by our{" "}
+                {t("agreementText")}{" "}
                 <Link
                   href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
                   className="text-indigo-300 underline"
                   target="_blank"
                 >
-                  bylaws
+                  {t("bylawsLink")}
                   <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" />
                 </Link>
                 . <br />
                 <span className="font-semibold text-white">
-                  If you DO NOT confirm, the court will assume customers agree
-                  with the debtors{"'"} proposed petition value recoveries.
+                  {t("disagreementWarning")}
                 </span>
               </p>
             </div>
@@ -168,7 +168,10 @@ export const SignedInRegisterWithClaims = ({
               </div>
               <div className="ml-3">
                 <p className="text-sm text-yellow-700">
-                  You have already registered this claim.{" "}
+                  {t("emailAlreadyInUseError")}{" "}
+                  <Link href="/signin" className="text-indigo-600 underline">
+                    {t("signInLink")}
+                  </Link>
                 </p>
               </div>
             </div>
@@ -207,7 +210,7 @@ export const SignedInRegisterWithClaims = ({
                   </svg>
                 </span>
               )}
-              <span>Yes, I Confirm</span>
+              <span>{t("confirmButton")}</span>
             </button>
             <button
               type="button"
@@ -215,7 +218,7 @@ export const SignedInRegisterWithClaims = ({
               onClick={onCancel}
               ref={cancelButtonRef}
             >
-              Cancel
+              {t("cancelButton")}
             </button>
           </>
         )}
@@ -244,7 +247,12 @@ export const SignedInRegisterWithClaims = ({
                   />
                 </div>
                 <div className="ml-3">
-                  <p className="text-sm text-green-700">Success!</p>
+                  <p className="text-sm text-green-700">
+                    {t("successMessage")}
+                  </p>
+                  <p className="text-sm text-green-700">
+                    {t("checkEmailMessage")}
+                  </p>
                 </div>
               </div>
             </div>

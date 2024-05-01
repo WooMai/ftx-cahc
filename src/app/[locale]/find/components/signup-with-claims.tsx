@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSignUp, useSignIn, SignInButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { api } from "@/trpc/react";
+import { useTranslations } from "next-intl";
 
 import {
   UserPlusIcon,
@@ -20,6 +21,7 @@ export const SignUpWithClaims = ({
   onCancel: () => void;
   cancelButtonRef: React.RefObject<HTMLButtonElement> | null;
 }) => {
+  const t = useTranslations("SignUpWithClaims");
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
   const removeClaim = useClaimsStore((state) => state.removeClaimWithCode);
 
@@ -137,11 +139,11 @@ export const SignUpWithClaims = ({
               as="h3"
               className="text-base font-semibold leading-6 text-stone-100"
             >
-              Make your voice heard
+              {t("makeYourVoiceHeard")}
             </Dialog.Title>
             <div className="mt-2">
               <p className="text-sm text-stone-500">
-                Complete this registration form
+                {t("completeRegistrationForm")}
               </p>
               <div className="mt-8">
                 {selectedClaims.map((claim, index) => (
@@ -160,14 +162,15 @@ export const SignUpWithClaims = ({
                       onClick={() => removeClaim(claim.customerCode)}
                       className="ml-3 flex-shrink-0 rounded-md text-sm font-medium text-stone-400 hover:text-stone-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                      Remove
+                      {t("removeButton")}
                     </button>
                   </div>
                 ))}
               </div>
               <p className="my-6 text-left text-sm text-stone-300">
-                Do you confirm, under penalty of perjury, that you are the owner
-                of {selectedClaims.length > 1 ? "these claims?" : "this claim?"}
+                {t("confirmOwnershipText", {
+                  count: selectedClaims.length,
+                })}
                 <br />
               </p>
               <div className="relative mb-4 inline-block w-full rounded-md bg-stone-700 px-3 pb-1.5 pt-2.5 text-left shadow-inner ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600">
@@ -175,7 +178,7 @@ export const SignUpWithClaims = ({
                   htmlFor="full-name"
                   className="block text-xs font-medium text-stone-400"
                 >
-                  Full name
+                  {t("fullNameLabel")}
                 </label>
                 <input
                   required
@@ -185,7 +188,7 @@ export const SignUpWithClaims = ({
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600 invalid:border-red-500 focus:ring-0 sm:text-sm sm:leading-6"
-                  placeholder="Your Name"
+                  placeholder={t("fullNamePlaceholder")}
                 />
               </div>
               <div className="relative inline-block w-full rounded-md bg-stone-700 px-3 pb-1.5 pt-2.5 text-left shadow-inner ring-1 ring-inset ring-stone-600 focus-within:z-10 focus-within:ring-2 focus-within:ring-indigo-600">
@@ -193,7 +196,7 @@ export const SignUpWithClaims = ({
                   htmlFor="email"
                   className="block text-xs font-medium text-stone-400"
                 >
-                  Contact email
+                  {t("emailLabel")}
                 </label>
                 <input
                   required
@@ -203,25 +206,23 @@ export const SignUpWithClaims = ({
                   value={emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
                   className="w-full border-0 bg-transparent p-0 text-stone-100 placeholder:text-stone-600 invalid:border-red-500 focus:ring-0 sm:text-sm sm:leading-6"
-                  placeholder="your@email.com"
+                  placeholder={t("emailPlaceholder")}
                 />
               </div>
               <p className="py-4 text-left text-sm text-stone-300">
-                By confirming you agree to the CAHC defending your property
-                rights, to publish your name in a declaration to the court, to
-                receive emails and to abide by our{" "}
+                {t("agreementText")}
                 <Link
                   href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
                   className="text-indigo-300 underline"
                   target="_blank"
                 >
-                  bylaws
+                  {" "}
+                  {t("bylawsLink")}
                   <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" />
                 </Link>
                 . <br />
                 <span className="font-semibold text-white">
-                  If you DO NOT confirm, the court will assume customers agree
-                  with the debtors{"'"} proposed petition value recoveries.
+                  {t("disagreementWarning")}
                 </span>
               </p>
             </div>
@@ -240,11 +241,11 @@ export const SignUpWithClaims = ({
               </div>
               <div className="ml-3">
                 <p className="text-sm text-yellow-700">
-                  Email already in use.{" "}
+                  {t("emailAlreadyInUseError")}{" "}
                   <SignInButton mode="modal" afterSignInUrl="/dashboard">
                     <span className="cursor-pointer">
                       <span className="underline hover:text-yellow-600">
-                        Sign-in
+                        {t("signInLink")}
                       </span>
                       .
                     </span>
@@ -286,7 +287,7 @@ export const SignUpWithClaims = ({
                 </svg>
               </span>
             )}
-            <span>Yes, I Confirm</span>
+            <span>{t("confirmButton")}</span>
           </button>
         )}
         <button
@@ -295,7 +296,7 @@ export const SignUpWithClaims = ({
           onClick={onCancel}
           ref={cancelButtonRef}
         >
-          Cancel
+          {t("cancelButton")}
         </button>
       </div>
       {mutation.isSuccess && (
@@ -303,10 +304,10 @@ export const SignUpWithClaims = ({
           <div className="h-full self-center text-center">
             <EnvelopeIcon className="inline-block h-10 w-10 animate-bounce text-indigo-300" />
             <p className="text-md py-4 text-center text-stone-300">
-              You have successfully registered!
+              {t("successMessage")}
               <br />
               <span className="font-semibold text-white">
-                Check your email for next steps.
+                {t("checkEmailMessage")}
               </span>
             </p>
           </div>
@@ -317,7 +318,7 @@ export const SignUpWithClaims = ({
           <div className="h-full self-center text-center">
             <ExclamationTriangleIcon className="inline-block h-10 w-10 text-indigo-300" />
             <p className="text-md py-4 text-left text-stone-300">
-              Email link has expired
+              {t("emailExpiredError")}
             </p>
           </div>
         </div>
@@ -327,7 +328,7 @@ export const SignUpWithClaims = ({
           <div className="h-full self-center text-center">
             <CheckIcon className="inline-block h-10 w-10 text-indigo-300" />
             <p className="text-md py-4 text-left text-stone-300">
-              Sign in on other tab
+              {t("signInOtherTabMessage")}
             </p>
           </div>
         </div>

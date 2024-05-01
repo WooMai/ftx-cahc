@@ -3,17 +3,16 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useClaimsStore } from "@/app/[locale]/store/useClaimsStore";
 import { SignUpWithClaims } from "./signup-with-claims";
+import { useTranslations } from "next-intl";
 
 export function Register() {
   const selectedClaims = useClaimsStore((state) => state.selectedClaims);
+  const t = useTranslations("Register");
 
   const isOpenByDefault = selectedClaims !== null && selectedClaims.length > 0;
   const [open, setOpen] = useState(isOpenByDefault);
 
   const cancelButtonRef = useRef(null);
-  const onSignupSuccess = (modalShouldBeOpen: boolean): void => {
-    setOpen(modalShouldBeOpen);
-  };
 
   if (!open && selectedClaims !== null && selectedClaims.length > 0) {
     return (
@@ -43,14 +42,15 @@ export function Register() {
                   <div className="flex items-center">
                     <div className="flex w-0 flex-1 justify-between">
                       <p className="w-0 flex-1 text-sm font-medium leading-8 text-white">
-                        Selected {selectedClaims.length} claim
-                        {selectedClaims.length > 1 ? "s" : ""}
+                        {t("notification", {
+                          count: selectedClaims.length,
+                        })}
                       </p>
                       <button
                         type="button"
                         className="inline-flex flex-shrink-0 animate-bounce items-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mb-0"
                       >
-                        Register
+                        {t("registerButton")}
                       </button>
                     </div>
                   </div>
