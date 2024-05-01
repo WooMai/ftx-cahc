@@ -19,6 +19,7 @@ import {
 import { type AxiosResponse } from "axios";
 import { defaultSearchPayload } from "@/app/[locale]/_components/default-search-payload";
 import Stopwatch from "./stopwatch";
+import {useTranslations} from "next-intl";
 
 export function Search({ assets }: { assets: { name: string }[] }) {
   const [searchConditions, setSearchConditions] =
@@ -75,6 +76,7 @@ export function SearchResults({
   onNextPage: () => void;
   onPreviousPage: () => void;
 }) {
+  const t = useTranslations("SearchForm");
   const { data, isLoading, error } = useQuery({
     queryKey: [
       "searchResults",
@@ -104,7 +106,7 @@ export function SearchResults({
           >
             <div className="sm:block">
               <p className="text-sm italic text-stone-400">
-                Searching through millions of claims...{" "}
+                {t('search_loading')}{" "}
                 <span className="text-stone-500">
                   <Suspense>
                     <Stopwatch />

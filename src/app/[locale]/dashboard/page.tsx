@@ -1,17 +1,15 @@
-import { auth, currentUser } from "@clerk/nextjs";
+import {auth, currentUser} from "@clerk/nextjs";
 
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-import { MyClaims } from "./_components/my-claims";
-import { DashboardCountStats } from "./_components/dashboard-count-stats";
-import { Link } from "@/components/link";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/16/solid";
-import { LanguageSelector } from "../_components/language-selector";
+import {dehydrate, HydrationBoundary, QueryClient,} from "@tanstack/react-query";
+import {MyClaims} from "./_components/my-claims";
+import {DashboardCountStats} from "./_components/dashboard-count-stats";
+import {Link} from "@/components/link";
+import {ArrowTopRightOnSquareIcon} from "@heroicons/react/16/solid";
+import {LanguageSelector} from "../_components/language-selector";
+import {getTranslations} from "next-intl/server";
 
 export default async function Page() {
+  const t = await getTranslations("Dashboard");
   const { sessionClaims } = auth();
   let userId: string | undefined | null = sessionClaims?.external_id as string;
   console.log("userId found on auth", userId);
@@ -41,12 +39,11 @@ export default async function Page() {
       </div>
 
       <h3 className="mb-6 text-base font-semibold leading-6 text-stone-200">
-        Welcome to the FTX Customer Ad-Hoc Voting Block
+        {t('title')}
       </h3>
       <p className="text-md max-w-4xl text-stone-500">
         <span className="">
-          We have now formed the largest voting block with hundreds of members
-          and 9-figures in claims.
+          {t('subtitle')}
         </span>
       </p>
       <div className="border-b border-stone-700 bg-stone-900">
@@ -54,7 +51,7 @@ export default async function Page() {
       </div>
       <div className="mt-16 pb-5">
         <h3 className="text-base font-semibold leading-6 text-stone-200">
-          Your Claim
+          {t('claim_list_title')}
         </h3>
       </div>
       {typeof userId !== "undefined" && (
@@ -73,46 +70,31 @@ export default async function Page() {
       )}
       <div className="pt-10">
         <h3 className="text-base font-semibold leading-6 text-stone-200">
-          Now what?
+          {t('now_what')}
         </h3>
         <br />
         <p className="text-md max-w-4xl text-stone-500">
-          Join the{" "}
-          <Link
-            href="https://t.me/ftxcoalition"
-            className="text-indigo-300 underline"
-            target="_blank"
-          >
-            Telegram
-            <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-3 w-3" />
-          </Link>{" "}
-          group. Look out for emails from{" "}
-          <span className="text-white"> updates@ftxvote.com</span> for further
-          instructions.
+          {t.rich('now_what_text', {
+            white: (elem) => <span className="text-white">{elem}</span>,
+            telegram: (elem) => (
+                <Link
+                    href="https://t.me/ftxcoalition"
+                    className="text-indigo-300 underline"
+                    target="_blank"
+                >
+                  {elem}
+                  <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-3 w-3"/>
+                </Link>
+            )
+          })}
         </p>
       </div>
       <div className="mt-10 border-t border-stone-700 pb-5 pt-10">
         <h3 className="text-base font-semibold leading-6 text-stone-200">
-          About us
+          {t('about_us')}
         </h3>
-        <p className="text-md mt-10 max-w-4xl text-stone-500">
-          Thus far the FTX Debtors have proposed a value destructive plan.
-          <br />
-          <br />
-          Since the Unsecured Creditors Committee has a fiduciary duty to all
-          unsecured creditors including Alameda creditors, they are unable to
-          fight on behalf of only FTX customers. Nor is the Ad Hoc Committee
-          counseled by Eversheds an option, as they already agreed to settle
-          their litigation and are now bound to support the debtors.
-          <br />
-          <br /> The estate is due to recover well over 100% petition date value
-          and instead of accruing the surplus back to customers, the debtors
-          plan to use our assets to pay non-customers and US government
-          regulators instead.
-          <br />
-          <br />
-          The judge requires us to formally organize in order for our point of
-          view to be considered in court.
+        <p className="text-md mt-10 max-w-4xl text-stone-500 whitespace-pre-line">
+          {t('about_us_text')}
         </p>
       </div>
     </div>

@@ -1,12 +1,13 @@
 "use client";
-import { Fragment, useState } from "react";
-import { usePathname } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react";
-import { Bars3Icon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ChartPieIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { Link } from "@/components/link";
+import {Fragment, useState} from "react";
+import {usePathname} from "next/navigation";
+import {Dialog, Transition} from "@headlessui/react";
+import {Bars3Icon, HomeIcon, XMarkIcon} from "@heroicons/react/24/outline";
+import {ChartPieIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
+import {Link} from "@/components/link";
 
-import { SignOutButton, UserButton } from "@clerk/nextjs";
+import {SignOutButton, UserButton} from "@clerk/nextjs";
+import {useTranslations} from "next-intl";
 
 const teams = [
   {
@@ -92,17 +93,18 @@ function classNames(...classes: (string | boolean)[]): string {
 }
 
 export function Shell({ children }: { children: React.ReactNode }) {
+  const t = useTranslations("Shell");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
   const navigation = [
     {
-      name: "My Claim",
+      name: t('my_claim'),
       href: "/dashboard",
       icon: HomeIcon,
       current: pathname.endsWith("/dashboard"),
     },
     {
-      name: "Find Claim",
+      name: t('find_claim'),
       href: "/dashboard/find-claims",
       icon: MagnifyingGlassIcon,
       current: pathname.endsWith("/dashboard/find-claims"),
@@ -117,7 +119,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     // { name: "Court Calendar", href: "#", icon: CalendarIcon, current: false },
     // { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
     {
-      name: "Recovery Analysis",
+      name: t('recovery_analysis'),
       href: "/dashboard/analysis",
       icon: ChartPieIcon,
       current: pathname.endsWith("/dashboard/analysis"),
@@ -253,7 +255,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                                   href="#"
                                   className="group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400"
                                 >
-                                  <span className="truncate">Sign Out</span>
+                                  <span className="truncate">{t('sign_out')}</span>
                                 </a>
                               </SignOutButton>
                             </li>
@@ -342,7 +344,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                     <li key="sign-out">
                       <SignOutButton>
                         <span className="group flex cursor-pointer gap-x-3 truncate rounded-md p-2 text-sm font-semibold leading-6 text-red-400 hover:bg-stone-800 hover:text-red-400">
-                          Sign Out
+                          {t('sign_out')}
                         </span>
                       </SignOutButton>
                     </li>
@@ -399,7 +401,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <aside className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-stone-800 px-4 py-6 sm:px-6 lg:px-8 xl:block">
           <section className="mt-12">
             <h2 className="text-base font-semibold leading-6 text-stone-300">
-              Important dates
+              {t('important_dates')}
             </h2>
             <ol className="mt-2 divide-y divide-stone-800 text-sm leading-6 text-stone-500">
               {dates.map((date, index) => (

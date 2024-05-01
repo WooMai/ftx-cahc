@@ -9,8 +9,10 @@ import {
 import Link from "next/link";
 
 import type { Key } from "react";
+import {useTranslations} from "next-intl";
 
 export function MyClaims({ userId }: { userId: string }) {
+  const t = useTranslations("MyClaims");
   const { data, isLoading, error } = api.claim.getClaimsForUserWithId.useQuery({
     userId,
   });
@@ -28,8 +30,8 @@ export function MyClaims({ userId }: { userId: string }) {
               <div className="flex min-w-0 gap-x-6">
                 <div className="min-w-0 flex-auto">
                   <p className="mt-1 block text-xs leading-5 text-stone-400">
-                    <span className="hidden sm:inline">Customer code</span>
-                    <span className="sm:hidden">Code</span>
+                    <span className="hidden sm:inline">{t('customer_code_long')}</span>
+                    <span className="sm:hidden">{t('customer_code_short')}</span>
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     <span className="font-semibold">{"         "}</span>
@@ -37,7 +39,7 @@ export function MyClaims({ userId }: { userId: string }) {
                 </div>
                 <div className="sm:ml-20 sm:flex sm:flex-col sm:items-start">
                   <p className="mt-1 text-xs leading-5 text-stone-400/50">
-                    Petition value
+                    {t('petition_value')}
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     {"             "}
@@ -48,7 +50,7 @@ export function MyClaims({ userId }: { userId: string }) {
               <div className="flex shrink-0 items-center gap-x-4">
                 <div className="sm:flex sm:flex-col sm:items-end">
                   <p className="mt-1 text-xs leading-5 text-stone-400">
-                    Today{"'"}s value
+                    {t('today_value')}
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     {"             "}
@@ -77,8 +79,8 @@ export function MyClaims({ userId }: { userId: string }) {
               <div className="flex min-w-0 gap-x-6">
                 <div className="min-w-0 flex-auto">
                   <p className="mt-1 block text-xs leading-5 text-stone-400">
-                    <span className="hidden sm:inline">Customer code</span>
-                    <span className="sm:hidden">Code</span>
+                    <span className="hidden sm:inline">{t('customer_code_long')}</span>
+                    <span className="sm:hidden">{t('customer_code_short')}</span>
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     <span className="font-semibold">{"         "}</span>
@@ -86,7 +88,7 @@ export function MyClaims({ userId }: { userId: string }) {
                 </div>
                 <div className="sm:ml-20 sm:flex sm:flex-col sm:items-start">
                   <p className="mt-1 text-xs leading-5 text-stone-400/50">
-                    Petition value
+                    {t('petition_value')}
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     {"             "}
@@ -97,7 +99,7 @@ export function MyClaims({ userId }: { userId: string }) {
               <div className="flex shrink-0 items-center gap-x-4">
                 <div className="sm:flex sm:flex-col sm:items-end">
                   <p className="mt-1 text-xs leading-5 text-stone-400">
-                    Today{"'"}s value
+                    {t('today_value')}
                   </p>
                   <div className="my-1 inline-block min-h-4 min-w-32 animate-pulse rounded-md bg-stone-700 font-mono text-xs leading-6 text-white sm:text-base">
                     {"             "}
@@ -154,14 +156,14 @@ export function MyClaims({ userId }: { userId: string }) {
           </ul>
           <div className="flex flex-col-reverse justify-between py-5 sm:row-auto sm:flex-row">
             <p className="text-md max-w-4xl text-center leading-8 text-stone-500 sm:text-left">
-              Verify ownership of this claim
+              {t('verify_claim_text')}
             </p>
             <button
               type="button"
               disabled
               className="w-full cursor-not-allowed rounded-md bg-indigo-500 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:opacity-80 sm:w-auto"
             >
-              Verify on ftx.com (coming soon)
+              {t('verify_claim_btn')}
             </button>
           </div>
         </>

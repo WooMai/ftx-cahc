@@ -1,6 +1,8 @@
 import { currentUser } from "@clerk/nextjs";
 
 import { QueryClient } from "@tanstack/react-query";
+import {LanguageSelector} from "@/app/[locale]/_components/language-selector";
+import {getTranslations} from "next-intl/server";
 
 const stats = [
   { name: "Estate Assets (est)", value: "$16.1", unit: "billion" },
@@ -16,16 +18,19 @@ const stats = [
 export default async function RecoveryAnalysis() {
   const user = await currentUser();
   const userId: string = user?.unsafeMetadata.external_id as string;
+  const t = await getTranslations('RecoveryAnalysis');
 
   return (
     <div className="mt-8">
+      <div className="mb-8 w-24">
+        <LanguageSelector/>
+      </div>
       <h3 className="mb-6 text-base font-semibold leading-6 text-stone-200">
-        Recovery Analysis
+        {t('title')}
       </h3>
       <p className="text-md max-w-4xl text-stone-500">
         <span className="">
-          The estate holds far more assets than the customer property valued at
-          petition date prices which will lead to a {">"}$1 plan.
+          {t('subtitle')}
         </span>
       </p>
       <br />

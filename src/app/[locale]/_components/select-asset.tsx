@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { Combobox, Label } from "@headlessui/react";
+import {useTranslations} from "next-intl";
 
 
 function classNames(...classes: (string | boolean)[]) {
@@ -16,6 +17,7 @@ export default function SelectAsset({
   defaultValue?: string;
   index: number;
 }) {
+  const t = useTranslations('SearchForm');
   const defaultValueOrEmptyString = defaultValue ? defaultValue : "";
 
   const [query, setQuery] = useState(defaultValueOrEmptyString);
@@ -58,7 +60,7 @@ export default function SelectAsset({
         className="absolute left-3 top-0 block text-xs font-medium leading-6 text-stone-400 "
         style={{ marginTop: 4.5 }}
       >
-        Asset
+        {t('asset')}
       </Label>
       <div className="relative">
         <Combobox.Input
