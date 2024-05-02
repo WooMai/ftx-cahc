@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
 import createMiddleware from "next-intl/middleware";
 
-const locales = ["en", "zh"];
+const locales = ["en", "zh", "bn"];
 
 
 const intlMiddleware = createMiddleware({
