@@ -1,0 +1,219 @@
+{
+  "Home": {
+    "title": "Join the FTX Customer Ad-Hoc Committee (CAHC) and Vote: NO",
+    "latest_news": "Latest News",
+    "latest": "Latest",
+    "latest_news_content": "Mar 6: FTX Debtors request 4 month delay, pay US Gov with customer assets",
+    "description_part1": "With over",
+    "former_ftx_customers": "1000+ former FTX customers",
+    "description_part2": "holding",
+    "claims_amount": "9-figures in claims",
+    "description_part3": "we have formed the largest voting block in the FTX bankruptcy cases.",
+    "legal_counsel": "Our legal counsel",
+    "legal_counsel_name": "McCarter & English, LLP",
+    "legal_counsel_action": "have filed customer property litigation:",
+    "docket_number": "docket 6863",
+    "join_us_part1": "Join us in voting ",
+    "no": "no",
+    "join_us_part2": " on any plan that fails to addresses serious issues impacting recovery of customer property.",
+    "read_our": "Read our",
+    "bylaws": "bylaws",
+    "and": "and",
+    "charter": "charter",
+    "to_learn_more": "to learn more.",
+    "find_your_ftx_claim": "Find your FTX claim",
+    "to_get_started": "to get started"
+  },
+  "CountStats": {
+    "stat1": "Customers Joined",
+    "stat2": "Total Claims"
+  },
+  "FightingFor": {
+    "issues_with_current_plan": "Issues with current plan",
+    "we_vote_no": "We vote 'no' on any plan unless the following issues are addressed",
+    "debtors_filed_plan": "The debtors have filed a half-baked and value-destructive plan. We aim to fix it by litigating our property rights and negotiating for common sense solutions like those below.",
+    "priority_for_customers": "Priority for customers.",
+    "priority_for_customers_desc": "If the current plan stands, upside goes to non-customers even from proceeds that were 100% traced to customer wallets, like Anthropic.",
+    "theft_of_property_damages": "Theft of property damages.",
+    "theft_of_property_damages_desc": "Customers should recover today's valuation of their crypto assets due to theft of property.",
+    "no_withholding_tax": "No 30% withholding tax.",
+    "no_withholding_tax_desc": "Since the large majority of customers are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
+    "digital_distributions": "Digital distributions.",
+    "digital_distributions_desc": "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries."
+  },
+  "TopNav": {
+    "home": "Home",
+    "find_claim": "Find Claim",
+    "telegram": "Telegram",
+    "my_claim_dashboard": "My Claim Dashboard",
+    "dashboard": "Dashboard",
+    "sign_in": "Sign In"
+  },
+  "Footer": {
+    "court_filings": "Court Filings",
+    "adversary_proceeding": "Adversary Proceeding",
+    "anthropic_objection": "Anthropic Objection",
+    "estimation_objection": "Estimation Objection",
+    "letter_to_ucc": "Letter to UCC",
+    "documents": "Documents",
+    "cahc_bylaws": "CAHC Bylaws",
+    "cahc_charter": "CAHC Charter",
+    "terms_of_service": "Terms of Service",
+    "privacy_policy": "Privacy Policy",
+    "links": "Links",
+    "cahc_telegram": "CAHC Telegram",
+    "cahc_twitter": "CAHC Twitter",
+    "debtors_filings": "Debtors Filings",
+    "debtors_plan": "Debtor's Plan",
+    "disclosure_statement": "Disclosure Statement"
+  },
+  "Shell": {
+    "my_claim": "My Claim",
+    "find_claim": "Find Claim",
+    "recovery_analysis": "Recovery Analysis",
+    "sign_out": "Sign Out"
+  },
+  "Dashboard": {
+    "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
+    "subtitle": "We have now formed the largest voting block with hundreds of members and 9-figures in claims.",
+    "claim_list_title": "Your Claim",
+    "now_what": "Now What?",
+    "now_what_text": "Join the <telegram>Telegram</telegram> group. Look out for emails from <white>updates@ftxvote.com</white> for further instructions.",
+    "about_us": "About us",
+    "about_us_text": "Thus far the FTX Debtors have proposed a value destructive plan.\n\nSince the Unsecured Creditors Committee has a fiduciary duty to all unsecured creditors including Alameda creditors, they are unable to fight on behalf of only FTX customers. Nor is the Ad Hoc Committee counseled by Eversheds an option, as they already agreed to settle their litigation and are now bound to support the debtors.\n\nThe estate is due to recover well over 100% petition date value and instead of accruing the surplus back to customers, the debtors plan to use our assets to pay non-customers and US government regulators instead.\n\nThe judge requires us to formally organize in order for our point of view to be considered in court."
+  },
+  "MyClaims": {
+    "customer_code_long": "Customer code",
+    "customer_code_short": "Code",
+    "petition_value": "Petition value",
+    "today_value": "Today's value",
+    "verify_claim_text": "Verify ownership of this claim",
+    "verify_claim_btn": "Verify on ftx.com (coming soon)"
+  },
+  "CoinsList": {
+    "th_asset": "Asset",
+    "th_balance": "Balance",
+    "th_petition": "Petition USD",
+    "th_today": "Today's USD",
+    "coin_type": {
+      "token": "token"
+    }
+  },
+  "ThisIsMyClaim": {
+    "text": "Register this claim to get started",
+    "btn": "This is my claim"
+  },
+  "Find": {
+    "title": "Find a claim",
+    "subtitle": "For us to represent your voice in court, you must register your claim with us. If your claim shows correctly in <MyClaims>My Claims</MyClaims> then you don't need to do anything."
+  },
+  "SearchForm": {
+    "description": "Specify roughly how many tokens you had to identify your claim.",
+    "asset": "Asset",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "search": "Search",
+    "search_loading": "Searching through millions of claims..."
+  },
+  "RecoveryAnalysis": {
+    "title": "Recovery Analysis",
+    "subtitle": "The estate holds far more assets than the customer property valued at petition date prices which will lead to a >$1 plan."
+  },
+  "ImportantDates": {
+    "title": "Important Dates",
+    "date1": {
+      "title": "Mar 1",
+      "description": "Disclosure Statement Due (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date2": {
+      "title": "Mar 20",
+      "description": "Omnibus Hearing",
+      "highlight": "yes",
+      "easternTime": "10:00 ET"
+    },
+    "date3": {
+      "title": "Mar 28",
+      "description": "SBF Sentencing",
+      "highlight": "yes",
+      "easternTime": "09:30 ET"
+    },
+    "date4": {
+      "title": "May 15",
+      "description": "Disclosure Statement Confirmation Hearing (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date5": {
+      "title": "Apr 18",
+      "description": "Hearing Cancelled",
+      "highlight": "no",
+      "easternTime": "13:00 ET"
+    },
+    "date6": {
+      "title": "May 1",
+      "description": "IRS Estimation Hearing",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date7": {
+      "title": "May 12",
+      "description": "Debtor Exclusivity Expires",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date8": {
+      "title": "May 23",
+      "description": "Omnibus Hearing",
+      "highlight": "yes",
+      "easternTime": "13:00 ET"
+    },
+    "date9": {
+      "title": "June 15",
+      "description": "Bahamas Bar Date",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date10": {
+      "title": "Jul 1",
+      "description": "Plan Vote Deadline (Blown)",
+      "highlight": "no",
+      "easternTime": ""
+    },
+    "date11": {
+      "title": "Jul 12",
+      "description": "Solicitation Exclusivity Expires",
+      "highlight": "no",
+      "easternTime": ""
+    }
+  },
+  "Register": {
+    "notification": "Selected {count, plural, one {# claim} other {# claims}}",
+    "registerButton": "Register"
+  },
+  "SignUpWithClaims": {
+    "makeYourVoiceHeard": "Make your voice heard",
+    "completeRegistrationForm": "Complete this registration form",
+    "removeButton": "Remove",
+    "confirmOwnershipText": "Do you confirm, under penalty of perjury, that you are the owner of {count, plural, one {this claim?} other {these claims?}}",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "Your Name",
+    "emailLabel": "Contact email",
+    "emailPlaceholder": "your@email.com",
+    "agreementText": "By confirming you agree to the CAHC defending your property rights, to publish your name in a declaration to the court, to receive emails and to abide by our <bylaws>bylaws</bylaws>.",
+    "disagreementWarning": "If you DO NOT confirm, the court will assume customers agree with the debtors' proposed petition value recoveries.",
+    "emailAlreadyInUseError": "Email already in use.",
+    "signInLink": "Sign-in",
+    "confirmButton": "Yes, I Confirm",
+    "cancelButton": "Cancel",
+    "successMessage": "You have successfully registered!",
+    "checkEmailMessage": "Check your email for next steps.",
+    "emailExpiredError": "Email link has expired",
+    "signInOtherTabMessage": "Sign in on other tab"
+  },
+  "SignedInRegisterClaim": {
+    "notification": "Selected {count, plural, one {# claim} other {# claims}}",
+    "registerClaimButton": "Register Claim"
+  }
+}
