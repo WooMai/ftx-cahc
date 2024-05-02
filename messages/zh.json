@@ -148,7 +148,7 @@
     "date5": {
       "title": "4月19日",
       "description": "听证会已取消",
-      "highlight": "no",
+      "highlight": "yes",
       "easternTime": "01:00 (UTC+8)"
     },
     "date6": {
@@ -196,7 +196,7 @@
     "makeYourVoiceHeard": "让您的声音被听到",
     "completeRegistrationForm": "请完成注册表格",
     "removeButton": "移除",
-    "confirmOwnershipText": "您确认，您是以上索赔的所有人。提供虚假信息将依法承担相应的法律责任。",
+    "confirmOwnershipText": "您确认，如有伪证将受到惩罚，您是 {count, plural, one {这项索赔} other {这些索赔}} 的所有者吗？",
     "fullNameLabel": "您的法定全名（英文）",
     "fullNamePlaceholder": "ZHANG SAN",
     "emailLabel": "联系邮箱（不必是FTX账户邮箱）",

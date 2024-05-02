@@ -1,60 +1,60 @@
 {
   "Home": {
-    "title": "Join the FTX Customer Ad-Hoc Committee (CAHC) and Vote: NO",
-    "latest_news": "Latest News",
-    "latest": "Latest",
-    "latest_news_content": "Mar 6: FTX Debtors request 4 month delay, pay US Gov with customer assets",
+    "title": "FTX গ্রাহক, অ্যাড-হক কমিটিতে (CAHC) যোগ দিন এবং ভোট দিন: না",
+    "latest_news": "সর্বশেষ সংবাদ",
+    "latest": "সর্বশেষ",
+    "latest_news_content": "মার্চ 6: FTX Debtors 4 মাস বিলম্বের জন্য অনুরোধ করে, গ্রাহকের সম্পদ থেকে মার্কিন সরকারকে অর্থ প্রদান করে৷",
     "description_part1": "With over",
-    "former_ftx_customers": "1000+ former FTX customers",
+    "former_ftx_customers": "1000+ প্রাক্তন FTX গ্রাহক",
     "description_part2": "holding",
     "claims_amount": "9-figures in claims",
-    "description_part3": "we have formed the largest voting block in the FTX bankruptcy cases.",
-    "legal_counsel": "Our legal counsel",
-    "legal_counsel_name": "McCarter & English, LLP",
-    "legal_counsel_action": "have filed customer property litigation:",
+    "description_part3": "আমরা FTX bankruptcy কেসে, সব থেকে বড় ভোটিং ব্লক তৈরি করেছি.",
+    "legal_counsel": "আমাদের আইনি পরামর্শ",
+    "legal_counsel_name": "ম্যাককার্টার এবং ইংরেজি, এলএলপি",
+    "legal_counsel_action": "গ্রাহক সম্পত্তি মামলা দায়ের করেছেন:",
     "docket_number": "docket 6863",
-    "join_us_part1": "Join us in voting ",
-    "no": "no",
-    "join_us_part2": " on any plan that fails to addresses serious issues impacting recovery of customer property.",
+    "join_us_part1": "আমাদের ভোটে যোগ দিন ",
+    "no": "না",
+    "join_us_part2": " যেকোনো পরিকল্পনা যেটা গ্রাহকের সম্পত্তি পুনরুদ্ধারে গুরুতর সমস্যা সমাধান মোকাবেলা করতে ব্যর্থ.",
     "read_our": "Read our",
     "bylaws": "bylaws",
-    "and": "and",
+    "and": "এবং",
     "charter": "charter",
-    "to_learn_more": "to learn more.",
-    "find_your_ftx_claim": "Find your FTX claim",
-    "to_get_started": "to get started"
+    "to_learn_more": "আরও জানতে.",
+    "find_your_ftx_claim": "আপনার FTX claim টি খুঁজুন",
+    "to_get_started": "শুরু করতে"
   },
   "CountStats": {
-    "stat1": "Customers Joined",
-    "stat2": "Total Claims"
+    "stat1": "গ্রাহকরা যোগ দিয়েছেন",
+    "stat2": "মোট Claims"
   },
   "FightingFor": {
-    "issues_with_current_plan": "Issues with current plan",
-    "we_vote_no": "We vote 'no' on any plan unless the following issues are addressed",
-    "debtors_filed_plan": "The debtors have filed a half-baked and value-destructive plan. We aim to fix it by litigating our property rights and negotiating for common sense solutions like those below.",
-    "priority_for_customers": "Priority for customers.",
+    "issues_with_current_plan": "বর্তমান পরিকল্পনার সমস্যা",
+    "we_vote_no": "আমরা যেকোন পরিকল্পনায় 'না' ভোট দিবো যদি না নিচের সমস্যাগুলোর সমাধান করা হয়",
+    "debtors_filed_plan": "ঋণখেলাপিরা (debtors) একটি অপরিকল্পিত এবং মূল্য-বিধ্বংসী পরিকল্পনা দায়ের করেছে। আমরা আমাদের সম্পত্তির অধিকার নিয়ে মামলা করে এটি ঠিক করতে চাই এবং নীচের মত সাধারণ জ্ঞান সমাধানের জন্য আলোচনা করে এটি ঠিক করার লক্ষ্য রাখি.",
+    "priority_for_customers": "গ্রাহকদের জন্য অগ্রাধিকার.",
     "priority_for_customers_desc": "If the current plan stands, upside goes to non-customers even from proceeds that were 100% traced to customer wallets, like Anthropic.",
-    "theft_of_property_damages": "Theft of property damages.",
-    "theft_of_property_damages_desc": "Customers should recover today's valuation of their crypto assets due to theft of property.",
+    "theft_of_property_damages": "সম্পত্তির ক্ষতি চুরি.",
+    "theft_of_property_damages_desc": "সম্পত্তি চুরির কারণে গ্রাহকদের তাদের ক্রিপ্টো সম্পদের আজকের মূল্যায়ন পুনরুদ্ধার করা উচিত.",
     "no_withholding_tax": "No 30% withholding tax.",
-    "no_withholding_tax_desc": "Since the large majority of customers are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
-    "digital_distributions": "Digital distributions.",
-    "digital_distributions_desc": "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries."
+    "no_withholding_tax_desc": "যেহেতু গ্রাহকদের বৃহৎ সংখ্যাগরিষ্ঠ non-US আমরা একটি 30% উইথহোল্ডিং ট্যাক্সের অধীন থাকব যা আমাদের IRS থেকে ফেরত দাবি করতে হবে, এটি একটি সমস্যা যা ঋণদাতারা (debtors) তাদের US ফোকাসের কারণে সম্পূর্ণরূপে উপেক্ষা করেছে.",
+    "digital_distributions": "ডিজিটাল বিতরণ.",
+    "digital_distributions_desc": "ঋণগ্রহীতারা 'নগদ' এর মাধ্যমে পুনরুদ্ধার বিতরণ করতে চায় যা মেইলে চেকের জন্য আইনজীবীর কথা বলে। এটি একটি বিশাল এবং ব্যয়বহুল প্রশাসনিক বোঝা যা পুনরুদ্ধার হ্রাস এবং বিলম্বিত করবে."
   },
   "TopNav": {
     "home": "Home",
-    "find_claim": "Find Claim",
-    "telegram": "Telegram",
+    "find_claim": "Claim খুঁজুন",
+    "telegram": "টেলিগ্রাম",
     "my_claim_dashboard": "My Claim Dashboard",
     "dashboard": "Dashboard",
-    "sign_in": "Sign In"
+    "sign_in": "সাইন ইন করুন"
   },
   "Footer": {
     "court_filings": "Court Filings",
-    "adversary_proceeding": "Adversary Proceeding",
+    "adversary_proceeding": "প্রতিপক্ষের কার্যক্রম",
     "anthropic_objection": "Anthropic Objection",
     "estimation_objection": "Estimation Objection",
-    "letter_to_ucc": "Letter to UCC",
+    "letter_to_ucc": "UCC কে চিঠি",
     "documents": "Documents",
     "cahc_bylaws": "CAHC Bylaws",
     "cahc_charter": "CAHC Charter",
@@ -71,16 +71,16 @@
     "my_claim": "My Claim",
     "find_claim": "Find Claim",
     "recovery_analysis": "Recovery Analysis",
-    "sign_out": "Sign Out"
+    "sign_out": "সাইন আউট"
   },
   "Dashboard": {
-    "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
-    "subtitle": "We have now formed the largest voting block with hundreds of members and 9-figures in claims.",
+    "title": "FTX গ্রাহক অ্যাড-হক ভোটিং ব্লকে স্বাগতম",
+    "subtitle": "আমরা এখন শত শত সদস্য এবং দাবিতে 9-পরিসংখ্যান নিয়ে বৃহত্তম ভোটিং ব্লক গঠন করেছি.",
     "claim_list_title": "Your Claim",
     "now_what": "Now What?",
-    "now_what_text": "Join the <telegram>Telegram</telegram> group. Look out for emails from <white>updates@ftxvote.com</white> for further instructions.",
+    "now_what_text": "টেলিগ্রাম গ্রুপে যুক্ত হন এবং আরও নির্দেশের জন্য updates@ftxvote.com থেকে ইমেল দেখুন.",
     "about_us": "About us",
-    "about_us_text": "Thus far the FTX Debtors have proposed a value destructive plan.\n\nSince the Unsecured Creditors Committee has a fiduciary duty to all unsecured creditors including Alameda creditors, they are unable to fight on behalf of only FTX customers. Nor is the Ad Hoc Committee counseled by Eversheds an option, as they already agreed to settle their litigation and are now bound to support the debtors.\n\nThe estate is due to recover well over 100% petition date value and instead of accruing the surplus back to customers, the debtors plan to use our assets to pay non-customers and US government regulators instead.\n\nThe judge requires us to formally organize in order for our point of view to be considered in court."
+    "about_us_text": "এখন পর্যন্ত FTX ঋণদাতারা একটি মূল্য ধ্বংসাত্মক পরিকল্পনা প্রস্তাব করেছে।\n\nযেহেতু আনসিকিউরড ক্রেডিটরস কমিটির আলামেডা পাওনাদার সহ সমস্ত অসুরক্ষিত পাওনাদারদের উপর একটি বিশ্বস্ত দায়িত্ব রয়েছে, তাই তারা শুধুমাত্র FTX গ্রাহকদের পক্ষে লড়াই করতে অক্ষম। বা এভারশেডস দ্বারা অ্যাডহক কমিটিকে পরামর্শ দেওয়া হয় না, কারণ তারা ইতিমধ্যে তাদের মামলা নিষ্পত্তি করতে সম্মত হয়েছে এবং এখন ঋণদাতাদের সমর্থন করতে বাধ্য।\n\nএস্টেটটি 100% পিটিশনের তারিখ মূল্যের বেশি পুনরুদ্ধার করার কারণে এবং গ্রাহকদের কাছে উদ্বৃত্ত জমা করার পরিবর্তে, ঋণদাতারা অ-গ্রাহকদের এবং মার্কিন সরকার নিয়ন্ত্রকদের অর্থ প্রদানের জন্য আমাদের সম্পদ ব্যবহার করার পরিকল্পনা করছে।\n\nআমাদের দৃষ্টিভঙ্গি আদালতে বিবেচনা করার জন্য বিচারক আমাদের আনুষ্ঠানিকভাবে সংগঠিত করতে চান."
   },
   "MyClaims": {
     "customer_code_long": "Customer code",
@@ -108,7 +108,7 @@
     "subtitle": "For us to represent your voice in court, you must register your claim with us. If your claim shows correctly in <MyClaims>My Claims</MyClaims> then you don't need to do anything."
   },
   "SearchForm": {
-    "description": "Specify roughly how many tokens you had to identify your claim.",
+    "description": "আপনার claim শনাক্ত করতে আপনার কতগুলি টোকেন ছিল তা নির্দিষ্ট করুন.",
     "asset": "Asset",
     "minimum": "Minimum",
     "maximum": "Maximum",
@@ -120,71 +120,71 @@
     "subtitle": "The estate holds far more assets than the customer property valued at petition date prices which will lead to a >$1 plan."
   },
   "ImportantDates": {
-    "title": "Important Dates",
+    "title": "গুরুত্বপূর্ণ তারিখ সমূহ",
     "date1": {
-      "title": "Mar 1",
+      "title": "১ মার্চ",
       "description": "Disclosure Statement Due (Blown)",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date2": {
-      "title": "Mar 20",
+      "title": "২০ মার্চ",
       "description": "Omnibus Hearing",
-      "highlight": "yes",
+      "highlight": "হ্যা",
       "easternTime": "10:00 ET"
     },
     "date3": {
-      "title": "Mar 28",
+      "title": "২৮ মার্চ",
       "description": "SBF Sentencing",
-      "highlight": "yes",
+      "highlight": "হ্যা",
       "easternTime": "09:30 ET"
     },
     "date4": {
-      "title": "May 15",
+      "title": "১৫ মে",
       "description": "Disclosure Statement Confirmation Hearing (Blown)",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date5": {
-      "title": "Apr 18",
-      "description": "Hearing Cancelled",
-      "highlight": "no",
+      "title": "১৮ এপ্রিল",
+      "description": "শুনানি বাতিল",
+      "highlight": "না",
       "easternTime": "13:00 ET"
     },
     "date6": {
-      "title": "May 1",
+      "title": "১ মে",
       "description": "IRS Estimation Hearing",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date7": {
-      "title": "May 12",
+      "title": "১২ মে",
       "description": "Debtor Exclusivity Expires",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date8": {
-      "title": "May 23",
+      "title": "২৩ মে",
       "description": "Omnibus Hearing",
-      "highlight": "yes",
+      "highlight": "হ্যা",
       "easternTime": "13:00 ET"
     },
     "date9": {
-      "title": "June 15",
+      "title": "১৫ জুন",
       "description": "Bahamas Bar Date",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date10": {
-      "title": "Jul 1",
+      "title": "১ জুলাই",
       "description": "Plan Vote Deadline (Blown)",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     },
     "date11": {
-      "title": "Jul 12",
+      "title": "১২ জুলাই",
       "description": "Solicitation Exclusivity Expires",
-      "highlight": "no",
+      "highlight": "না",
       "easternTime": ""
     }
   },
@@ -194,23 +194,23 @@
   },
   "SignUpWithClaims": {
     "makeYourVoiceHeard": "Make your voice heard",
-    "completeRegistrationForm": "Complete this registration form",
+    "completeRegistrationForm": "এই রেজিস্ট্রেশন ফর্মটি পূরণ করুন",
     "removeButton": "Remove",
     "confirmOwnershipText": "Do you confirm, under penalty of perjury, that you are the owner of {count, plural, one {this claim?} other {these claims?}}",
     "fullNameLabel": "Full name",
     "fullNamePlaceholder": "Your Name",
-    "emailLabel": "Contact email",
+    "emailLabel": "যোগাযোগের ই - মেইল",
     "emailPlaceholder": "your@email.com",
-    "agreementText": "By confirming you agree to the CAHC defending your property rights, to publish your name in a declaration to the court, to receive emails and to abide by our <bylaws>bylaws</bylaws>.",
-    "disagreementWarning": "If you DO NOT confirm, the court will assume customers agree with the debtors' proposed petition value recoveries.",
-    "emailAlreadyInUseError": "Email already in use.",
-    "signInLink": "Sign-in",
-    "confirmButton": "Yes, I Confirm",
-    "cancelButton": "Cancel",
-    "successMessage": "You have successfully registered!",
-    "checkEmailMessage": "Check your email for next steps.",
-    "emailExpiredError": "Email link has expired",
-    "signInOtherTabMessage": "Sign in on other tab"
+    "agreementText": "নিশ্চিত করার মাধ্যমে আপনি আপনার সম্পত্তির অধিকার রক্ষা করতে, আদালতে আপনার নাম প্রকাশ করতে, ইমেল পেতে এবং আমাদের মেনে চলার জন্য CAHC-তে সম্মত হন.",
+    "disagreementWarning": "আপনি নিশ্চিত না হলে, আদালত ধরে নেবে গ্রাহকরা দেনাদারদের প্রস্তাবিত আবেদন মূল্য পুনরুদ্ধারের সাথে একমত.",
+    "emailAlreadyInUseError": "এই ইমেইলটি ইতোমধ্যে ব্যবহৃত হয়েছে",
+    "signInLink": "সাইন ইন করুন",
+    "confirmButton": "হ্যাঁ, আমি নিশ্চিত",
+    "cancelButton": "বাতিল করুন",
+    "successMessage": "আপনি সফলভাবে Register করেছেন!",
+    "checkEmailMessage": "পরবর্তী পদক্ষেপের জন্য আপনার ইমেল চেক করুন.",
+    "emailExpiredError": "ইমেল লিঙ্ক এর মেয়াদ শেষ হয়েছে",
+    "signInOtherTabMessage": "অন্য ট্যাবে সাইন ইন করুন"
   },
   "SignedInRegisterClaim": {
     "notification": "Selected {count, plural, one {# claim} other {# claims}}",
