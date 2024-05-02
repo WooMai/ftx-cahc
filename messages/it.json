@@ -7,7 +7,7 @@
     "description_part1": "Con oltre",
     "former_ftx_customers": "1000+ ex clienti FTX",
     "description_part2": "proprietà",
-    "claims_amount": "9 numeri nella richiesta totale di risarcimento crediti",
+    "claims_amount": "9 cifre nella richiesta totale di risarcimento crediti",
     "description_part3": "abbiamo costituito il più grande blocco di voto nei casi fallimentari FTX.",
     "legal_counsel": "La nostra rappresentanza legale",
     "legal_counsel_name": "McCarter & English, LLP",
@@ -26,7 +26,7 @@
   },
   "CountStats": {
     "stat1": "Clienti Iscritti",
-    "stat2": "Totale richiesta di risarcimento"
+    "stat2": "Credito totale"
   },
   "FightingFor": {
     "issues_with_current_plan": "Problemi con il piano attuale",
@@ -68,19 +68,19 @@
     "disclosure_statement": "Comunicazione informativa"
   },
   "Shell": {
-    "my_claim": "Il Mio Credito",
-    "find_claim": "Trova credito",
+    "my_claim": "Il mio credito",
+    "find_claim": "Trova il mio credito",
     "recovery_analysis": "Analisi Del Recupero",
     "sign_out": "Disconnettiti"
   },
   "Dashboard": {
     "title": "Benvenuto nel voto di blocco FTX Customer Ad-Hoc",
-    "subtitle": "Abbiamo costituito il blocco di voto più grande con centinaia di membri e 9 cifre nelle rivendicazioni.",
-    "claim_list_title": "Il Tuo Reclamo",
+    "subtitle": "Abbiamo costituito il blocco di voto più grande con centinaia di membri e 9 cifre nella richiesta totale di risarcimento crediti.",
+    "claim_list_title": "Il tuo credito",
     "now_what": "E adesso?",
-    "now_what_text": "Unisciti al gruppo <telegram>Telegram</telegram>. Controlla le email da <white>updates@ftxvote.com</white> per ulteriori istruzioni.",
+    "now_what_text": "Unisciti al gruppo <telegram>Telegram</telegram>. Controlla le email da <white>updates@ftxvote.com</white> per ulteriori informazioni.",
     "about_us": "Chi siamo",
-    "about_us_text": "Finora i debitori FTX hanno proposto un piano distruttivo del valore del capitale.\n\nPoiché il Unsecured Creditors Committee (UCC) ha un obbligo fiduciario nei confronti di tutti i creditori non garantiti, compresi i creditori di Alameda, non è in grado di combattere per conto dei soli clienti FTX. Ed il comitato Ad Hoc consigliato da Eversheds non è un'opzione, poiché hanno già accettato di risolvere le controversie e sono ora obbligati a sostenere i debitori.\n\nIl capitale dovrebbe recuperare ben oltre il 100% del valore della data di petizione, ma i debitori, invece di ridistribuire l'eccedenza di nuovo ai clienti, prevedono di utilizzare i nostri beni per pagare i non clienti e le autorità di regolamentazione statunitensi.\n\nIl giudice ci chiede di organizzarci formalmente per poter considerare il nostro punto di vista in tribunale."
+    "about_us_text": "Finora i debitori FTX hanno proposto un piano distruttivo del valore del capitale.\n\nPoiché il comitato 'Unsecured Creditors Committee' (UCC) ha un obbligo fiduciario nei confronti di tutti i creditori non garantiti, compresi i creditori di Alameda, non è in grado di combattere per conto dei soli clienti FTX. Ed il comitato Ad Hoc consigliato da Eversheds non è un'opzione, poiché hanno già accettato di risolvere le controversie e sono ora obbligati a sostenere i debitori.\n\nIl capitale dovrebbe recuperare ben oltre il 100% del valore della data di petizione, ma i debitori, invece di ridistribuire l'eccedenza di nuovo ai clienti, prevedono di utilizzare i nostri beni per pagare i non clienti e le autorità di regolamentazione statunitensi.\n\nIl giudice ci chiede di organizzarci formalmente per poter considerare il nostro punto di vista in tribunale."
   },
   "MyClaims": {
     "customer_code_long": "Codice cliente",
@@ -100,12 +100,12 @@
     }
   },
   "ThisIsMyClaim": {
-    "text": "Registra questa richiesta per iniziare",
+    "text": "Registra questo credito per iniziare",
     "btn": "Questa è la mia richiesta"
   },
   "Find": {
-    "title": "Trova Richiesta",
-    "subtitle": "Per rappresentare la tua voce in tribunale, devi registrare la tua richiesta d' indennizzo con noi. Se il tuo reclamo mostra correttamente in <MyClaims>La mia richiesta</MyClaims> allora non è necessario fare nulla."
+    "title": "Trova credito",
+    "subtitle": "Per rappresentare la tua voce in tribunale, devi registrare la tua richiesta d' indennizzo con noi. Se la tua richiesta di indennizzo appare correttamente in <MyClaims>La mia richiesta</MyClaims> allora non è necessario fare nulla."
   },
   "SearchForm": {
     "description": "Specificare approssimativamente quanti tokens avevi per identificare il reclamo.",
@@ -113,11 +113,11 @@
     "minimum": "Minimo",
     "maximum": "Massimo",
     "search": "Cerca",
-    "search_loading": "Ricerca attraverso milioni di reclami..."
+    "search_loading": "Ricerca attraverso milioni di richieste..."
   },
   "RecoveryAnalysis": {
     "title": "Analisi Del Recupero",
-    "subtitle": "Il debitore detiene molti più beni rispetto alla proprietà del cliente valutata ai prezzi della data della petizione, il che porterà ad un piano di restituzione a >$1."
+    "subtitle": "Il debitore detiene molti più beni rispetto alla proprietà del cliente valutate ai prezzi della data di petizione, il che porterà ad un piano di restituzione superiore a $1."
   },
   "ImportantDates": {
     "title": "Date Importanti",
@@ -141,7 +141,7 @@
     },
     "date4": {
       "title": "Maggio 15",
-      "description": "Udienza di conferma della dichiarazione di divulgazione (soffiata)",
+      "description": "Udienza di conferma della dichiarazione di divulgazione",
       "highlight": "no",
       "easternTime": ""
     },
@@ -214,6 +214,6 @@
   },
   "SignedInRegisterClaim": {
     "notification": "Selezionato {count, plural, one {# reclamo} other {# reclami}}",
-    "registerClaimButton": "Registra Richiesta"
+    "registerClaimButton": "Registra credito"
   }
 }

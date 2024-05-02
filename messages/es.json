@@ -1,219 +1,219 @@
 {
   "Home": {
     "title": "Únete al Comité Ad-Hoc de Clientes de FTX (CAHC) y Vota: NO",
-    "latest_news": "Latest News",
-    "latest": "Latest",
-    "latest_news_content": "Mar 6: FTX Debtors request 4 month delay, pay US Gov with customer assets",
-    "description_part1": "With over",
-    "former_ftx_customers": "1000+ former FTX customers",
-    "description_part2": "holding",
-    "claims_amount": "9-figures in claims",
-    "description_part3": "we have formed the largest voting block in the FTX bankruptcy cases.",
-    "legal_counsel": "Our legal counsel",
+    "latest_news": "Noticias más recientes",
+    "latest": "Nuevo",
+    "latest_news_content": "6 de Marzo: Los liquidadores de FTX piden 4 meses más, pagarán al gobierno americano con dinero de los clientes",
+    "description_part1": "Con más de",
+    "former_ftx_customers": "Más de 1000 antiguos clientes de FTX",
+    "description_part2": "tenencia",
+    "claims_amount": "9 cifras en reclamaciones",
+    "description_part3": "hemos formado el mayor bloque de votación en el caso de bancarrota de FTX.",
+    "legal_counsel": "Nuestro asesoramiento legal",
     "legal_counsel_name": "McCarter & English, LLP",
-    "legal_counsel_action": "have filed customer property litigation:",
-    "docket_number": "docket 6863",
-    "join_us_part1": "Join us in voting ",
+    "legal_counsel_action": "han presentado un litigio sobre la propiedad del cliente:",
+    "docket_number": "documento 6863",
+    "join_us_part1": "Únete a nosotros en la votación ",
     "no": "no",
-    "join_us_part2": " on any plan that fails to addresses serious issues impacting recovery of customer property.",
-    "read_our": "Read our",
-    "bylaws": "bylaws",
-    "and": "and",
+    "join_us_part2": " en cualquier plan que no se adecue a los serios problemas para recuperar nuestra propiedad.",
+    "read_our": "Lee nuestra",
+    "bylaws": "reglamentos",
+    "and": "y",
     "charter": "charter",
-    "to_learn_more": "to learn more.",
-    "find_your_ftx_claim": "Find your FTX claim",
-    "to_get_started": "to get started"
+    "to_learn_more": "para obtener más información.",
+    "find_your_ftx_claim": "Encuentra tu reclamación de FTX",
+    "to_get_started": "para empezar"
   },
   "CountStats": {
-    "stat1": "Customers Joined",
-    "stat2": "Total Claims"
+    "stat1": "Clientes se han unido",
+    "stat2": "Total de reclamaciones"
   },
   "FightingFor": {
-    "issues_with_current_plan": "Issues with current plan",
-    "we_vote_no": "We vote 'no' on any plan unless the following issues are addressed",
-    "debtors_filed_plan": "The debtors have filed a half-baked and value-destructive plan. We aim to fix it by litigating our property rights and negotiating for common sense solutions like those below.",
-    "priority_for_customers": "Priority for customers.",
-    "priority_for_customers_desc": "If the current plan stands, upside goes to non-customers even from proceeds that were 100% traced to customer wallets, like Anthropic.",
-    "theft_of_property_damages": "Theft of property damages.",
-    "theft_of_property_damages_desc": "Customers should recover today's valuation of their crypto assets due to theft of property.",
-    "no_withholding_tax": "No 30% withholding tax.",
-    "no_withholding_tax_desc": "Since the large majority of customers are non-US we will be subject to a 30% withholding tax which we will have to claim back from the IRS, an issue that the debtors have completely ignored due to their US focus.",
-    "digital_distributions": "Digital distributions.",
-    "digital_distributions_desc": "The debtors want to distribute recoveries via 'cash' which is lawyer-speak for checks in the mail. This is a huge and costly administrative burden that will reduce and delay recoveries."
+    "issues_with_current_plan": "Problemas con el plan actual",
+    "we_vote_no": "Votamos \"no\" a cualquier plan a menos que se aborden las siguientes cuestiones",
+    "debtors_filed_plan": "Los deudores han presentado un plan a medio hacer y que destroza cualquier tipo de recuperación total. Nuestro objetivo es solucionarlo mediante litigios de nuestros derechos de propiedad y negociando soluciones de sentido común como las que se indican a continuación.",
+    "priority_for_customers": "Prioridad para los clientes.",
+    "priority_for_customers_desc": "Si el plan actual se mantiene, la posible recuperación de los activos sobrantes puede ir a gente -no cliente- aunque el dinero fuera 100% trazable a monederos de clientes, como Anthropic.",
+    "theft_of_property_damages": "Robo de daños a la propiedad.",
+    "theft_of_property_damages_desc": "Los clientes deben recuperar la valoración actual de sus activos cripto debido al robo de su propiedad.",
+    "no_withholding_tax": "Que no haya un 30% de retención fiscal.",
+    "no_withholding_tax_desc": "Dado que la gran mayoría de los clientes no son estadounidenses, estaremos sujetos a un 30% de retención fiscal que tendremos que reclamar al IRS, un asunto que los liquidadores han ignorado por completo debido a su enfoque estadounidense.",
+    "digital_distributions": "Distribuciones digitales.",
+    "digital_distributions_desc": "Los deudores quieren distribuir los reembolsos a través de dinero en efectivo, que en el caso de los abogados, son cheques por correo. Se trata de una enorme y costosa carga administrativa que reducirá y retrasará las recuperaciones."
   },
   "TopNav": {
-    "home": "Home",
-    "find_claim": "Find Claim",
+    "home": "Inicio",
+    "find_claim": "Buscar reclamación",
     "telegram": "Telegram",
-    "my_claim_dashboard": "My Claim Dashboard",
-    "dashboard": "Dashboard",
-    "sign_in": "Sign In"
+    "my_claim_dashboard": "Mi panel de reclamaciones",
+    "dashboard": "Panel de control",
+    "sign_in": "Iniciar sesión"
   },
   "Footer": {
-    "court_filings": "Court Filings",
-    "adversary_proceeding": "Adversary Proceeding",
-    "anthropic_objection": "Anthropic Objection",
-    "estimation_objection": "Estimation Objection",
-    "letter_to_ucc": "Letter to UCC",
-    "documents": "Documents",
-    "cahc_bylaws": "CAHC Bylaws",
-    "cahc_charter": "CAHC Charter",
-    "terms_of_service": "Terms of Service",
-    "privacy_policy": "Privacy Policy",
-    "links": "Links",
-    "cahc_telegram": "CAHC Telegram",
-    "cahc_twitter": "CAHC Twitter",
-    "debtors_filings": "Debtors Filings",
-    "debtors_plan": "Debtor's Plan",
-    "disclosure_statement": "Disclosure Statement"
+    "court_filings": "Documentos del Tribunal",
+    "adversary_proceeding": "Procedimiento contencioso",
+    "anthropic_objection": "Objeción a Anthropic",
+    "estimation_objection": "Objeción a la estimación",
+    "letter_to_ucc": "Carta a la UCC",
+    "documents": "Documentos",
+    "cahc_bylaws": "Estatutos del CAHC",
+    "cahc_charter": "Carta de la CAHC",
+    "terms_of_service": "Términos del servicio",
+    "privacy_policy": "Política de privacidad",
+    "links": "Enlaces",
+    "cahc_telegram": "Telegram CAHC",
+    "cahc_twitter": "Twitter CAHC",
+    "debtors_filings": "Documentos de los deudores",
+    "debtors_plan": "Plan de los liquidadores",
+    "disclosure_statement": "Declaración de divulgación"
   },
   "Shell": {
-    "my_claim": "My Claim",
-    "find_claim": "Find Claim",
-    "recovery_analysis": "Recovery Analysis",
-    "sign_out": "Sign Out"
+    "my_claim": "Mi reclamación",
+    "find_claim": "Buscar reclamación",
+    "recovery_analysis": "Análisis de recuperación",
+    "sign_out": "Cerrar sesión"
   },
   "Dashboard": {
-    "title": "Welcome to the FTX Customer Ad-Hoc Voting Blo1ck",
-    "subtitle": "We have now formed the largest voting block with hundreds of members and 9-figures in claims.",
-    "claim_list_title": "Your Claim",
-    "now_what": "Now What?",
-    "now_what_text": "Join the <telegram>Telegram</telegram> group. Look out for emails from <white>updates@ftxvote.com</white> for further instructions.",
-    "about_us": "About us",
-    "about_us_text": "Thus far the FTX Debtors have proposed a value destructive plan.\n\nSince the Unsecured Creditors Committee has a fiduciary duty to all unsecured creditors including Alameda creditors, they are unable to fight on behalf of only FTX customers. Nor is the Ad Hoc Committee counseled by Eversheds an option, as they already agreed to settle their litigation and are now bound to support the debtors.\n\nThe estate is due to recover well over 100% petition date value and instead of accruing the surplus back to customers, the debtors plan to use our assets to pay non-customers and US government regulators instead.\n\nThe judge requires us to formally organize in order for our point of view to be considered in court."
+    "title": "Bienvenido al bloque de votación de clientes Ad-Hoc de FTX",
+    "subtitle": "Hemos formado el mayor bloque de votación con cientos de miembros y 9 cifras en reclamaciones.",
+    "claim_list_title": "Tu reclamación",
+    "now_what": "¿Y ahora qué?",
+    "now_what_text": "Únete al grupo de <telegram>Telegram</telegram>. Estate atento a correos electrónicos de <white>updates@ftxvote.com</white> para más información.",
+    "about_us": "Sobre nosotros",
+    "about_us_text": "Hasta ahora, el grupo de liquidadores de FTX ha propuesto un plan para destruir nuestra capacidad de recuperación.\n\nDado que el Comité de Acreedores no garantizados tiene un deber fiduciario con todos los acreedores no garantizados, incluidos los acreedores de Alameda, no puede luchar únicamente en nombre de los clientes de FTX. El Comité Ad Hoc asesorado por Eversheds tampoco es una opción, puesto que ya ha acordado resolver su litigio y ahora está obligado a apoyar a los deudores.\n\nEl estado 'liquidadores' debe recuperar más del 100% del valor a fecha de petición y, en lugar de devolver el excedente a los clientes, los deudores planean utilizar nuestros activos para pagar a los no clientes y a los reguladores del gobierno de EE. UU..\n\nEl juez exige que nos organicemos formalmente para que nuestro punto de vista sea tenido en cuenta en el tribunal."
   },
   "MyClaims": {
-    "customer_code_long": "Customer code",
-    "customer_code_short": "Code",
-    "petition_value": "Petition value",
-    "today_value": "Today's value",
-    "verify_claim_text": "Verify ownership of this claim",
-    "verify_claim_btn": "Verify on ftx.com (coming soon)"
+    "customer_code_long": "Código de cliente",
+    "customer_code_short": "Código",
+    "petition_value": "Valor en la petición",
+    "today_value": "Valor de hoy",
+    "verify_claim_text": "Verifica la propiedad de esta reclamación",
+    "verify_claim_btn": "Verifica en ftx.com (pronto)"
   },
   "CoinsList": {
-    "th_asset": "Asset",
+    "th_asset": "Activo",
     "th_balance": "Balance",
-    "th_petition": "Petition USD",
-    "th_today": "Today's USD",
+    "th_petition": "Petición en USD",
+    "th_today": "Valor hoy en USD",
     "coin_type": {
       "token": "token"
     }
   },
   "ThisIsMyClaim": {
-    "text": "Register this claim to get started",
-    "btn": "This is my claim"
+    "text": "Registra esta reclamación para empezar",
+    "btn": "Esta es mi reclamación"
   },
   "Find": {
-    "title": "Find a claim",
-    "subtitle": "For us to represent your voice in court, you must register your claim with us. If your claim shows correctly in <MyClaims>My Claims</MyClaims> then you don't need to do anything."
+    "title": "Buscar reclamación",
+    "subtitle": "Para que representemos tu voz en los tribunales, debes registrar tu reclamación con nosotros. Si tu reclamación se muestra correctamente en <MyClaims>Mis reclamaciones</MyClaims> entonces no necesitas hacer nada más."
   },
   "SearchForm": {
-    "description": "Specify roughly how many tokens you had to identify your claim.",
-    "asset": "Asset",
-    "minimum": "Minimum",
-    "maximum": "Maximum",
-    "search": "Search",
-    "search_loading": "Searching through millions of claims..."
+    "description": "Especifique aproximadamente cuantos tokens tenías para identificar tu reclamación.",
+    "asset": "Activo",
+    "minimum": "Mínimo",
+    "maximum": "Máximo",
+    "search": "Buscar",
+    "search_loading": "Buscando entre millones de reclamaciones..."
   },
   "RecoveryAnalysis": {
-    "title": "Recovery Analysis",
-    "subtitle": "The estate holds far more assets than the customer property valued at petition date prices which will lead to a >$1 plan."
+    "title": "Análisis de recuperación",
+    "subtitle": "La propiedad posee muchos más activos que la propiedades de los clientes valorada a precios de fecha de petición que conducirán a un plan de más de 1$."
   },
   "ImportantDates": {
-    "title": "Important Dates",
+    "title": "Fechas importantes",
     "date1": {
-      "title": "Mar 1",
-      "description": "Disclosure Statement Due (Blown)",
+      "title": "1 de Marzo",
+      "description": "Vencimiento de la declaración informativa",
       "highlight": "no",
       "easternTime": ""
     },
     "date2": {
-      "title": "Mar 20",
-      "description": "Omnibus Hearing",
-      "highlight": "yes",
-      "easternTime": "10:00 ET"
+      "title": "20 de Marzo",
+      "description": "Audiencia en la corte",
+      "highlight": "sí",
+      "easternTime": "10:00 ET (Eastern Time)"
     },
     "date3": {
-      "title": "Mar 28",
-      "description": "SBF Sentencing",
-      "highlight": "yes",
-      "easternTime": "09:30 ET"
+      "title": "28 de Marzo",
+      "description": "Sentencia de SBF",
+      "highlight": "sí",
+      "easternTime": "09:30 ET (Eastern Time)"
     },
     "date4": {
-      "title": "May 15",
-      "description": "Disclosure Statement Confirmation Hearing (Blown)",
+      "title": "15 de mayo",
+      "description": "Audiencia de confirmación de siguientes pasos",
       "highlight": "no",
       "easternTime": ""
     },
     "date5": {
-      "title": "Apr 18",
-      "description": "Hearing Cancelled",
+      "title": "18 de abril",
+      "description": "Audiencia cancelada",
       "highlight": "no",
-      "easternTime": "13:00 ET"
+      "easternTime": "13:00 ET (Eastern Time)"
     },
     "date6": {
-      "title": "May 1",
-      "description": "IRS Estimation Hearing",
+      "title": "1 de mayo",
+      "description": "Estimación del IRS",
       "highlight": "no",
       "easternTime": ""
     },
     "date7": {
-      "title": "May 12",
-      "description": "Debtor Exclusivity Expires",
+      "title": "12 de mayo",
+      "description": "La exclusividad de los liquidadores caduca",
       "highlight": "no",
       "easternTime": ""
     },
     "date8": {
-      "title": "May 23",
-      "description": "Omnibus Hearing",
-      "highlight": "yes",
-      "easternTime": "13:00 ET"
+      "title": "23 de mayo",
+      "description": "Audiencia en la corte",
+      "highlight": "sí",
+      "easternTime": "13:00 ET (Eastern Time)"
     },
     "date9": {
-      "title": "June 15",
-      "description": "Bahamas Bar Date",
+      "title": "15 de junio",
+      "description": "Fecha máxima de Bahamas",
       "highlight": "no",
       "easternTime": ""
     },
     "date10": {
-      "title": "Jul 1",
-      "description": "Plan Vote Deadline (Blown)",
+      "title": "1 de julio",
+      "description": "Plazo para votar un plan",
       "highlight": "no",
       "easternTime": ""
     },
     "date11": {
-      "title": "Jul 12",
-      "description": "Solicitation Exclusivity Expires",
+      "title": "12 de julio",
+      "description": "El plan de exclusividad expira",
       "highlight": "no",
       "easternTime": ""
     }
   },
   "Register": {
-    "notification": "Selected {count, plural, one {# claim} other {# claims}}",
-    "registerButton": "Register"
+    "notification": "¡Has seleccionado {count, plural, one {# claim} other {# reclamaciones}}",
+    "registerButton": "Crear cuenta"
   },
   "SignUpWithClaims": {
-    "makeYourVoiceHeard": "Make your voice heard",
-    "completeRegistrationForm": "Complete this registration form",
-    "removeButton": "Remove",
-    "confirmOwnershipText": "Do you confirm, under penalty of perjury, that you are the owner of {count, plural, one {this claim?} other {these claims?}}",
-    "fullNameLabel": "Full name",
-    "fullNamePlaceholder": "Your Name",
-    "emailLabel": "Contact email",
-    "emailPlaceholder": "your@email.com",
-    "agreementText": "By confirming you agree to the CAHC defending your property rights, to publish your name in a declaration to the court, to receive emails and to abide by our <bylaws>bylaws</bylaws>.",
-    "disagreementWarning": "If you DO NOT confirm, the court will assume customers agree with the debtors' proposed petition value recoveries.",
-    "emailAlreadyInUseError": "Email already in use.",
-    "signInLink": "Sign-in",
-    "confirmButton": "Yes, I Confirm",
-    "cancelButton": "Cancel",
-    "successMessage": "You have successfully registered!",
-    "checkEmailMessage": "Check your email for next steps.",
-    "emailExpiredError": "Email link has expired",
-    "signInOtherTabMessage": "Sign in on other tab"
+    "makeYourVoiceHeard": "Haz que tu voz se escuche",
+    "completeRegistrationForm": "Completa este formulario de registro",
+    "removeButton": "Eliminar",
+    "confirmOwnershipText": "¿Confirmas, bajo pena de perjurio, que eres el dueño de {count, plural, one {¡esta reclamación?} other {estos reclamos?}}",
+    "fullNameLabel": "Nombre completo",
+    "fullNamePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico de contacto",
+    "emailPlaceholder": "tu@email.com",
+    "agreementText": "Al confirmar usted acepta que el CAHC defienda sus derechos de propiedad, publique su nombre en una declaración ante el tribunal, para recibir correos electrónicos y cumplir con nuestros <bylaws>estatutos</bylaws>.",
+    "disagreementWarning": "Si NO confirmas, el tribunal asumirá que los clientes están de acuerdo con las devoluciones propuestas por los liquidadores.",
+    "emailAlreadyInUseError": "El correo electrónico ya está en uso.",
+    "signInLink": "Iniciar sesión",
+    "confirmButton": "Sí, confirmo",
+    "cancelButton": "Cancelar",
+    "successMessage": "¡Te has registrado correctamente!",
+    "checkEmailMessage": "Revisa tu correo electrónico para ver los siguientes pasos.",
+    "emailExpiredError": "Este enlace ha caducado",
+    "signInOtherTabMessage": "Iniciar sesión en otra pestaña"
   },
   "SignedInRegisterClaim": {
-    "notification": "Selected {count, plural, one {# claim} other {# claims}}",
-    "registerClaimButton": "Register Claim"
+    "notification": "¡Has seleccionado {count, plural, one {# claim} other {# reclamaciones}}",
+    "registerClaimButton": "Registrar reclamación"
   }
 }
