@@ -97,50 +97,60 @@ export default async function Home() {
             {t("title")}
             <br />
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            {t("description_part1")}{" "}
-            <span className="font-bold">{t("former_ftx_customers")}</span>{" "}
-            {t("description_part2")}{" "}
-            <span className="font-bold">{t("claims_amount")}</span>,{" "}
-            {t("description_part3")}
-            <br />
-            <br />
-            {t("legal_counsel")}{" "}
-            <span className="font-bold">{t("legal_counsel_name")}</span>{" "}
-            {t("legal_counsel_action")}{" "}
-            <Link
-              className="text-indigo-300 underline"
-              href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo"
-              target="_blank"
-            >
-              {t("docket_number")}
-              <ArrowTopRightOnSquareIcon className="mb-1 ml-1  inline h-4 w-4" />
-            </Link>
-          </p>
+          <div className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
+            <p className="mb-6">
+              {t.rich('description', {
+                b: (chunk) => <span className="font-bold">{chunk}</span>,
+              })}
+            </p>
+            <p>
+              {t.rich("legal_counsel", {
+                b: (chunk) => <span className="font-bold">{chunk}</span>,
+                docket: (chunk) => (
+                    <Link
+                        className="text-indigo-300 underline"
+                        href="https://restructuring.ra.kroll.com/FTX/Home-DocketInfo"
+                        target="_blank"
+                    >
+                      {chunk}
+                      <ArrowTopRightOnSquareIcon className="mb-1 ml-1  inline h-4 w-4" />
+                    </Link>
+                ),
+              })}
+            </p>
+          </div>
           <hr className="mt-10 opacity-20" />
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
-            {t("join_us_part1")}&apos;{t("no")}&apos;{t("join_us_part2")}
-            <br />
-            {t("read_our")}{" "}
-            <Link
-              href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
-              className="text-indigo-300 underline"
-              target="_blank"
-            >
-              {t("bylaws")}
-              <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
-            </Link>{" "}
-            {t("and")}{" "}
-            <Link
-              href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing"
-              target="_blank"
-              className="text-indigo-300 underline"
-            >
-              {t("charter")}
-              <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
-            </Link>{" "}
-            {t("to_learn_more")}
-          </p>
+          <div className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
+            <p className="mb-5">
+              {t.rich('join_us', {
+                b: (chunk) => <span className="font-bold">{chunk}</span>,
+              })}
+            </p>
+            <p>
+              {t.rich('read_more', {
+                bylaws: (chunk) => (
+                    <Link
+                        href="https://drive.google.com/file/d/1MYUnEK7C4VguRmTWrvR3h9Zv4HePp6zw/view?usp=sharing"
+                        className="text-indigo-300 underline"
+                        target="_blank"
+                    >
+                      {chunk}
+                      <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
+                    </Link>
+                ),
+                charter: (chunk) => (
+                    <Link
+                        href="https://docs.google.com/document/d/1cw_ZWHNMM90IfGuOhDRQYl9PBSSV7pOdR4SfZhQZpG8/edit?usp=sharing"
+                        target="_blank"
+                        className="text-indigo-300 underline"
+                    >
+                      {chunk}
+                      <ArrowTopRightOnSquareIcon className="mb-1 ml-1 inline h-4 w-4" />
+                    </Link>
+                ),
+              })}
+            </p>
+          </div>
           <br />
           <div className="mt-10 flex flex-col items-center justify-center gap-x-3 sm:flex-row">
             <Link
